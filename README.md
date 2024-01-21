@@ -3,12 +3,18 @@
 </p>
 
 <div align="center">
+
 <br />
+
 <h1>😎 프로젝트 소개 및 개요</h1>
+
 <br />
-외부 API를 활용해 레시피를 스크랩할 수 있는 사이트
+
+<img src="https://github.com/mobi-chap-chap/chap-chap/assets/134191817/11a3eec3-aeef-4c57-a547-4e5fa6bf4f5e" />
+
 <br />
-Linear를 통해 협업함
+
+Chap-Chap은 1920px 기준으로 제작되었으며 반응형 적용이 되어 있지 않습니다.
 
 <br />
 
@@ -18,12 +24,17 @@ Linear를 통해 협업함
 
 <h1>🔗 Links</h1>
 
-<a href="#"> 
-    배포된 사이트 vercel로 확인하기
-</a>
-<br />
-<a href="#"> 
-        figma에서 디자인 확인하기
+Linear 👉 <a href="https://linear.app/chapchap/team/CHA/active">
+백로그 확인하기
+</a> <br />
+Jira 👉 <a href="https://jyeon380516.atlassian.net/jira/software/projects/CHAP/boards/2">
+daily scrum & memoirs 확인하기
+</a> <br />
+figma 👉 <a href="https://www.figma.com/file/5pE3hQpUwjZ33yTfkxKhXW/chap-chap?type=design&node-id=0%3A1&mode=design&t=NDWmmwTcNvgyXviS-1">
+디자인 확인하기
+</a> <br />
+vercel 👉 <a href="#">
+구현된 사이트 확인하기
 </a>
 
 <br />
@@ -39,10 +50,24 @@ Linear를 통해 협업함
 <br />
 <h1>👥 Members</h1>
 
-<h3>Pair 1</h3>
-<p>00페이지</p>
+<h3>Planning Poker</h3>
+
+<p align="center" >
+<img width="80%" src="https://github.com/mobi-chap-chap/chap-chap/assets/134191817/5aa166ab-6924-496b-8861-a28808e42cc7" />
+</p>
+
 <table>
   <tr>
+    <td>
+      <a href="https://github.com/55555-Jyeon">
+        <img src="https://github.com/Manners-Maketh-Market/MMM/assets/134191817/b04543f3-6de1-42c1-bd01-92cfd68dcb3f" width="120px" height="120px"/>
+      </a>  
+    </td>
+    <td>
+      <a href="https://github.com/Ahnjuhyeon">
+        <img src="https://github.com/Manners-Maketh-Market/MMM/assets/134191815/4a4ed8b7-443e-45b2-8d5a-1b2a6f81899e" width="120px" height="120px"/>
+      </a>  
+    </td>
      <td>
       <a href="https://github.com/kiminn">
         <img src="https://github.com/Manners-Maketh-Market/MMM/assets/134191815/90e1745b-51eb-4e31-8946-93970bcb7af1" width="120px" height="120px"/>
@@ -51,6 +76,12 @@ Linear를 통해 협업함
   </tr>
   <tr>
     <th>
+      Amy
+    </th>
+    <th>
+      Ann
+    </th>
+    <th>
       Kimi
     </th>
   </tr>
@@ -58,52 +89,14 @@ Linear를 통해 협업함
     <th>
        Frontend
     </th>
-  </tr>
-</table>
-<h3>Pair 2</h3>
-<p>00페이지</p>
-<table>
-  <tr>
-    <td>
-      <a href="https://github.com/Ahnjuhyeon">
-        <img src="https://github.com/Manners-Maketh-Market/MMM/assets/134191815/4a4ed8b7-443e-45b2-8d5a-1b2a6f81899e" width="120px" height="120px"/>
-      </a>  
-    </td>
-  </tr>
-  <tr>
     <th>
-       Ann
+       Frontend
     </th>
-  </tr>
-  <tr>
     <th>
        Frontend
     </th>
   </tr>
 </table>
-<h3>Pair 3</h3>
-<p>00페이지</p>
-<table>
-  <tr>
-    <td>
-      <a href="https://github.com/55555-Jyeon">
-        <img src="https://github.com/Manners-Maketh-Market/MMM/assets/134191817/b04543f3-6de1-42c1-bd01-92cfd68dcb3f" width="120px" height="120px"/>
-      </a>  
-    </td>
-  </tr>
-  <tr>
-    <th>
-       Amy
-    </th>
-  </tr>
-  <tr>
-    <th>
-       Frontend
-    </th>   
-  </tr>
-</table>
-<h3>Pair 4</h3>
-<p>API</p>
 <table>
   <tr>
     <td>
@@ -135,6 +128,89 @@ Linear를 통해 협업함
 
 <img src="#" />
 
+#### 🗓️ schedule table
+
+<table>
+  <tr>
+    <td>number</td>
+    <td> 🗓️ </td>
+    <td>todo title</td>
+    <td>check</td>
+    <td>💬</td>
+  </tr>
+  <tr>
+    <td>day 01</td>
+    <td>2024-01-19</td>
+    <td>기획</td>
+    <td>✔️</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>day 02</td>
+    <td>2024-01-20</td>
+    <td>와이어프레임 & BDD</td>
+    <td>✔️</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>day 03</td>
+    <td>2024-01-21</td>
+    <td>디자인</td>
+    <td>✔️</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>day 04</td>
+    <td>2024-01-22</td>
+    <td>기초 셋팅 및 ETA 시작</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>day 05</td>
+    <td>2024-01-23</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>day 06</td>
+    <td>2024-01-24</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+    <tr>
+    <td>day 07</td>
+    <td>2024-01-25</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  </tr>
+    <tr>
+    <td>day 08</td>
+    <td>2024-01-26</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  </tr>
+  <tr>
+    <td>day 09</td>
+    <td>2024-01-27</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>day 10</td>
+    <td>2024-01-28</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
 <br />
 
 <h1>📊 Stacks</h1>
@@ -174,10 +250,42 @@ Linear를 통해 협업함
 | 💡 refactor | 기능, 코드 개선                                    |
 
 <br />
+
+#### 🆕 new issues
+
+error 발생 후 해결 방법 공유 & blocking 됐을 때 상황 공유는 gitHub issue에 등록하기
+
+<table>
+  <tr>
+    <td>🔴</td>
+    <td>issue occur</td>
+  </tr>
+  <tr>
+    <td>🟡</td>
+    <td>postpone small issue</td>
+  </tr>
+  <tr>
+    <td>🟢</td>
+    <td>solved</td>
+  </tr>
+    <tr>
+    <td> 🏳️ </td>
+    <td>give up, can't resolve now</td>
+  </tr>
+</table>
+
+<br />
+
+<h1>🗂️ Design Token</h1>
+<img width="70%" src="https://github.com/mobi-chap-chap/chap-chap/assets/134191817/ec984e62-94d8-4305-b973-f7f45c781930" />
+
+<br />
+
+<br />
+
 <h1>🗂️ Folder Structure</h1>
 <img width="30%" src="#" />
 
-<br />
 <h1>🛠️ 주요 기능 구현 내용</h1>
 
 <p align="left">
