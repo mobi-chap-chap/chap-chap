@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import SignInForm from "../pages/sign/in-form";
 import Layout from "../layout/layout";
 import MainPage from "../pages/main/main";
+import ScrapPage from "../pages/scrap/scraps";
 
 const router = createBrowserRouter([
   {
@@ -10,7 +11,10 @@ const router = createBrowserRouter([
   },
   {
     element: <Layout />,
-    children: [{ path: "/chap-chap", element: <MainPage /> }],
+    children: [
+      { path: "/chap-chap", element: <MainPage /> },
+      { path: "/chap-chap/scrap", element: <ScrapPage /> },
+    ],
   },
 ]);
 
