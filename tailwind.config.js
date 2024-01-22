@@ -21,17 +21,15 @@ export default {
     fontFamily: {
       sans: ["SOYOMapleBoldTTF", "sans-serif"],
     },
-    fontSize: {
-      extraSmall: "10px",
-      small: "12px",
-      medium: "14px",
-      large: "18px",
-      extraLarge: "24px",
-      superLarge: "28px",
-    },
     fontWeight: {
       regular: 500,
       bold: 700,
+    },
+    container: {
+      padding: {
+        layout: "42px",
+        content: "px",
+      },
     },
     extend: {},
   },
