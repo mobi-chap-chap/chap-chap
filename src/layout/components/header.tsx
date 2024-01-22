@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Header = () => {
-  return <Container>header</Container>;
+  return <div className="w-screen bg-primary-peanut">header</div>;
 };
 export default Header;
 

@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { FlexCenter } from "../../styles/common.style";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import ICON from "../../../img/chevron.png";
 
 const ScrollTop = () => {
   const [isShowButton, setIsShowButton] = useState(false);
@@ -33,7 +32,7 @@ const ScrollTop = () => {
     <Container>
       {isShowButton && (
         <ToTop onClick={onScrollTop}>
-          <Icon src={ICON} />
+          <Icon />
         </ToTop>
       )}
     </Container>
