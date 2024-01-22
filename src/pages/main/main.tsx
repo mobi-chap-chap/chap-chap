@@ -1,4 +1,4 @@
 const MainPage = () => {
-  return <>main page</>;
+  return <div>main</div>;
 };
 export default MainPage;
