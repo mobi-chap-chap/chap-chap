@@ -10,7 +10,7 @@
 
 <br />
 
-<img src="https://github.com/mobi-chap-chap/chap-chap/assets/134191817/11a3eec3-aeef-4c57-a547-4e5fa6bf4f5e" />
+<img width="80%" src="https://github.com/mobi-chap-chap/chap-chap/assets/134191817/11a3eec3-aeef-4c57-a547-4e5fa6bf4f5e" />
 
 <br />
 
@@ -231,11 +231,15 @@ vercel 👉 <a href="#">
 | <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white">                                | 타입스크립트                         |
 | Library                                                                                                                                     |                                      |
 | <img src="https://img.shields.io/badge/styledcomponents-DB7093?style=flat-square&logo=styledcomponents&logoColor=white">                    | CSS-in-JS                            |
+| <img src="https://img.shields.io/badge/tailwindcss-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white">                              | tailwind CSS                         |
+| <img src="https://img.shields.io/badge/schacn%20ui-000000?style=flat-square&logo=shadcnui&logoColor=white">                                 | shadcn UI                            |
 | <img src="https://img.shields.io/badge/React%20Query-FF4154?style=flat-square&logo=reactquery&logoColor=white">                             | api call, 백엔드 데이터 연결 및 관리 |
 | <img src="https://img.shields.io/badge/React%20Router-CA4245?style=flat-square&logo=reactrouter&logoColor=white">                           | 라우팅 연결                          |
 
 <br />
 <h1>📝 Convention</h1>
+
+아래 PR 및 commit 컨벤션은 .github 폴더 안에 마크다운 파일로 형식을 강제하고 있습니다.
 
 | 표기        | 표기 사용 상황                                     |
 | ----------- | -------------------------------------------------- |
@@ -253,7 +257,10 @@ vercel 👉 <a href="#">
 
 #### 🆕 new issues
 
-error 발생 후 해결 방법 공유 & blocking 됐을 때 상황 공유는 gitHub issue에 등록하기
+error 발생 후 해결 방법 공유 & blocking 됐을 때 상황 공유는 gitHub issue에 등록하기 <br />
+
+타입스크립트를 처음 프로젝트에 적용하고 있기 때문에 처음부터 깔끔한 코드를 쓰는 것은 어려울 것이라 판단됩니다.
+따라서 각자 맡은 파트를 진행하는 과정에서 새롭게 알게 된 방법이나 개선하면 좋은 방법 등 공유도 issue를 통해 공유하고 있습니다.
 
 <table>
   <tr>
@@ -271,6 +278,31 @@ error 발생 후 해결 방법 공유 & blocking 됐을 때 상황 공유는 git
     <tr>
     <td> 🏳️ </td>
     <td>give up, can't resolve now</td>
+  </tr>
+</table>
+
+<br />
+
+#### 🌈 design convention
+
+style을 적용할 때 통일을 위해 적용할 컨벤션
+
+<table>
+  <tr>
+    <td>condition</td>
+    <td>name</td>
+  </tr>
+  <tr>
+    <td>최상위 div</td>
+    <td>Container</td>
+  </tr>
+  <tr>
+    <td>하위 감싸는 div</td>
+    <td>Wrap000 / Wrapper</td>
+  </tr>
+  <tr>
+    <td>번들 사이즈 감소를 위해</td>
+    <td>S로 export</td>
   </tr>
 </table>
 
