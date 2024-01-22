@@ -24,12 +24,6 @@ Chap-Chap은 1920px 기준으로 제작되었으며 반응형 적용이 되어 �
 
 <h1>🔗 Links</h1>
 
-Linear 👉 <a href="https://linear.app/chapchap/team/CHA/active">
-백로그 확인하기
-</a> <br />
-Jira 👉 <a href="https://jyeon380516.atlassian.net/jira/software/projects/CHAP/boards/2">
-daily scrum & memoirs 확인하기
-</a> <br />
 figma 👉 <a href="https://www.figma.com/file/5pE3hQpUwjZ33yTfkxKhXW/chap-chap?type=design&node-id=0%3A1&mode=design&t=NDWmmwTcNvgyXviS-1">
 디자인 확인하기
 </a> <br />
@@ -52,8 +46,16 @@ vercel 👉 <a href="#">
 
 <h3>Planning Poker</h3>
 
+플래닝 포커, 혹은 스크럼 포커는 그룹 구성원들이 테이블 위에 숫자가 적힌 카드를 뒤집어 놓고 동시에 카드를 뒤집어 노동시간을 계산하는 노동시간 계산법 중 하나 입니다. James Grenning이 창안했으며 애자일 개발 이론에 사용됩니다.
+
+저희는 검색했을 때 나오는 피보나치 수열의 카드를 가지고 하는 방법이 아닌, <br />
+"내가 이 페이지를 진행한다면 어느 정도의 시간이 걸릴 것인가, 나에겐 어떤 난이도인가"를 두고 포커를 진행했습니다.
+배팅은 1~100까지 가능하며 가장 적게 배팅한 사람이 해당 프로젝트를 진행하게 됩니다. 단, 다음 프로젝트의 담당자를 정할 때는 누적으로 계산합니다.
+
+약 10일의 기간동안 해커톤 느낌으로 진행되는 프로젝트이기 때문에 위와 같은 방식으로 task를 분담했습니다. 플래닝 포커로 담당자를 정해 각자 맡은 페이지를 진행하지만 blocking이 오래 지속되는 경우 함께 해결했습니다.
+
 <p align="center" >
-<img width="80%" src="https://github.com/mobi-chap-chap/chap-chap/assets/134191817/5aa166ab-6924-496b-8861-a28808e42cc7" />
+<img width="80%" src="https://github.com/mobi-chap-chap/chap-chap/assets/134191817/cca5abab-3b17-428c-a2a4-7f8915755d49" />
 </p>
 
 <table>
@@ -169,21 +171,21 @@ vercel 👉 <a href="#">
   <tr>
     <td>day 05</td>
     <td>2024-01-23</td>
-    <td></td>
+    <td>ETA 02</td>
     <td></td>
     <td></td>
   </tr>
   <tr>
     <td>day 06</td>
     <td>2024-01-24</td>
-    <td></td>
+    <td>ETA 03</td>
     <td></td>
     <td></td>
   </tr>
     <tr>
     <td>day 07</td>
     <td>2024-01-25</td>
-    <td></td>
+    <td>ETA 04</td>
     <td></td>
     <td></td>
   </tr>
@@ -191,7 +193,7 @@ vercel 👉 <a href="#">
     <tr>
     <td>day 08</td>
     <td>2024-01-26</td>
-    <td></td>
+    <td>ETA 05</td>
     <td></td>
     <td></td>
   </tr>
@@ -199,14 +201,14 @@ vercel 👉 <a href="#">
   <tr>
     <td>day 09</td>
     <td>2024-01-27</td>
-    <td></td>
+    <td>ETA 06</td>
     <td></td>
     <td></td>
   </tr>
   <tr>
     <td>day 10</td>
     <td>2024-01-28</td>
-    <td></td>
+    <td>ETA 07</td>
     <td></td>
     <td></td>
   </tr>
