@@ -7,15 +7,15 @@ const Header = () => {
         <img src={HeaderIcon.Logo} />
       </a>
       <div className="absolute top-7 right-6 flex flex-row">
-        <a href="#" className="px-4">
+        <div className="px-4">
           <img src={HeaderIcon.search} className="w-8" />
-        </a>
-        <a href="#" className="px-4">
+        </div>
+        <div className="px-4">
           <img src={HeaderIcon.bookmarkLine} className="w-8" />
-        </a>
-        <a href="#" className="px-4">
+        </div>
+        <div className="px-4">
           <img src={HeaderIcon.account} className="w-8" />
-        </a>
+        </div>
       </div>
     </div>
   );

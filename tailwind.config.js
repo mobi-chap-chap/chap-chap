@@ -31,7 +31,15 @@ export default {
         content: "px",
       },
     },
-    extend: {},
+    extend: {
+      boxShadow: {
+        container: "-5px -5px 10px #FFF, 5px 5px 10px #F1E9CC",
+        dropPeanut: "-5px -5px 10px #FFF, 5px 5px 8px #F1E9CC",
+        innerPeanut: "inset 5px 5px 10px #F1E9CC, inset -5px -5px 10px #FFF",
+        dropCheese: "-5px -5px 10px #DCA310, 5px 5px 8px #F3CE6F",
+        innerCheese: "inset 5px 5px 10px #F3CE6F, inset -5px -5px 10px #DCA310",
+      },
+    },
   },
   plugins: [],
 };
