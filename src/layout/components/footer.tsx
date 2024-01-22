@@ -9,8 +9,14 @@ const Footer = () => {
           <a href="#" className="px-2">
             <img src={FooterIcon.footerSNS01} />
           </a>
-          <a href="#" className="px-2">
-            <img src={FooterIcon.footerSNS02} />
+          <a
+            href="https://github.com/mobi-chap-chap/chap-chap"
+            className="px-2"
+          >
+            <img
+              src={FooterIcon.footerSNS02}
+              alt="chap chap github repository"
+            />
           </a>
           <a href="#" className="px-2">
             <img src={FooterIcon.footerSNS03} />
