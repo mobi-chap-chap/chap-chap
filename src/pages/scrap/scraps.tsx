@@ -1,4 +1,10 @@
+import ScrapList from "./components/scrap-list";
+
 const ScrapPage = () => {
-  return <>scrap page</>;
+  return (
+    <>
+      <ScrapList />
+    </>
+  );
 };
 export default ScrapPage;
