@@ -5,47 +5,72 @@ import SignUpOverlay from './components/overlay/sign-up-overlay';
 import LoginOverlay from './components/overlay/login-overlay';
 
 const Sign = () => {
-    const [isChangeForm, setIsChangeForm] = useState(false);
+    // 랜더링을 다시해버리는 거기 때문에 애니메이션이 잘안먹힌다...
+    const [showSignUpForm, setShowSignUpForm] = useState(true);
 
     const onChangeForm = () => {
-        setIsChangeForm((prev) => !prev);
+        setShowSignUpForm((prev) => !prev);
     };
 
     // tailwind에서 translate -100%를 주는 방법을 못찾아서 const로 빼서 주고있습니다.
-    
+
     //회원 가입
-    const signUpContainerStyle = isChangeForm
+    const signUpContainerStyle = showSignUpForm
         ? {
               transform: `translateX(100%)`,
+              transition: `all 0.5s`,
+              opacity: 1,
           }
-        : {};
+        : {
+              //   transform: `translateX(0%)`,
+              transition: `all 0.5s`,
+              opacity: 0,
+          };
     // 로그인
-    const signInContainerStyle = isChangeForm
+    const signInContainerStyle = showSignUpForm
         ? {
               transform: `translateX(100%)`,
+              transition: `all 0.5s`,
+              opacity: 0,
           }
-        : {};
+        : {
+              //   transform: `translateX(0%)`,
+              transition: `all 0.5s`,
+              opacity: 1,
+          };
 
     // 로그인 시
-    const loginOverlayStyle = isChangeForm
+    const loginOverlayStyle = showSignUpForm
         ? {
-              transform: `translateX(-100%)`,
+              transform: `translateX(0%)`,
+              transition: `all 0.5s`,
+              opacity: 0,
           }
-        : {};
+        : {
+              //   transform: `translateX(100%)`,
+              transition: `all 0.5s`,
+              opacity: 1,
+          };
 
     // 회원가입 시
-    const signUpOverlayStyle = isChangeForm
+    const signUpOverlayStyle = showSignUpForm
         ? {
               transform: `translateX(-100%)`,
+              transition: `all 0.5s`,
+              opacity: 1,
           }
-        : {};
+        : {
+              //   transform: `translateX(100%)`,
+              transition: `all 0.5s`,
+              opacity: 0,
+          };
 
     return (
         // Wrapper
-        <div className="w-screen h-screen flex items-center justify-center  bg-primary-peanut">
+        <div className="w-screen h-screen flex items-center justify-center bg-primary-peanut">
             {/* container */}
             <div className="flex w-[1424px] h-[898px] shadow-container rounded-3xl">
-                {isChangeForm ? (
+                {showSignUpForm ? (
                     <div className="flex w-[1424px] h-[898px] shadow-container rounded-3xl">
                         <div style={signUpContainerStyle} className="h-[898px] w-[712px]  ">
                             <SignUpForm />
