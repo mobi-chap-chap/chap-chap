@@ -1,7 +1,5 @@
 import axios from 'axios';
 import TokenRepository from '../repositories/token-repository';
-import { Recipe } from './type/recipe.type';
-import { END_POINT } from '../consts/end-point';
 
 export const axiosInstance = axios.create({
     baseURL: import.meta.env.VITE_BACKEND_URL,
