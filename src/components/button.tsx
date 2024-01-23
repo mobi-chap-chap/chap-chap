@@ -17,7 +17,7 @@ const ChapButton: FC<ButtonTypes> = ({ children, type, variant, size, ...props }
         <button
             type={type}
             {...props}
-            className={`${variantCSS[variant]} ${sizeCSS[size]} transition duration-500 ease-in-out`}
+            className={`${variantCSS[variant]} ${sizeCSS[size]} transition duration-500 ease-in-out focus:outline-none`}
         >
             {children}
         </button>
