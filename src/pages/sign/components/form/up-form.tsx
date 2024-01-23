@@ -1,8 +1,9 @@
+import { FC } from 'react';
 import ChapButton from '../../../../components/button';
 import ChapInput from '../../../../components/input';
 import FormHeader from './form-header';
 
-const SignUpForm: React.FC = () => {
+const SignUpForm: FC = () => {
     return (
         <div className="flex h-full w-full flex-col items-center justify-center rounded-l-3xl">
             <FormHeader />

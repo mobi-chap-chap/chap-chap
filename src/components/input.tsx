@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { InputTypes } from './type/input.type';
+import { InputTypes } from './type/components.type';
 
 const ChapInput: FC<InputTypes> = ({ label, error, access, ...props }) => {
     return (

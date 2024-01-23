@@ -11,17 +11,6 @@ const Sign = () => {
         setShowSignUpForm((prev) => !prev);
     };
 
-    //회원 가입
-    const signUpContainerStyle = showSignUpForm
-        ? {
-              transform: `translateX(100%)`,
-              transition: `all 0.5s`,
-              opacity: 1,
-          }
-        : {
-              transition: `all 0.5s`,
-              opacity: 0,
-          };
     // 회원가입 overlay
     const signUpOverlayStyle = showSignUpForm
         ? {
@@ -30,26 +19,13 @@ const Sign = () => {
               opacity: 1,
           }
         : {
-              transition: `all 0.5s`,
               opacity: 0,
-          };
-    // 로그인
-    const signInContainerStyle = showSignUpForm
-        ? {
-              transform: `translateX(100%)`,
-              transition: `all 0.5s`,
-              opacity: 0,
-          }
-        : {
-              transition: `all 0.5s`,
-              opacity: 1,
           };
 
     // 로그인 overlay
     const loginOverlayStyle = showSignUpForm
         ? {
               transform: `translateX(0%)`,
-              transition: `all 0.5s`,
               opacity: 0,
           }
         : {
@@ -64,7 +40,7 @@ const Sign = () => {
             <div className="flex w-[1424px] h-[898px] shadow-container rounded-3xl">
                 {showSignUpForm ? (
                     <div className="flex w-[1424px] h-[898px] shadow-container rounded-3xl">
-                        <div style={signUpContainerStyle} className="h-[898px] w-[712px]  ">
+                        <div className="h-[898px] w-[712px] translate-x-full">
                             <SignUpForm />
                         </div>
                         <div style={signUpOverlayStyle} className="h-[898px] w-[712px] rounded-l-3xl ">
@@ -73,7 +49,8 @@ const Sign = () => {
                     </div>
                 ) : (
                     <div className="flex w-[1424px] h-[898px] shadow-container rounded-3xl">
-                        <div style={signInContainerStyle} className="h-[898px] w-[712px] rounded-r-3xl">
+                        {/* 잘됨 */}
+                        <div className="h-[898px] w-[712px] rounded-r-3xl ">
                             <SignInForm />
                         </div>
                         <div style={loginOverlayStyle} className="h-[898px] w-[712px] bg-primary-cheese rounded-r-3xl">

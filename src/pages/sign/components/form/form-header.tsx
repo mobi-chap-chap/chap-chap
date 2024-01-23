@@ -1,24 +1,22 @@
-import LogoGroup from '../../../../assets/icons/LogoGroup.svg';
-// logoGroup assets에 추가
-import Facebook from '../../../../assets/icons/facebook.svg';
-import Instagram from '../../../../assets/icons/instagram.svg';
-import GitHub from '../../../../assets/icons/github.svg';
 import ChapButton from '../../../../components/button';
+import { FormIcon } from '../../../../assets/icon';
+import { Link } from 'react-router-dom';
 
 const FormHeader = () => {
     return (
         <div className="flex flex-col items-center justify-center">
-            <img src={LogoGroup} />
-            {/* icons 전역 컴포넌트 받아서 수정예정 */}
+            <img src={FormIcon.LogoGroup} />
             <div className="w-[292px] h-[80px] flex justify-around my-[40px]">
                 <ChapButton variant={'peanut'} size={'circle'} type="button">
-                    <img src={Facebook} />
+                    <img src={FormIcon.formSNS01} />
                 </ChapButton>
+                <Link to="https://github.com/mobi-chap-chap/chap-chap">
+                    <ChapButton variant={'peanut'} size={'circle'} type="button">
+                        <img src={FormIcon.formSNS02} />
+                    </ChapButton>
+                </Link>
                 <ChapButton variant={'peanut'} size={'circle'} type="button">
-                    <img src={Instagram} />
-                </ChapButton>
-                <ChapButton variant={'peanut'} size={'circle'} type="button">
-                    <img src={GitHub} />
+                    <img src={FormIcon.formSNS03} />
                 </ChapButton>
             </div>
         </div>
