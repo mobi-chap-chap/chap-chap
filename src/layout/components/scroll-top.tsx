@@ -1,7 +1,6 @@
-import styled from "styled-components";
-import { FlexCenter } from "../../styles/common.style";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { MainIcon } from "../../assets/icon";
 
 const ScrollTop = () => {
   const [isShowButton, setIsShowButton] = useState(false);
@@ -11,7 +10,7 @@ const ScrollTop = () => {
   const onHandleScroll = () => {
     const { scrollY } = window;
 
-    scrollY > 200 ? setIsShowButton(true) : setIsShowButton(false);
+    scrollY > 100 ? setIsShowButton(true) : setIsShowButton(false);
   };
 
   useEffect(() => {
@@ -29,46 +28,13 @@ const ScrollTop = () => {
   if (window.location.pathname === "/") return null;
 
   return (
-    <Container>
-      {isShowButton && (
-        <ToTop onClick={onScrollTop}>
-          <Icon />
-        </ToTop>
-      )}
-    </Container>
+    <div
+      onClick={onScrollTop}
+      className="fixed bottom-30 right-80 w-12 h-12 rounded-full flex place-content-center bg-primary-peanut"
+    >
+      <img src={MainIcon.top} className="w-8 h-8 mt-2" />
+    </div>
   );
 };
 
 export default ScrollTop;
-
-const Container = styled.div`
-  position: fixed;
-  bottom: 20px;
-  right: 50px;
-`;
-
-const ToTop = styled.button`
-  ${FlexCenter}
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  border: 1px solid #555;
-  margin-bottom: 10px;
-  transition: all 0.6s;
-
-  &:hover {
-    cursor: pointer;
-  }
-`;
-
-const Icon = styled.img`
-  padding: 10px;
-  width: 56px;
-  height: 56px;
-  @media ${({ theme }) => theme.DEVICE.mobile} {
-    width: 40px;
-    height: 40px;
-  }
-  @media ${({ theme }) => theme.DEVICE.tablet} {
-  }
-`;

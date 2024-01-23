@@ -1,13 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
-import SignInForm from "../pages/sign/in-form";
 import Layout from "../layout/layout";
 import MainPage from "../pages/main/main";
+import Sign from "../pages/sign/sign";
 import ScrapPage from "../pages/scrap/scraps";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <SignInForm />,
+    element: <Sign />,
   },
   {
     element: <Layout />,
