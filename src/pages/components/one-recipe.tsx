@@ -1,13 +1,8 @@
-import { useState } from "react";
-import scrapLineIcon from "../../assets/icons/bookmark-line.png";
-import scrapPullIcon from "../../assets/icons/bookmark-full.png";
-type OneRecipeProps = {
-  recipeImg: string;
-  recipeType: string;
-  recipeKal: number;
-  recipeTitle: string;
-};
-const OneRecipe: React.FC<OneRecipeProps> = ({
+import { FC, useState } from "react";
+import { OneRecipeIcon } from "../../assets/icon";
+import { OneRecipeProps } from "./type/type";
+
+const OneRecipe: FC<OneRecipeProps> = ({
   recipeImg,
   recipeType,
   recipeKal,
@@ -32,7 +27,7 @@ const OneRecipe: React.FC<OneRecipeProps> = ({
   return (
     <>
       <div className="w-[240px] h-[382px]  m-auto cursor-pointer rounded-lg border border-solid border-primary-peanut">
-        <div className="w-[239px] h-[240px] transition delay-100  absolute  hover:bg-black opacity-40 rounded-t-lg"></div>
+        <div className="w-[239px] h-[240px] transition delay-100  absolute  hover:bg-black opacity-40 rounded-t-lg" />
         <div>
           <img
             src={recipeImg}
@@ -51,7 +46,11 @@ const OneRecipe: React.FC<OneRecipeProps> = ({
             <div>
               <img
                 className="w-[30px]"
-                src={isLikedScrap ? scrapPullIcon : scrapLineIcon}
+                src={
+                  isLikedScrap
+                    ? OneRecipeIcon.bookmarkFull
+                    : OneRecipeIcon.bookmarkLine
+                }
                 onClick={onScrapToggle}
               />
             </div>
