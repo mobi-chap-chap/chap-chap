@@ -1,0 +1,32 @@
+.slick-slider {
+  width: 1024px;
+  height: 310px;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 60px 0;
+
+  .slick-list {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    overflow-x: hidden;
+  }
+
+  .slick-dots {
+    bottom: 10px;
+  }
+
+  .slick-arrow {
+    width: 36px;
+    height: 36px;
+  }
+  .slick-prev {
+    left: 20px;
+    z-index: 1;
+  }
+  .slick-next {
+    right: 20px;
+  }
+}
