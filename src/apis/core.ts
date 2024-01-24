@@ -12,7 +12,6 @@ export const axiosInstance = axios.create({
 // 인증키서비스명/요청파일타입/요청시작위치/요청종료위치
 export const axiosRecipeInstance = axios.create({
     baseURL: import.meta.env.VITE_RECIPE_URL,
-    withCredentials: true,
 });
 
 // interceptor.response 응답을 가로챔 / request: 요청
