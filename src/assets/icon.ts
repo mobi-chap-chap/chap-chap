@@ -47,12 +47,14 @@ export const FormIcon = {
     formSNS03,
 };
 export const MyDialogIcon = {
-    defaultProfile01,
-    defaultProfile02,
-    defaultProfile03,
-    editUserInfo,
-    pencil,
-    logout,
+  defaultProfile01,
+  defaultProfile02,
+  defaultProfile03,
+  editUserInfo,
+  pencil,
+  post,
+  recipe,
+  logout,
 };
 export const OneRecipeIcon = {
     bookmarkLine,

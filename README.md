@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="#" alt="chap-chap logo">
+    <img width="90%" src="https://github.com/mobi-chap-chap/chap-chap/assets/134191817/618f8153-1413-4457-8b83-f57370b6ca32" alt="chap-chap logo">
 </p>
 
 <div align="center">
@@ -24,12 +24,6 @@ Chap-Chap은 1920px 기준으로 제작되었으며 반응형 적용이 되어 �
 
 <h1>🔗 Links</h1>
 
-Linear 👉 <a href="https://linear.app/chapchap/team/CHA/active">
-백로그 확인하기
-</a> <br />
-Jira 👉 <a href="https://jyeon380516.atlassian.net/jira/software/projects/CHAP/boards/2">
-daily scrum & memoirs 확인하기
-</a> <br />
 figma 👉 <a href="https://www.figma.com/file/5pE3hQpUwjZ33yTfkxKhXW/chap-chap?type=design&node-id=0%3A1&mode=design&t=NDWmmwTcNvgyXviS-1">
 디자인 확인하기
 </a> <br />
@@ -52,8 +46,16 @@ vercel 👉 <a href="#">
 
 <h3>Planning Poker</h3>
 
+플래닝 포커, 혹은 스크럼 포커는 그룹 구성원들이 테이블 위에 숫자가 적힌 카드를 뒤집어 놓고 동시에 카드를 뒤집어 노동시간을 계산하는 노동시간 계산법 중 하나 입니다. James Grenning이 창안했으며 애자일 개발 이론에 사용됩니다.
+
+저희는 검색했을 때 나오는 피보나치 수열의 카드를 가지고 하는 방법이 아닌, <br />
+"내가 이 페이지를 진행한다면 어느 정도의 시간이 걸릴 것인가, 나에겐 어떤 난이도인가"를 두고 포커를 진행했습니다.
+배팅은 1~100까지 가능하며 가장 적게 배팅한 사람이 해당 프로젝트를 진행하게 됩니다. 단, 다음 프로젝트의 담당자를 정할 때는 누적으로 계산합니다.
+
+약 10일의 기간동안 해커톤 느낌으로 진행되는 프로젝트이기 때문에 위와 같은 방식으로 task를 분담했습니다. 플래닝 포커로 담당자를 정해 각자 맡은 페이지를 진행하지만 blocking이 오래 지속되는 경우 함께 해결했습니다.
+
 <p align="center" >
-<img width="80%" src="https://github.com/mobi-chap-chap/chap-chap/assets/134191817/5aa166ab-6924-496b-8861-a28808e42cc7" />
+<img width="80%" src="https://github.com/mobi-chap-chap/chap-chap/assets/134191817/cca5abab-3b17-428c-a2a4-7f8915755d49" />
 </p>
 
 <table>
@@ -135,55 +137,54 @@ vercel 👉 <a href="#">
     <td>number</td>
     <td> 🗓️ </td>
     <td>todo title</td>
-    <td>check</td>
-    <td>💬</td>
+    <td>detail</td>
+    <td>issue</td>
   </tr>
   <tr>
     <td>day 01</td>
     <td>2024-01-19</td>
-    <td>기획</td>
-    <td>✔️</td>
+    <td rowspan="2">기획</td>
+    <td>open API & concept</td>
     <td>-</td>
   </tr>
   <tr>
     <td>day 02</td>
     <td>2024-01-20</td>
     <td>와이어프레임 & BDD</td>
-    <td>✔️</td>
-    <td></td>
+    <td>-</td>
   </tr>
   <tr>
     <td>day 03</td>
     <td>2024-01-21</td>
     <td>디자인</td>
-    <td>✔️</td>
-    <td></td>
+    <td>figma design</td>
+    <td>-</td>
   </tr>
   <tr>
     <td>day 04</td>
     <td>2024-01-22</td>
-    <td>기초 셋팅 및 ETA 시작</td>
-    <td></td>
-    <td></td>
+    <td>ETA 01</td>
+    <td>기초 셋팅 & publishing</td>
+    <td>tailwind CSS 설정 지연</td>
   </tr>
   <tr>
     <td>day 05</td>
     <td>2024-01-23</td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>ETA 02</td>
+    <td>API & publishing</td>
+    <td>API 호출 지연 & CORS error</td>
   </tr>
   <tr>
     <td>day 06</td>
     <td>2024-01-24</td>
-    <td></td>
+    <td>ETA 03</td>
     <td></td>
     <td></td>
   </tr>
     <tr>
     <td>day 07</td>
     <td>2024-01-25</td>
-    <td></td>
+    <td>ETA 04</td>
     <td></td>
     <td></td>
   </tr>
@@ -191,7 +192,7 @@ vercel 👉 <a href="#">
     <tr>
     <td>day 08</td>
     <td>2024-01-26</td>
-    <td></td>
+    <td>ETA 05</td>
     <td></td>
     <td></td>
   </tr>
@@ -199,14 +200,14 @@ vercel 👉 <a href="#">
   <tr>
     <td>day 09</td>
     <td>2024-01-27</td>
-    <td></td>
+    <td>ETA 06</td>
     <td></td>
     <td></td>
   </tr>
   <tr>
     <td>day 10</td>
     <td>2024-01-28</td>
-    <td></td>
+    <td>ETA 07</td>
     <td></td>
     <td></td>
   </tr>
@@ -215,26 +216,88 @@ vercel 👉 <a href="#">
 
 <h1>📊 Stacks</h1>
 
-| Environment                                                                                                                                 | 사용                                 |
-| ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------ |
-| Communication                                                                                                                               |                                      |
-| <img src="https://img.shields.io/badge/GitHub-000000?style=flat-square&logo=github&logoColor=white">                                        | gitHub                               |
-| <img src="https://img.shields.io/badge/discord-5865F2?style=flat-square&logo=discord&logoColor=white">                                      | discord                              |
-| tools                                                                                                                                       |                                      |
-| <img src="https://img.shields.io/badge/figma-F24E1E?style=flat-square&logo=figma&logoColor=white">                                          | 디자인                               |
-| <img src="https://img.shields.io/badge/Visual%20Studio%20Code-007ACC.svg?&style=for-the-badge&logo=Visual%20Studio%20Code&logoColor=white"> | 기본 환경                            |
-| <img src="https://img.shields.io/badge/NPM-CB3837?style=flat-square&logo=npm&logoColor=white">                                              | Config                               |
-| Language                                                                                                                                    |                                      |
-| <img src="https://img.shields.io/badge/react-61DAFB?style=flat-square&logo=react&logoColor=white">                                          | 리액트                               |
-| <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white">                                          | HTML5                                |
-| <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3cript&logoColor=white">                                       | CSS3                                 |
-| <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white">                                | 타입스크립트                         |
-| Library                                                                                                                                     |                                      |
-| <img src="https://img.shields.io/badge/styledcomponents-DB7093?style=flat-square&logo=styledcomponents&logoColor=white">                    | CSS-in-JS                            |
-| <img src="https://img.shields.io/badge/tailwindcss-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white">                              | tailwind CSS                         |
-| <img src="https://img.shields.io/badge/schacn%20ui-000000?style=flat-square&logo=shadcnui&logoColor=white">                                 | shadcn UI                            |
-| <img src="https://img.shields.io/badge/React%20Query-FF4154?style=flat-square&logo=reactquery&logoColor=white">                             | api call, 백엔드 데이터 연결 및 관리 |
-| <img src="https://img.shields.io/badge/React%20Router-CA4245?style=flat-square&logo=reactrouter&logoColor=white">                           | 라우팅 연결                          |
+<table>
+  <tr>
+    <td>Environment</td>
+    <td>사용</td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">Communication</td>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://img.shields.io/badge/GitHub-000000?style=flat-square&logo=github&logoColor=white">
+    </td>
+    <td>GitHub</td>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://img.shields.io/badge/discord-5865F2?style=flat-square&logo=discord&logoColor=white"> 
+    </td>
+    <td>Discord</td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">Tools</td>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://img.shields.io/badge/figma-F24E1E?style=flat-square&logo=figma&logoColor=white">   
+    </td>
+    <td>for design</td>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://img.shields.io/badge/Visual%20Studio%20Code-007ACC.svg?&style=for-the-badge&logo=Visual%20Studio%20Code&logoColor=white">
+    </td>
+    <td>for coding</td>
+  </tr>
+  <tr>
+    <td><img src="https://img.shields.io/badge/NPM-CB3837?style=flat-square&logo=npm&logoColor=white"></td>
+    <td>config</td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">Language</td>
+  </tr>
+  <tr>
+    <td><img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white"></td>
+    <td>HTML5</td>
+  </tr>
+  <tr>
+    <td><img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3cript&logoColor=white"> </td>
+    <td>CSS3</td>
+  </tr>
+  <tr>
+    <td><img src="https://img.shields.io/badge/react-61DAFB?style=flat-square&logo=react&logoColor=white"> </td>
+    <td>React</td>
+  </tr>
+  <tr>
+    <td><img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white"> </td>
+    <td>TypeScript</td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">Library</td>
+  </tr>
+  <tr>
+    <td><img src="https://img.shields.io/badge/tailwindcss-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white">  </td>
+    <td>tailwind CSS</td>
+  </tr>
+  <tr>
+    <td><img src="https://img.shields.io/badge/schacn%20ui-000000?style=flat-square&logo=shadcnui&logoColor=white"></td>
+    <td>shadcn UI</td>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://img.shields.io/badge/React%20Router-CA4245?style=flat-square&logo=reactrouter&logoColor=white"> 
+    </td>
+    <td>라우팅 연결</td>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://img.shields.io/badge/React%20Query-FF4154?style=flat-square&logo=reactquery&logoColor=white"> 
+    </td>
+    <td>api call, 백엔드 데이터 연결 및 관리</td>
+  </tr>
+<table>
 
 <br />
 <h1>📝 Convention</h1>
