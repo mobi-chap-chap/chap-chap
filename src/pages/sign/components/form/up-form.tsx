@@ -1,15 +1,20 @@
+import { FC } from 'react';
+import ChapButton from '../../../../components/button';
+import ChapInput from '../../../../components/input';
 import FormHeader from './form-header';
 
-const SignUpForm: React.FC = () => {
+const SignUpForm: FC = () => {
     return (
         <div className="flex h-full w-full flex-col items-center justify-center rounded-l-3xl">
             <FormHeader />
-            <form className="w-full flex flex-col space-y-10 items-center mt-24 mb-20">
-                <input />
-                <input />
-                <input />
-                <input />
-                <button>회원가입</button>
+            <form className="flex w-full flex-col items-center justify-center">
+                <ChapInput label={'별명'} type={'text'} />
+                <ChapInput label={'아이디'} type={'text'} />
+                <ChapInput label={'비밀번호'} type={'text'} />
+                <ChapInput label={'비밀번호 확인'} type={'text'} />
+                <ChapButton variant={'peanut'} size={'rounded'} type={'submit'}>
+                    회원가입
+                </ChapButton>
             </form>
         </div>
     );
