@@ -34,12 +34,7 @@ export default {
       regular: 500,
       bold: 700,
     },
-    container: {
-      padding: {
-        layout: "42px",
-        content: "px",
-      },
-    },
+
     extend: {
       boxShadow: {
         container: "-5px -5px 10px #FFF, 5px 5px 10px #F1E9CC",
