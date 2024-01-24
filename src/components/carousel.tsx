@@ -3,7 +3,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./carousel.css";
 import { FC } from "react";
-import { ChapCarouselProps, Slide } from "./carousel.type";
+import { ChapCarouselProps, Slide } from "./components.type";
 
 const ChapCarousel: FC<ChapCarouselProps> = ({ Slides }) => {
   // slick-slider settings
