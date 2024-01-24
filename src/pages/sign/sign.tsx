@@ -10,7 +10,7 @@ const Sign = () => {
     const onChangeForm = () => {
         setShowSignUpForm((prev) => !prev);
     };
-
+  
     // 회원가입 overlay
     const signUpOverlayStyle = showSignUpForm
         ? {
