@@ -10,8 +10,9 @@ const Header: FC = () => {
   };
 
   return (
+
     <>
-      <div className="layout:container w-screen h-24 fixed inset-x-0 top-0 border-solid border-b-2 border-b-primary-cheese">
+      <div className="layout:container w-screen h-24 fixed bg-white z-[100] inset-x-0 top-0 border-solid border-b-2 border-b-primary-cheese">
         <a href="#" className="absolute top-7 left-7">
           <img src={HeaderIcon.Logo} />
         </a>
@@ -25,6 +26,7 @@ const Header: FC = () => {
           <div onClick={onShowDialog} className="px-4">
             <img src={HeaderIcon.account} className="w-8" />
           </div>
+
         </div>
       </div>
       {isDialogOpen && <MyDialog isDialogOpen={isDialogOpen} />}

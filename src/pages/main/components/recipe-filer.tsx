@@ -1,37 +1,24 @@
 import React from "react";
+import { SelectDropdown } from "./recipe-select";
+
 const RecipeFilter: React.FC = () => {
+  const recipeTypes = ["레시피 종류", "밥", "후식", "반찬", "국 & 찌개"];
+  const cookingMethods = [
+    "조리 방법",
+    "굽기",
+    "끓이기",
+    "찌기",
+    "튀기기",
+    "기타",
+  ];
+  const calorieOrders = ["칼로리 순", "낮은순", "높은순"];
+
   return (
-    <div className="m-14 w-screen ">
-      <div className="w-4/5 m-auto">
-        <select
-          className="w-28 h-8 bg-white text-black border border-primary-cheese font-thin rounded-md px-1.5"
-          style={{ fontSize: "14px" }}
-        >
-          <option>레시피 종류</option>
-          <option>밥</option>
-          <option>후식</option>
-          <option>반찬</option>
-          <option>국 & 찌개</option>
-        </select>
-        <select
-          className="w-28 h-8 bg-white text-black border border-primary-cheese font-thin mx-3 rounded-md px-1.5 "
-          style={{ fontSize: "14px" }}
-        >
-          <option>조리 방법</option>
-          <option>굽기</option>
-          <option>끓이기</option>
-          <option>찌기</option>
-          <option>튀기기</option>
-          <option>기타</option>
-        </select>
-        <select
-          className="w-28 h-8 bg-white text-black border border-primary-cheese font-thin rounded-md  px-1.5"
-          style={{ fontSize: "14px" }}
-        >
-          <option>칼로리 순</option>
-          <option>낮은순</option>
-          <option>높은순</option>
-        </select>
+    <div className="m-[50px] ml-[30px] w-screen mt-[150px]">
+      <div className="w-[1024px] m-auto">
+        <SelectDropdown label="레시피 종류" options={recipeTypes} />
+        <SelectDropdown label="조리 방법" options={cookingMethods} />
+        <SelectDropdown label="칼로리 순" options={calorieOrders} />
       </div>
     </div>
   );
