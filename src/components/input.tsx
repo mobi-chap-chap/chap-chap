@@ -22,4 +22,25 @@ const ChapInput: FC<InputTypes> = ({ label, error, access, ...props }) => {
     </>
   );
 };
+
 export default ChapInput;
+
+/**
+ * 사용 예시
+ *
+ * @example
+ *
+ * const SignInForm:FC = () => {
+ * const [{nickName, password}, onChangeInputs] = useInputs({
+ *  nickName: '',
+ *  password: '',
+ * })
+ *
+ * return(
+ *   <form>
+ *      <ChapInput name="nickName" label={"닉네임"} type={"text"} onChange={onChangeInputs} />
+ *      <ChapInput name="password" label={"비밀번호"} type={"password"} onChange={onChangeInputs} />
+ *  </form>
+ * )
+ *
+ */
