@@ -14,9 +14,11 @@ import formLogo from "./icons/form-logo.png";
 import formSNS01 from "./icons/form-sns-01.png";
 import formSNS02 from "./icons/form-sns-02.png";
 import formSNS03 from "./icons/form-sns-03.png";
-import Logo from "./icons/logo.png";
+import Logo from "./icons/logo.svg";
 import logout from "./icons/logout.png";
 import pencil from "./icons/pencil.png";
+import post from "./icons/post.png";
+import recipe from "./icons/recipe-book.png";
 import search from "./icons/search.png";
 import share from "./icons/share.png";
 import top from "./icons/up-arrow.png";
@@ -51,6 +53,8 @@ export const MyDialogIcon = {
   defaultProfile03,
   editUserInfo,
   pencil,
+  post,
+  recipe,
   logout,
 };
 export const OneRecipeIcon = {
