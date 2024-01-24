@@ -49,7 +49,6 @@ const Sign = () => {
                     </div>
                 ) : (
                     <div className="flex w-[1424px] h-[898px] shadow-container rounded-3xl">
-                        {/* 잘됨 */}
                         <div className="h-[898px] w-[712px] rounded-r-3xl ">
                             <SignInForm />
                         </div>
