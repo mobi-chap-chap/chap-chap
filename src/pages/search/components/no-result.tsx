@@ -1,8 +1,9 @@
 import ChapButton from '../../../components/button';
 import { SearchParams } from '../type/search-param';
 import UseNavigation from '../../../hooks/use-navigation';
+import { FC } from 'react';
 
-const NoResult: React.FC<SearchParams> = ({ searchValue }) => {
+const NoResult: FC<SearchParams> = ({ searchValue }) => {
     const { goToMainPage } = UseNavigation();
 
     return (

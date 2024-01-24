@@ -1,9 +1,10 @@
 // import { useParams } from 'react-router-dom';
+import { FC } from 'react';
 import NoResult from './components/no-result';
 // import { SearchParams } from './type/search-param';
 import SearchTitle from './components/search-title';
 
-const SearchPage: React.FC = () => {
+const SearchPage: FC = () => {
     // const { searchValue } = useParams<SearchParams>();
     const searchValue = '000';
     // typeGuard
