@@ -1,7 +1,7 @@
 .slick-slider {
   width: 1024px;
   height: 310px;
-  position: absolute;
+  position: relative;
   top: 100px;
   left: 50%;
   transform: translateX(-50%);

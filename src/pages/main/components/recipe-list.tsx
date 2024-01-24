@@ -4,12 +4,13 @@ import { QUERY_KEY } from "../../../consts/query-key";
 import { getRecipe } from "../../../apis/recipe.api";
 import OneRecipe from "../../components/one-recipe";
 import { keyID, serviceID } from "../../../apis/type/recipe.type";
+import { FC } from "react";
 
-const RecipeList: React.FC = () => {
+const RecipeList: FC = () => {
   const { data: recipeList } = useQuery([QUERY_KEY.MORE_RECIPE_LIST], () =>
     getRecipe(recipeData)
   );
-  // console.log(recipeList);
+
   const recipeData = {
     keyId: keyID, // 실제 값으로 대체
     serviceId: serviceID, // 실제 값으로 대체
@@ -19,11 +20,10 @@ const RecipeList: React.FC = () => {
   };
 
   const RecipeListContent = recipeList && recipeList.COOKRCP01.row;
-  console.log(RecipeListContent);
 
   return (
     RecipeListContent && (
-      <div className="text-black w-screen px-[200px] py-[50px] ">
+      <div className=" text-black w-full  px-[450px] py-[50px] ml-[13px] relative">
         <Grid
           container
           spacing={{ xs: 1, md: 2, lg: 3 }}
@@ -50,7 +50,9 @@ const RecipeList: React.FC = () => {
     )
   );
 };
+
 export default RecipeList;
+
 /*
 
 // Queries

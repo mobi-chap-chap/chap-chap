@@ -3,10 +3,11 @@ import RecipeList from "./components/recipe-list";
 import MyDialog from "../my/dialog";
 import ChapCarousel from "../../components/carousel";
 import { Slides } from "../../assets/slider-images";
+import { FC } from "react";
 
-const MainPage: React.FC = () => {
+const MainPage: FC = () => {
   return (
-      <div className="w-screen overflow-x-hidden">
+    <div className="w-screen overflow-x-hidden">
       <MyDialog isDialogOpen={false} />
       <ChapCarousel Slides={Slides} />
       <RecipeFilter />
@@ -16,8 +17,3 @@ const MainPage: React.FC = () => {
   );
 };
 export default MainPage;
-/*
-
-할일
-
-*/

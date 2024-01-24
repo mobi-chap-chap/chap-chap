@@ -14,3 +14,9 @@ export type InputTypes = {
   error?: string;
   access?: string;
 } & InputHTMLAttributes<HTMLInputElement>;
+
+export type Slide = string;
+
+export interface ChapCarouselProps {
+  Slides: Slide[];
+}
