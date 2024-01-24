@@ -9,7 +9,7 @@ import { Recipe } from "./type/recipe.type";
  * @returns  res.data
  */
 export const getRecipe = async ({ ...props }: Recipe) => {
-    const res = await axiosRecipeInstance.get(END_POINT.RECIPE({ ...props }));
-    console.log(res.data);
-    return res.data;
+  const res = await axiosRecipeInstance.get(END_POINT.RECIPE({ ...props }));
+  console.log(res.data);
+  return res.data;
 };
