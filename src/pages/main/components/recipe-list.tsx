@@ -3,11 +3,16 @@ import { useQuery } from "react-query";
 import { QUERY_KEY } from "../../../consts/query-key";
 import { getRecipe } from "../../../apis/recipe.api";
 import OneRecipe from "../../components/one-recipe";
-import { RecipeInfo, keyID, serviceID } from "../../../apis/type/recipe.type";
+import {
+  Recipe,
+  RecipeInfo,
+  keyID,
+  serviceID,
+} from "../../../apis/type/recipe.type";
 import { FC } from "react";
 
 const RecipeList: FC = () => {
-  const recipeData = {
+  const recipeData: Recipe = {
     keyId: keyID, // 실제 값으로 대체
     serviceId: serviceID, // 실제 값으로 대체
     dataType: "json", // 실제 값으로 대체
@@ -38,7 +43,9 @@ const RecipeList: FC = () => {
               key={index + 1}
             >
               <OneRecipe
+                recipeData={recipeData}
                 recipeNum={recipe.RCP_SEQ}
+                recipeName={recipe.RCP_NM}
                 recipeImg={recipe.ATT_FILE_NO_MAIN}
                 recipeType={recipe.RCP_PAT2}
                 recipeKal={recipe.INFO_ENG}

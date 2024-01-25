@@ -16,7 +16,7 @@ const router = createBrowserRouter([
     children: [
       { path: "/chap-chap", element: <MainPage /> },
       {
-        path: "/chap-chap/recipe/:id",
+        path: "/chap-chap/recipe/:RCP_NM",
         element: <DetailRecipe />,
       },
       { path: "/chap-chap/scrap", element: <ScrapPage /> },

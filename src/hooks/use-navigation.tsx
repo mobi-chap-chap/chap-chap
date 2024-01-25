@@ -10,8 +10,13 @@ const UseNavigation = () => {
     navigate("/chap-chap");
   };
 
-  const goToDetailPage = (id: number) => {
-    navigate(`/chap-chap/recipe/${id}`);
+  // const goToDetailPage = (recipeTitle: string) => {
+  //   navigate(`/chap-chap/recipe&RCP_NM=${recipeTitle}`);
+  // };
+  const goToDetailPage = (recipeTitle: string) => {
+    navigate(`/chap-chap/recipe/${recipeTitle}`, {
+      state: { RCP_NM: recipeTitle },
+    });
   };
 
   return {

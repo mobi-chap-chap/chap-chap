@@ -19,7 +19,7 @@ export interface RecipeInfo {
   RCP_SEQ: number;
   ATT_FILE_NO_MAIN: string;
   RCP_PAT2: string;
-  INFO_ENG: number;
+  INFO_ENG: string;
   RCP_NM: string;
   // 추가 필드가 있다면 여기에 계속 추가
 }

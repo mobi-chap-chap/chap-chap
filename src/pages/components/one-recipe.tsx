@@ -5,7 +5,6 @@ import { OneRecipeIcon } from "../../assets/icon";
 import { OneRecipeProps } from "./one-recipe-type";
 
 const OneRecipe: FC<OneRecipeProps> = ({
-  recipeNum: id,
   recipeImg,
   recipeType,
   recipeKal,
@@ -22,16 +21,18 @@ const OneRecipe: FC<OneRecipeProps> = ({
 
   const { goToDetailPage } = UseNavigation();
 
+  const urlParams = new URLSearchParams(window.location.href);
+  urlParams.append("RCP_NM", recipeTitle);
+
   // navigate : detail-recipe
-  const onClickToDetailPage = (id: number) => {
-    console.log("recipe id:", id);
-    goToDetailPage(id);
+  const onClickToDetailPage = (recipeTitle: string) => {
+    goToDetailPage(recipeTitle);
     window.scrollTo({ top: 0 });
   };
 
   return (
     <div
-      onClick={() => onClickToDetailPage(id)}
+      onClick={() => onClickToDetailPage(recipeTitle)}
       className="w-[240px] h-[382px]  m-auto cursor-pointer rounded-lg border border-solid border-primary-peanut"
     >
       <div className="w-[239px] h-[240px] transition delay-100  absolute  hover:bg-black opacity-40 rounded-t-lg"></div>
@@ -47,7 +48,7 @@ const OneRecipe: FC<OneRecipeProps> = ({
         <div className="flex justify-between items-center px-[13px] pl-[15px] ">
           <div className="flex text-[14px] ">
             <div>{recipeType}</div>
-            <div className="ml-[27px]">{Math.floor(recipeKal)}kal</div>
+            <div className="ml-[27px]">{recipeKal}kal</div>
           </div>
 
           <div>
