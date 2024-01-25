@@ -15,7 +15,10 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       { path: "/chap-chap", element: <MainPage /> },
-      { path: "/chap-chap/recipe", element: <DetailRecipe /> },
+      {
+        path: "/chap-chap/recipe/:RCP_NM",
+        element: <DetailRecipe />,
+      },
       { path: "/chap-chap/scrap", element: <ScrapPage /> },
       { path: "/chap-chap/search", element: <SearchPage /> },
     ],
