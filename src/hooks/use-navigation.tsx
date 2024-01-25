@@ -10,9 +10,6 @@ const UseNavigation = () => {
     navigate("/chap-chap");
   };
 
-  // const goToDetailPage = (recipeTitle: string) => {
-  //   navigate(`/chap-chap/recipe&RCP_NM=${recipeTitle}`);
-  // };
   const goToDetailPage = (recipeTitle: string) => {
     navigate(`/chap-chap/recipe/${recipeTitle}`, {
       state: { RCP_NM: recipeTitle },

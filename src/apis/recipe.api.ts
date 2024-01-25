@@ -1,8 +1,6 @@
 import { DETAIL_END_POINT, END_POINT } from "../consts/end-point";
 import { axiosRecipeInstance } from "./core";
-import { Recipe, keyID, serviceID } from "./type/recipe.type";
-
-//Promise<> 는 아래서 추론이 되기때문에 생략가능
+import { Recipe } from "./type/recipe.type";
 
 /**
  * @recipeData : keyId, serviceId, dataType, startIdx, endIdx
@@ -16,17 +14,8 @@ export const getRecipe = async ({ ...recipeData }: Recipe) => {
 };
 
 export const getDetailRecipe = async ({ ...recipeData }: Recipe) => {
-  console.log("debugging 04", recipeData); // 아예 console에 안 찍힘
   const res = await axiosRecipeInstance.get(
     DETAIL_END_POINT.RECIPE({ ...recipeData })
   );
-  console.log("debugging 03", res.data); // 아예 console에 안 찍힘
   return res.data;
 };
-
-// export const getDetailRecipe = async (param: number | undefined) => {
-//   const res = await axiosRecipeInstance.get(
-//     `/sample/COOKRCP01/xml/1/5/RCP_NM=${param}`
-//   );
-//   return res.data;
-// };

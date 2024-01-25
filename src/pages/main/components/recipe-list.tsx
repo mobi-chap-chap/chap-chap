@@ -25,6 +25,7 @@ const RecipeList: FC = () => {
   );
 
   const RecipeListContent = recipeList && recipeList.COOKRCP01.row;
+  console.log("recipeList", recipeList);
 
   return (
     RecipeListContent && (
