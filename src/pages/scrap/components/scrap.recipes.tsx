@@ -3,32 +3,24 @@ import { FC } from "react";
 import { useQuery } from "react-query";
 import { getRecipe } from "../../../apis/recipe.api";
 import { QUERY_KEY } from "../../../consts/query-key";
-import { keyID, serviceID } from "../../../apis/type/recipe.type";
+import { recipeData } from "../../../consts/recipe-data";
 
 const ScrapRecipe: FC = () => {
   //임시로 넣은 데이터 입니다!
   const { data: recipeList } = useQuery([QUERY_KEY.MORE_RECIPE_LIST], () =>
     getRecipe(recipeData)
   );
-  const recipeData = {
-    keyId: keyID, // 실제 값으로 대체
-    serviceId: serviceID, // 실제 값으로 대체
-    dataType: "json", // 실제 값으로 대체
-    startIdx: "1", // 시작 인덱스 값
-    endIdx: "12", // 종료 인덱스 값
-  };
-
   const RecipeListContent = recipeList?.COOKRCP01?.row || [];
   console.log(RecipeListContent);
   return (
     <>
-      <div className=" text-black w-full  px-[450px] py-[20px] ml-[13px] relative">
+      <div className=" text-black w-full  px-[450px] ml-[13px] relative">
         <div>
           <div style={{ marginTop: 50 }}>
             <Grid
               container
               spacing={{ xs: 1, md: 2, lg: 3 }}
-              style={{ paddingBottom: 20 }}
+              style={{ paddingTop: 20, paddingBottom: 60, marginLeft: -20 }}
             >
               {RecipeListContent.map((list: any, index: number) => (
                 <Grid style={{ margin: 10 }}>
@@ -51,6 +43,6 @@ export default ScrapRecipe;
 해야하는거
 이미지 컴포넌트 분리 
 호버
-<div className="w-[239px] h-[240px] transition delay-100  absolute  hover:bg-black opacity-40 rounded-t-lg" />
+
 
 */

@@ -1,5 +1,5 @@
 import RecipeInfo from "./components/recipe-info";
-import Steps from "./components/steps";
+import Steps from "./components/recipe-steps";
 
 const DetailRecipe = () => {
   return (

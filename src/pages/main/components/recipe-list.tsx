@@ -3,24 +3,42 @@ import { useQuery } from "react-query";
 import { QUERY_KEY } from "../../../consts/query-key";
 import { getRecipe } from "../../../apis/recipe.api";
 import OneRecipe from "../../components/one-recipe";
-import { keyID, serviceID } from "../../../apis/type/recipe.type";
 import { FC } from "react";
+import { recipeData } from "../../../consts/recipe-data";
 
 const RecipeList: FC = () => {
   const { data: recipeList } = useQuery([QUERY_KEY.MORE_RECIPE_LIST], () =>
     getRecipe(recipeData)
   );
+  // const { data: recipeLists } = useInfiniteQuery(
+  //   [QUERY_KEY.MORE_RECIPE_LIST],
+  //   () => getRecipe(recipeData)
+  // );
 
-  const recipeData = {
-    keyId: keyID, // 실제 값으로 대체
-    serviceId: serviceID, // 실제 값으로 대체
-    dataType: "json", // 실제 값으로 대체
-    startIdx: "1", // 시작 인덱스 값
-    endIdx: "52", // 종료 인덱스 값
-  };
+  // const {
+  //   fetchNextPage,
+  //   fetchPreviousPage,
+  //   hasNextPage,
+  //   hasPreviousPage,
+  //   isFetchingNextPage,
+  //   isFetchingPreviousPage,
+  //   ...result
+  // } = useInfiniteQuery({
+  //   queryKey: [QUERY_KEY.MORE_RECIPE_LIST],
+  //   queryFn: ({ pageParam = "1" }) =>
+  //     getRecipe({ startIdx: pageParam, endIdx: "50" }),
+  //   //레시피는 넘버가 아니다
+  //   initialPageParam: { startIdx: "1", endIdx: "50" },
+  //   getNextPageParam: (lastPage) => lastPage.nextCursor,
+  //   getPreviousPageParam: (firstPage) => firstPage.prevCursor,
+  // });
+
+  // const { data: recipeLists, fetchNextPage } = useInfiniteQuery<recipeInfo, Error>({
+  //   queryKey: [QUERY_KEY.MORE_RECIPE_LIST],
+  //   queryFn: ({ pageParam = 1 }) => getRecipe(recipeData, pageParam),
+  // });
 
   const RecipeListContent = recipeList && recipeList.COOKRCP01.row;
-
   return (
     RecipeListContent && (
       <div className=" text-black w-full  px-[450px] py-[50px] ml-[13px] relative">
