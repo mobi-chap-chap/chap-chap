@@ -1,7 +1,7 @@
 import { useParams, useSearchParams } from "react-router-dom";
 import RecipeInfo from "./components/recipe-info";
 import Steps from "./components/recipe-steps";
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { useQuery } from "react-query";
 import { QUERY_KEY } from "../../consts/query-key";
 import { getDetailRecipe } from "../../apis/recipe.api";
@@ -14,6 +14,7 @@ const DetailRecipe: FC = () => {
 
   //console.log("recipeName", recipeName);
 
+  // 제네릭으로 타입을 지정하여 RCP_NM이 undefined일 수 있음을 명시
   const { RCP_NM } = useParams<{ RCP_NM?: string }>();
 
   console.log("RCP_NM", RCP_NM);
@@ -39,13 +40,15 @@ const DetailRecipe: FC = () => {
   //   queryFn: () => getDetailRecipe(dataId ? +dataId : undefined),
   // });
 
+  console.log("debugging 01", recipeData);
+
   const { data: detailRecipe, refetch } = useQuery({
     queryKey: [QUERY_KEY.DETAIL_RECIPE_DATA],
     queryFn: () => getDetailRecipe(recipeData),
   });
 
   detailRecipe && console.log("detailRecipe", detailRecipe);
-  // console.log("디테일레시피", detailRecipe);
+  console.log("debugging 02", detailRecipe); // error(파일타입 값이 누락 혹은 유효하지 않습니다. 요청인자 중 TYPE을 확인하십시오)
 
   return (
     detailRecipe && (

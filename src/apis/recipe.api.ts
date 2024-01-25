@@ -16,9 +16,11 @@ export const getRecipe = async ({ ...recipeData }: Recipe) => {
 };
 
 export const getDetailRecipe = async ({ ...recipeData }: Recipe) => {
+  console.log("debugging 04", recipeData); // 아예 console에 안 찍힘
   const res = await axiosRecipeInstance.get(
     DETAIL_END_POINT.RECIPE({ ...recipeData })
   );
+  console.log("debugging 03", res.data); // 아예 console에 안 찍힘
   return res.data;
 };
 

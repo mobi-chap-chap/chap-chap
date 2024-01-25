@@ -194,7 +194,7 @@ vercel 👉 <a href="#">
     <td>2024-01-25</td>
     <td>ETA 04</td>
     <td>developing</td>
-    <td>-</td>
+    <td>각자 고군분투 중</td>
   </tr>
   </tr>
     <tr>
