@@ -11,7 +11,7 @@ const SearchPage: FC = () => {
     // ! -> searchValue은 undefined가 아니야! --> 불안정하다 쓰지마 정말 확실한 경우가아니면 typeAssertion
     if (!searchValue) return;
     return (
-        <div className="w-screen h-screen flex flex-col items-center">
+        <div className="w-screen h-[990px] flex flex-col">
             <SearchTitle searchValue={searchValue} />
             <NoResult searchValue={searchValue} />
         </div>
