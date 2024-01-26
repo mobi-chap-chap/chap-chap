@@ -1,31 +1,26 @@
 import { Grid } from "@mui/material";
-import { useQuery } from "react-query";
 import { QUERY_KEY } from "../../../consts/query-key";
-import { getRecipe } from "../../../apis/recipe.api";
+import { getRecipe } from "../../../apis/recipe/recipe.api";
 import OneRecipe from "../../components/one-recipe";
-import {
-  Recipe,
-  RecipeInfo,
-  keyID,
-  serviceID,
-} from "../../../apis/type/recipe.type";
-import { FC } from "react";
+import { RecipeInfo } from "../../../apis/recipe/recipe.type";
+import { FC, useEffect } from "react";
+import { useGetRecipe } from "../../../apis/recipe/recipe-api-hook";
+import { infiniteQueryOptions } from "@tanstack/react-query";
 
 const RecipeList: FC = () => {
-  const recipeData: Recipe = {
-    keyId: keyID, // 실제 값으로 대체
-    serviceId: serviceID, // 실제 값으로 대체
-    dataType: "json", // 실제 값으로 대체
-    startIdx: "1", // 시작 인덱스 값
-    endIdx: "52", // 종료 인덱스 값
-  };
 
-  const { data: recipeList } = useQuery([QUERY_KEY.MORE_RECIPE_LIST], () =>
-    getRecipe(recipeData)
-  );
+  infiniteQueryOptions({ {
+    queryKey: [QUERY_KEY.MORE_RECIPE_LIST],
+    queryFn: ({ pageParam = { startIdx: "1", endIdx: "10" } }) =>
+      getRecipe(pageParam),
+    getNextPageParam: (lastPage) => {},
+  }})
 
-  const RecipeListContent = recipeList && recipeList.COOKRCP01.row;
-  console.log("recipeList", recipeList);
+  const { data, fetchNextPage } = useGetRecipe();
+
+  useEffect(() => {
+    console.log(data);
+  }, [data]);
 
   return (
     RecipeListContent && (

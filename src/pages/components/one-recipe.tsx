@@ -5,6 +5,7 @@ import { OneRecipeIcon } from "../../assets/icon";
 import { OneRecipeProps } from "./one-recipe-type";
 
 const OneRecipe: FC<OneRecipeProps> = ({
+  recipeData,
   recipeImg,
   recipeType,
   recipeKal,
@@ -26,7 +27,11 @@ const OneRecipe: FC<OneRecipeProps> = ({
 
   // navigate : detail-recipe
   const onClickToDetailPage = (recipeTitle: string) => {
-    goToDetailPage(recipeTitle);
+    console.log("RCP_NM", recipeTitle);
+    console.log("onClick data", recipeData);
+
+    //if ()
+    // goToDetailPage(recipeTitle);
     window.scrollTo({ top: 0 });
   };
 

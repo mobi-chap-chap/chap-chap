@@ -1,9 +1,9 @@
 import { Grid } from "@mui/material";
 import { FC } from "react";
 import { useQuery } from "react-query";
-import { getRecipe } from "../../../apis/recipe.api";
+import { getRecipe } from "../../../apis/recipe/recipe.api";
 import { QUERY_KEY } from "../../../consts/query-key";
-import { keyID, serviceID } from "../../../apis/type/recipe.type";
+import { keyID, serviceID } from "../../../apis/recipe/recipe.type";
 
 const ScrapRecipe: FC = () => {
   //임시로 넣은 데이터 입니다!

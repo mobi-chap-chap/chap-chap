@@ -1,5 +1,5 @@
 import { axiosInstance } from "./core";
-import { User } from "./type/user.type";
+import { User } from "./user.type";
 
 const PATH = "/user/update";
 

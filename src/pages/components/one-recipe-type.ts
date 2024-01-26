@@ -1,8 +1,8 @@
-import { Recipe } from "../../apis/type/recipe.type";
+import { RecipeInfo } from "../../apis/recipe/recipe.type";
 
 // OneRecipe의 props 타입 정의
 export type OneRecipeProps = {
-  recipeData: Recipe;
+  recipeData: RecipeInfo;
   recipeNum: number;
   recipeName: string;
   recipeImg: string;
