@@ -7,9 +7,9 @@ import { RecipeDetail } from "../../apis/type/recipe.type";
 
 const DetailRecipe: FC<RecipeDetail> = () => {
   const { RCP_NM } = useParams<{ RCP_NM?: string }>();
-  // console.log("RCP_NM", RCP_NM);
 
-  if (!RCP_NM) throw new Error("RCP_NM is Empty");
+  // navigate to 404 page
+  if (!RCP_NM) return <div>잘못된 접근입니다.</div>;
 
   const { recipeDetail, isSuccess } = useGetDetailRecipe({
     startIdx: 1,
@@ -17,8 +17,8 @@ const DetailRecipe: FC<RecipeDetail> = () => {
     RCP_NM: RCP_NM,
   });
 
-  // navigate to 404 page
-  if (!isSuccess || !recipeDetail) return <div>잘못된 접근입니다.</div>;
+  // loading page
+  if (!isSuccess || !recipeDetail) return <div>로딩 중</div>;
 
   const detailInfo = recipeDetail.COOKRCP01.row.filter(
     (recipe) => recipe.RCP_NM === RCP_NM
@@ -27,9 +27,11 @@ const DetailRecipe: FC<RecipeDetail> = () => {
   return (
     <div className="w-[1024px] h-[100%]  mx-[448px] top-[160px] relative">
       <div className="h-[515px]  flex flex-row">
-        {/* carousel로 대체 */}
-        <div className="w-[484px] h-[484px] bg-primary-peanut text-black text-center pt-[22%]">
-          carousel 위치
+        <div className="w-[484px] h-[484px] bg-primary-peanut overflow-hidden flex place-content-center place-items-center">
+          <img
+            className="w-[484px] h-[484px]"
+            src={detailInfo.ATT_FILE_NO_MK}
+          />
         </div>
         <RecipeInfo {...detailInfo} />
       </div>
