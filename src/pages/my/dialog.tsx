@@ -3,13 +3,13 @@ import { MyDialogIcon } from "../../assets/icon";
 import { MyDialogProps } from "./dialog.interface";
 
 const MyDialog: FC<MyDialogProps> = ({ isDialogOpen }) => {
-  const changeProfileImage = () => {};
-
+  /* const changeProfileImage = () => {};
+   */
   const navigateMyRecipePage = () => {
     alert("앗! 아직 페이지 개설 중입니다! 조금만 기다려주세요");
   };
 
-  const onClickLogout = () => {};
+  /* const onClickLogout = () => {}; */
 
   return (
     isDialogOpen && (

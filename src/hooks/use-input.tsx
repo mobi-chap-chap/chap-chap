@@ -6,7 +6,6 @@ const useInputs = (initialValue: InputValue) => {
   const [value, setValue] = useState<InputValue>(initialValue);
 
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.value);
     setValue((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,

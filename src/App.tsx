@@ -1,9 +1,9 @@
+
 import GlobalStyles from './styles/global.style';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { RecoilRoot } from 'recoil';
 import { RouterProvider } from 'react-router-dom';
 import router from './router/router';
-import ScrollTop from './layout/components/scroll-top';
 import AuthProvider from './context/auth.ctx';
 
 function App() {
@@ -11,7 +11,6 @@ function App() {
     return (
         <AuthProvider>
             <GlobalStyles />
-            {/* <ScrollTop /> */}
             <QueryClientProvider client={queryClient}>
                 <RecoilRoot>
                     <RouterProvider router={router} />
