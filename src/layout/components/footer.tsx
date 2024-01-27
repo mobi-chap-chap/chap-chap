@@ -2,7 +2,7 @@ import { FooterIcon } from "../../assets/icon";
 
 const Footer = () => {
   return (
-    <div className="layout:container w-screen h-52  bg-primary-peanut py-6">
+    <div className="layout:container w-screen h-52 bg-primary-peanut py-6">
       <div className="flex flex-col  justify-center items-center">
         <img src={FooterIcon.Logo} className="my-5" />
         <div className="flex flex-row mb-11">

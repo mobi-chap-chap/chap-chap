@@ -1,7 +1,7 @@
-import React from "react";
+import { FC } from "react";
 import { SelectDropdown } from "./recipe-select";
 
-const RecipeFilter: React.FC = () => {
+const RecipeFilter: FC = () => {
   const recipeTypes = ["레시피 종류", "밥", "후식", "반찬", "국 & 찌개"];
   const cookingMethods = [
     "조리 방법",
@@ -14,7 +14,7 @@ const RecipeFilter: React.FC = () => {
   const calorieOrders = ["칼로리 순", "낮은순", "높은순"];
 
   return (
-    <div className="m-[50px] ml-[30px] w-screen mt-[150px]">
+    <div className="m-[20px] ml-[30px] w-screen mt-[150px]">
       <div className="w-[1024px] m-auto">
         <SelectDropdown label="레시피 종류" options={recipeTypes} />
         <SelectDropdown label="조리 방법" options={cookingMethods} />
