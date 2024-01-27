@@ -4,11 +4,13 @@ import { useGetRecipeInfinity } from "../../../apis/recipe/hook";
 import OneRecipe from "../../components/one-recipe";
 
 const RecipeList: FC = () => {
-  const { recipeData, fetchNextPage, hasNextPage } = useGetRecipeInfinity();
+  const { recipeData, fetchNextPage } = useGetRecipeInfinity();
 
   const RecipeListContent = recipeData?.pages
     .map((list) => list.COOKRCP01.row)
     .flat();
+
+  console.log("recipeData?", recipeData); // undefined
 
   // 스크롤 최하단 시 fetchNextPage실행
   const handleScroll = () => {
@@ -46,8 +48,6 @@ const RecipeList: FC = () => {
                 key={index + 1}
               >
                 <OneRecipe
-                  /* recipeData={recipeData} */
-                  recipeNum={recipe.RCP_SEQ}
                   recipeName={recipe.RCP_NM}
                   recipeImg={recipe.ATT_FILE_NO_MAIN}
                   recipeType={recipe.RCP_PAT2}
@@ -58,12 +58,6 @@ const RecipeList: FC = () => {
             ))}
         </Grid>
       </div>
-      {/*       <button
-        className="h-[300px] w-[300px] text-black"
-        onClick={() => fetchNextPage()}
-      >
-        click me!!
-      </button> */}
     </>
   );
 };

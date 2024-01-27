@@ -25,14 +25,15 @@ const DetailRecipe: FC<RecipeDetail> = () => {
   )[0];
 
   return (
-    <div className="w-[1024px] mx-[448px] relative top-[160px]">
-      <div className="h-[515px] border border-solid border-b-primary-cheese flex flex-row">
+    <div className="w-[1024px] h-[100%]  mx-[448px] top-[160px] relative">
+      <div className="h-[515px]  flex flex-row">
         {/* carousel로 대체 */}
         <div className="w-[484px] h-[484px] bg-primary-peanut text-black text-center pt-[22%]">
           carousel 위치
         </div>
         <RecipeInfo {...detailInfo} />
       </div>
+      <div className="w-[1024px] h-[1px]  bg-primary-cheese" />
       <Steps {...detailInfo} />
     </div>
   );
