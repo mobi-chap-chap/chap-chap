@@ -6,7 +6,12 @@ import router from "./router/router";
 import ScrollTop from "./layout/components/scroll-top";
 
 function App() {
-  const queryClient = new QueryClient();
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: { refetchOnWindowFocus: false, retry: false },
+    },
+  });
+
   return (
     <>
       <GlobalStyles />

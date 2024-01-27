@@ -4,8 +4,9 @@ import Steps from "./components/recipe-steps";
 import { FC } from "react";
 import { useQuery } from "react-query";
 import { QUERY_KEY } from "../../consts/query-key";
-import { getDetailRecipe } from "../../apis/recipe.api";
+
 import { Recipe, keyID, serviceID } from "../../apis/type/recipe.type";
+import { getDetailRecipe } from "../../apis/recipe/api";
 
 const DetailRecipe: FC = () => {
   const { RCP_NM } = useParams<{ RCP_NM?: string }>();
