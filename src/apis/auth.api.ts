@@ -1,30 +1,35 @@
 import { axiosInstance } from './core';
 import { User } from './type/user.type';
-
+import { SignUpType, SignInType } from '../consts/form-schema';
 const PATH = '/user';
 
 export const AuthApi = {
-    async SignUp(userId: string, password: string) {
-        const res = await axiosInstance.post<User>(PATH + 'sign-up', {
+    async SignUp(data: SignUpType) {
+        const { userId, password, nickname } = data;
+        const res = await axiosInstance.post(PATH + '/sign-up', {
             userId,
             password,
+            data: {
+                nickname,
+            },
         });
         return res.data;
     },
-    async SignIn(userId: string, password: string) {
-        const res = await axiosInstance.post<User>(PATH + 'sign-in', {
+    async SignIn(data: SignInType) {
+        const { userId, password } = data;
+        const res = await axiosInstance.post(PATH + '/sign-in', {
             userId,
             password,
         });
         return res.data;
     },
     async SignOut() {
-        const res = await axiosInstance.post<User>(PATH + 'sign-out');
+        const res = await axiosInstance.post<User>(PATH + '/sign-out');
         return res.data;
     },
 
-    async refreshToken() {
-        const res = await axiosInstance.get(PATH + 'refresh');
+    async RefreshToken() {
+        const res = await axiosInstance.get(PATH + '/refresh');
         return res;
     },
 };

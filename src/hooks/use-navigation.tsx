@@ -1,4 +1,3 @@
-
 import { useNavigate } from 'react-router-dom';
 
 /**
@@ -6,15 +5,18 @@ import { useNavigate } from 'react-router-dom';
  */
 const UseNavigation = () => {
     const navigate = useNavigate();
-    
-    const goToMainPage = () => {
-      navigate('/chap-chap')
-    }
 
+    const goToMainPage = () => {
+        navigate('/chap-chap');
+    };
+    const goToSignUp = () => {
+        navigate('/');
+    };
 
     return {
-      goToMainPage
-    }
+        goToMainPage,
+        goToSignUp,
+    };
 };
 
 export default UseNavigation;

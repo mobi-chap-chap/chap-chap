@@ -1,18 +1,19 @@
 import SignInForm from './components/form/in-form';
 import SignUpForm from './components/form/up-form';
-import { useState } from 'react';
+import { FC, useState } from 'react';
 import SignUpOverlay from './components/overlay/sign-up-overlay';
 import LoginOverlay from './components/overlay/login-overlay';
+import { ShowProps } from '../../type/sign.type';
 
-const Sign = () => {
-    const [showSignUpForm, setShowSignUpForm] = useState(true);
+const Sign: FC<ShowProps> = () => {
+    const [showSignUpForm, setShowSignUpForm] = useState<boolean>(true);
 
-    const onChangeForm = () => {
-        setShowSignUpForm((prev) => !prev);
+    const onChangeForm = (): void => {
+        setShowSignUpForm((prev: boolean) => !prev);
     };
 
     // 회원가입 overlay
-    const signUpOverlayStyle = showSignUpForm
+    const signUpOverlayStyle: React.CSSProperties = showSignUpForm
         ? {
               transform: `translateX(-100%)`,
               transition: `all 0.5s`,
@@ -41,7 +42,7 @@ const Sign = () => {
                 {showSignUpForm ? (
                     <div className="flex w-[1424px] h-[898px] shadow-container rounded-3xl">
                         <div className="h-[898px] w-[712px] translate-x-full">
-                            <SignUpForm />
+                            <SignUpForm setShowSignUpForm={setShowSignUpForm} />
                         </div>
                         <div style={signUpOverlayStyle} className="h-[898px] w-[712px] rounded-l-3xl ">
                             <SignUpOverlay onChangeForm={onChangeForm} />

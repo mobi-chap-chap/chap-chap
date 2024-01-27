@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { FormIcon } from '../../../../assets/icon';
 import ChapButton from '../../../../components/button';
-import { OverlayProps } from './overlay.type';
+import { OverlayProps } from '../../../../type/sign.type';
 
 const SignUpOverlay: FC<OverlayProps> = ({ onChangeForm }) => {
     return (
