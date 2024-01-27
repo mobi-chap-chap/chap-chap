@@ -19,7 +19,12 @@ export const AuthApi = {
         return res.data;
     },
     async SignOut() {
-        const res = await axiosInstance.post<User>(PATH + 'sin-out');
+        const res = await axiosInstance.post<User>(PATH + 'sign-out');
         return res.data;
+    },
+
+    async refreshToken() {
+        const res = await axiosInstance.get(PATH + 'refresh');
+        return res;
     },
 };

@@ -6,6 +6,7 @@ export const axiosInstance = axios.create({
     headers: {
         Authorization: `Bearer ${import.meta.env.VITE_MOBI_TOKEN}`,
     },
+    // 백엔드에서 refresh token을 cookie 형태로 전달
     withCredentials: true,
 });
 

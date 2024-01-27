@@ -10,10 +10,18 @@ export const UserApi = {
         });
         return res.data;
     },
-
+    
     async PostScrapRecipe(scrap: boolean) {
         const res = await axiosInstance.post<User>(PATH + '/info', {
             scrap,
+        });
+        return res.data;
+    },
+
+    //별명 추가
+    async PatchNickName(nickname: string) {
+        const res = await axiosInstance.patch<User>(PATH + '/nickname', {
+            nickname,
         });
         return res.data;
     },
