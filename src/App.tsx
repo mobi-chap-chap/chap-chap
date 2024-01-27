@@ -1,23 +1,24 @@
-import GlobalStyles from "./styles/global.style";
-import { QueryClient, QueryClientProvider } from "react-query";
-import { RecoilRoot } from "recoil";
-import { RouterProvider } from "react-router-dom";
-import router from "./router/router";
-import ScrollTop from "./layout/components/scroll-top";
+import GlobalStyles from './styles/global.style';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { RecoilRoot } from 'recoil';
+import { RouterProvider } from 'react-router-dom';
+import router from './router/router';
+import ScrollTop from './layout/components/scroll-top';
+import AuthProvider from './context/auth.ctx';
 
 function App() {
-  const queryClient = new QueryClient();
-  return (
-    <>
-      <GlobalStyles />
-      {/* <ScrollTop /> */}
-      <QueryClientProvider client={queryClient}>
-        <RecoilRoot>
-          <RouterProvider router={router} />
-        </RecoilRoot>
-      </QueryClientProvider>
-    </>
-  );
+    const queryClient = new QueryClient();
+    return (
+        <AuthProvider>
+            <GlobalStyles />
+            {/* <ScrollTop /> */}
+            <QueryClientProvider client={queryClient}>
+                <RecoilRoot>
+                    <RouterProvider router={router} />
+                </RecoilRoot>
+            </QueryClientProvider>
+        </AuthProvider>
+    );
 }
 
 export default App;
