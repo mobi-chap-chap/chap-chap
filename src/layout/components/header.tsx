@@ -2,7 +2,6 @@ import { FC, useState } from "react";
 import { HeaderIcon } from "../../assets/icon";
 import MyDialog from "../../pages/my/dialog";
 import UseNavigation from "../../hooks/use-navigation";
-import { Link } from "react-router-dom";
 
 const Header: FC = () => {
   const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false);
