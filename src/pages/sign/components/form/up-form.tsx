@@ -25,6 +25,7 @@ const SignUpForm: FC = () => {
         },
     });
 
+    
     // console.log('isValid', isValid);
     console.log(errors);
 

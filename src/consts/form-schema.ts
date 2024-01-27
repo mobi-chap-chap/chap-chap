@@ -11,7 +11,8 @@ export const SignUpSchema = z
         userId: z
             .string()
             .nonempty('아이디를 입력해주세요.')
-            .regex(REGEXP.userId, { message: '5자리 이상 10자리 이하의 영문자나 영문자와 숫자로 입력해주세요' }),
+            // .max(10, { message: '5자리 이상 10자리 이하의 영문자나 영문자와 숫자로 입력해주세요' })
+            .regex(REGEXP.userId, { message: '4자리 이상 10자리 이하의 영어 또는 숫자로 입력해주세요' }),
         password: z
             .string()
             .nonempty('비밀번호를 입력해주세요.')
