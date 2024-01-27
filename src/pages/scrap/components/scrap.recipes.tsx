@@ -39,10 +39,7 @@ const ScrapRecipe: FC = () => {
 };
 export default ScrapRecipe;
 */
-/*
+
 //해야하는거
-이미지 컴포넌트 분리 
-호버
-
-
-*/
+//이미지 컴포넌트 분리
+//호버
