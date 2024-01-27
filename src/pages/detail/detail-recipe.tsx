@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import RecipeInfo from "./components/recipe-info";
 import Steps from "./components/recipe-steps";
 import { FC } from "react";
-import { useGetDetailRecipe } from "../../apis/recipe/hook";
+import { useGetDetailRecipe } from "../../hooks/use-recipe-query";
 import { RecipeDetail } from "../../apis/type/recipe.type";
 
 const DetailRecipe: FC<RecipeDetail> = () => {

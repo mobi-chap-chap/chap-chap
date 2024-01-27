@@ -1,6 +1,6 @@
 import { FC, useEffect } from "react";
 import { Grid } from "@mui/material";
-import { useGetRecipeInfinity } from "../../../apis/recipe/hook";
+import { useGetRecipeInfinity } from "../../../hooks/use-recipe-query";
 import OneRecipe from "../../components/one-recipe";
 
 const RecipeList: FC = () => {

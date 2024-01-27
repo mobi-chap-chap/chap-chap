@@ -1,6 +1,6 @@
 import { useInfiniteQuery, useQuery } from "react-query";
-import { getDetailRecipe, getRecipe } from "./api";
-import { QUERY_KEY } from "../../consts/query-key";
+import { getDetailRecipe, getRecipe } from "../apis/recipe.api";
+import { QUERY_KEY } from "../consts/query-key";
 
 /**
  * @function useGetRecipeInfinity 는 recipe data를 가져와 무한 스크롤을 구현해주는 hook 함수

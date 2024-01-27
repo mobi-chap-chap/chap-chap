@@ -1,6 +1,6 @@
-import { DETAIL_END_POINT, END_POINT } from "../../consts/end-point";
-import { axiosRecipeInstance } from "../core";
-import { Info } from "../type/recipe.type";
+import { DETAIL_END_POINT, END_POINT } from "../consts/end-point";
+import { axiosRecipeInstance } from "./core";
+import { Info } from "./type/recipe.type";
 
 /**
  * @recipeData : keyId, serviceId, dataType, startIdx, endIdx
