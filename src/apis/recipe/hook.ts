@@ -13,7 +13,7 @@ export function useGetRecipeInfinity() {
     queryFn: ({ pageParam = { startIdx: 1, endIdx: 12 } }) =>
       getRecipe(pageParam),
     getNextPageParam: (lastPage, totalPages) => {
-      let startIdx = totalPages.length * 12 + 1;
+      const startIdx = totalPages.length * 12 + 1;
       let endIdx = (totalPages.length + 1) * 12;
 
       if (lastPage.COOKRCP01.total_count < endIdx) {

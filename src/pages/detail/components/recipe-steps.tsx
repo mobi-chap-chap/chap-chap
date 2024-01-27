@@ -7,8 +7,6 @@ interface StepData {
 }
 
 const Steps: FC<RecipeDetail> = (recipeData) => {
-  console.log(recipeData);
-
   const stepKeys: StepData[] = Object.keys(recipeData)
     .filter((key) => key.startsWith("MANUAL"))
     .map((stepKey) => ({

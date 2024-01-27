@@ -1,4 +1,4 @@
-import { Grid } from "@mui/material";
+/* import { Grid } from "@mui/material";
 import { FC } from "react";
 import { useQuery } from "react-query";
 import { QUERY_KEY } from "../../../consts/query-key";
@@ -8,6 +8,7 @@ import { getRecipe } from "../../../apis/recipe/api";
 const ScrapRecipe: FC = () => {
   //임시로 넣은 데이터 입니다!
   const { data: recipeList } = useQuery([QUERY_KEY.MORE_RECIPE_LIST], () =>
+   
     getRecipe(recipeData)
   );
   const RecipeListContent = recipeList?.COOKRCP01?.row || [];
@@ -23,7 +24,6 @@ const ScrapRecipe: FC = () => {
             >
               {RecipeListContent.map((list: any, index: number) => (
                 <Grid style={{ margin: 10 }}>
-                  {/* <OneImage src={list.Product.img_url} onClick={() => onToDetailPage(list.Product.idx)} /> */}
                   <img
                     src={list.ATT_FILE_NO_MAIN}
                     className="w-[240px] h-[240px] "
@@ -38,8 +38,9 @@ const ScrapRecipe: FC = () => {
   );
 };
 export default ScrapRecipe;
+*/
 /*
-해야하는거
+//해야하는거
 이미지 컴포넌트 분리 
 호버
 

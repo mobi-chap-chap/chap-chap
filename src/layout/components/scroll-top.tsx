@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { MainIcon } from "../../assets/icon";
 
 const ScrollTop = () => {
-  const [isShowButton, setIsShowButton] = useState(false);
-
-  const navigate = useNavigate();
+  const [_, setIsShowButton] = useState(false);
 
   const onHandleScroll = () => {
     const { scrollY } = window;

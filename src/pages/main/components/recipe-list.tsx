@@ -10,17 +10,12 @@ const RecipeList: FC = () => {
     .map((list) => list.COOKRCP01.row)
     .flat();
 
-  console.log("recipeData?", recipeData); // undefined
-
   // 스크롤 최하단 시 fetchNextPage실행
   const handleScroll = () => {
     const scrollHeight = document.documentElement.scrollHeight;
     const scrollTop = document.documentElement.scrollTop;
     const clientHeight = document.documentElement.clientHeight;
-    if (scrollTop + clientHeight >= scrollHeight) {
-      console.log("scroll end! plz wait! fetching data...");
-      return fetchNextPage();
-    }
+    if (scrollTop + clientHeight >= scrollHeight) return fetchNextPage();
   };
 
   useEffect(() => {
@@ -28,7 +23,7 @@ const RecipeList: FC = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  });
 
   return (
     <>
