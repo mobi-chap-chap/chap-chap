@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { OneRecipeIcon } from "../../../assets/icon";
-import { RecipeDetail } from "../../../apis/type/recipe.type";
+import { RecipeDetail } from "../../../type/recipe.type";
 
 const RecipeInfo: FC<RecipeDetail> = (recipeData) => {
   const {

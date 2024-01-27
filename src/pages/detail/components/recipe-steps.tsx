@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { RecipeDetail } from "../../../apis/type/recipe.type";
+import { RecipeDetail } from "../../../type/recipe.type";
 
 interface StepData {
   stepKey: string;

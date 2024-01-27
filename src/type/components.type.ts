@@ -27,6 +27,6 @@ export type InputTypes<T extends FieldValues> = {
 
 export type Slide = string;
 
-export interface ChapCarouselProps {
+export type ChapCarouselProps = {
     Slides: Slide[];
 }

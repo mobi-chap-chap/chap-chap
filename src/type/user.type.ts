@@ -11,4 +11,11 @@ export type User = {
     status: number;
 };
 
+//dialog
+
+export type MyDialogProps = {
+    isDialogOpen: boolean;
+  }
+  
+
 

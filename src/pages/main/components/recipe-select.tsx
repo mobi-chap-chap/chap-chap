@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { SelectProps } from "./main.type";
+import { SelectProps } from "../../../type/main.type";
 
 export const SelectDropdown: FC<SelectProps> = ({ label, options }) => {
   return (

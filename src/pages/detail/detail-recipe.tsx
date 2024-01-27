@@ -3,7 +3,7 @@ import RecipeInfo from "./components/recipe-info";
 import Steps from "./components/recipe-steps";
 import { FC } from "react";
 import { useGetDetailRecipe } from "../../hooks/use-recipe-query";
-import { RecipeDetail } from "../../apis/type/recipe.type";
+import { RecipeDetail } from "../../type/recipe.type";
 
 const DetailRecipe: FC<RecipeDetail> = () => {
   const { RCP_NM } = useParams<{ RCP_NM?: string }>();
