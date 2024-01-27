@@ -15,7 +15,10 @@ const RecipeList: FC = () => {
     const scrollHeight = document.documentElement.scrollHeight;
     const scrollTop = document.documentElement.scrollTop;
     const clientHeight = document.documentElement.clientHeight;
-    if (scrollTop + clientHeight >= scrollHeight) return fetchNextPage();
+    if (scrollTop + clientHeight >= scrollHeight) {
+      console.log("scroll end! plz wait! fetching data...");
+      return fetchNextPage();
+    }
   };
 
   useEffect(() => {

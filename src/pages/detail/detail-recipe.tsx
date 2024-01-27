@@ -33,7 +33,7 @@ const DetailRecipe: FC<RecipeDetail> = () => {
         </div>
         <RecipeInfo {...detailInfo} />
       </div>
-      <Steps />
+      <Steps {...detailInfo} />
     </div>
   );
 };
