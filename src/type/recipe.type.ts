@@ -15,7 +15,7 @@ export type Recipe = {
 };
 
 // Recipe return type
-export interface Info {
+export type Info = {
   COOKRCP01: {
     RESULT: {
       CODE: string;
@@ -26,7 +26,7 @@ export interface Info {
   };
 }
 
-export interface RecipeDetail {
+export type RecipeDetail = {
   ATT_FILE_NO_MAIN: string;
   ATT_FILE_NO_MK: string;
   HASH_TAG: string;
