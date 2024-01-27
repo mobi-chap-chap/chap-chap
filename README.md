@@ -35,11 +35,19 @@ vercel 👉 <a href="#">
 
 <h1>🧪 테스트 계정</h1>
 
-|          | 내용 |
-| -------- | ---- |
-| 아이디   |      |
-| 비밀번호 |      |
-| 주의사항 |      |
+<table>
+  <tr>
+    <td colspan="2">account info</td>
+  </tr>
+  <tr>
+    <td>ID</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>password</td>
+    <td></td>
+  </tr>
+</table>
 
 <br />
 <h1>👥 Members</h1>
@@ -103,7 +111,7 @@ vercel 👉 <a href="#">
   <tr>
     <td>
       <a href="#">
-        <img src="https://github.com/Manners-Maketh-Market/MMM/assets/134191817/65047608-1ef6-44a1-b743-7a1b329ec7fb" width="120px" height="120px"/>
+        <img src="https://github.com/mobi-chap-chap/chap-chap/assets/134191817/4cdeceaf-23a5-4834-b66c-defca92e2974" width="120px" height="120px"/>
       </a>  
     </td>
   </tr>
@@ -178,38 +186,38 @@ vercel 👉 <a href="#">
     <td>day 06</td>
     <td>2024-01-24</td>
     <td>ETA 03</td>
-    <td></td>
-    <td></td>
+    <td>publishing & developing</td>
+    <td>-</td>
   </tr>
     <tr>
     <td>day 07</td>
     <td>2024-01-25</td>
     <td>ETA 04</td>
-    <td></td>
-    <td></td>
+    <td>developing</td>
+    <td>각자 고군분투 중</td>
   </tr>
   </tr>
     <tr>
     <td>day 08</td>
     <td>2024-01-26</td>
     <td>ETA 05</td>
-    <td></td>
-    <td></td>
+    <td>developing</td>
+    <td>-</td>
   </tr>
   </tr>
   <tr>
     <td>day 09</td>
     <td>2024-01-27</td>
     <td>ETA 06</td>
-    <td></td>
-    <td></td>
+    <td>developing</td>
+    <td>-</td>
   </tr>
   <tr>
     <td>day 10</td>
     <td>2024-01-28</td>
     <td>ETA 07</td>
-    <td></td>
-    <td></td>
+    <td>developing</td>
+    <td>-</td>
   </tr>
 </table>
 <br />
@@ -278,12 +286,12 @@ vercel 👉 <a href="#">
     <td colspan="2" align="center">Library</td>
   </tr>
   <tr>
-    <td><img src="https://img.shields.io/badge/tailwindcss-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white">  </td>
+    <td><img src="https://img.shields.io/badge/tailwind%20CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white">  </td>
     <td>tailwind CSS</td>
   </tr>
   <tr>
-    <td><img src="https://img.shields.io/badge/schacn%20ui-000000?style=flat-square&logo=shadcnui&logoColor=white"></td>
-    <td>shadcn UI</td>
+    <td><img src="https://img.shields.io/badge/mui%20UI-007FFF?style=flat-square&logo=mui&logoColor=white"></td>
+    <td>mui UI</td>
   </tr>
   <tr>
     <td>
@@ -399,7 +407,63 @@ style을 적용할 때 통일을 위해 적용할 컨벤션
 
 <h1>📽️ 시연 영상</h1>
 
-<h4>sign in/up</h4>
+<h4>sign in/up form</h4>
+
+<p>
+    <img src="" />
+</p>
+<p>
+    <img src="" />
+</p>
+<p>
+    <img src="" />
+</p>
+
+<br />
+
+<h4>main page</h4>
+
+<p>
+    <img src="" />
+</p>
+<p>
+    <img src="" />
+</p>
+<p>
+    <img src="" />
+</p>
+
+<br />
+
+<h4>search page</h4>
+
+<p>
+    <img src="" />
+</p>
+<p>
+    <img src="" />
+</p>
+<p>
+    <img src="" />
+</p>
+
+<br />
+
+<h4>recipe page</h4>
+
+<p>
+    <img src="" />
+</p>
+<p>
+    <img src="" />
+</p>
+<p>
+    <img src="" />
+</p>
+
+<br />
+
+<h4>my dialog</h4>
 
 <p>
     <img src="" />
@@ -418,5 +482,23 @@ style을 적용할 때 통일을 위해 적용할 컨벤션
 <h1>📌 전체 회고</h1>
 
 " 좀 더 에자일(Agile)하게 협업하자! "
+
+Amy's Memoirs
+
+```
+
+```
+
+Ann's Memoirs
+
+```
+
+```
+
+Kimi's Memoirs
+
+```
+
+```
 
 </div>
