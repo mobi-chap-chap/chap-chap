@@ -1,10 +1,11 @@
 export type User = {
-    userId: number;
-    password:string;
-    data : {
+    userId: string;
+    password: string;
+    data: {
         memberId: number;
         nickName: string;
         profileImage: File;
         scrap?: boolean;
-    }
- };
+    };
+    status: number;
+};

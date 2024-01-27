@@ -1,0 +1,12 @@
+Context 란?
+context를 이용하면 단계마다 일일이 props를 넘겨주지 않고도 컴포넌트 트리 전체에 데이터를 제공할 수 있음
+-> 한마디로 데이터가 필요할 때마다 props를 통해 전달할 필요가 없이 context 를 이용해 공유한다!
+
+- createContext : context 객체를 생성
+- Provider : 생성한 context를 하위 컴포넌트에게 전달하는 역할
+- Consumer : context의 변화를 감시하는 컴포넌트
+- useContext: Context를 불러 온 후 바로 사용이 가능. context의 provider에서 제공한 값을 얻는다.
+
+
++ auth에서
+status넘길 때 status:number로 넘기기

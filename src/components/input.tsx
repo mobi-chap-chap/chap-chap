@@ -1,7 +1,7 @@
-import { FC } from 'react';
 import { InputTypes } from './components.type';
+import { FieldValues } from 'react-hook-form';
 
-const ChapInput: FC<InputTypes> = ({ label, error, access, ...props }) => {
+const ChapInput = <T extends FieldValues>({ id, label, error, access, register, ...props }: InputTypes<T>) => {
     return (
         <>
             <div className="w-[558px] flex justify-between items-center">
@@ -9,10 +9,14 @@ const ChapInput: FC<InputTypes> = ({ label, error, access, ...props }) => {
                 <input
                     className="bg-primary-peanut shadow-innerPeanut w-[414px] h-[48px] rounded-[14px] focus:outline-none pl-3 text-primary-chocolate"
                     {...props}
+                    {...register(id, { required: true })}
                 />
             </div>
-            <p className="w-full ml-[144px] pl-[30px] py-[15px] text-error text-[14px]">{error}</p>
-            <p className="w-full ml-[144px] pl-[30px] py-[15px] text-access text-[14px]">{access}</p>
+            {error ? (
+                <p className="w-full ml-[144px] pl-[30px] py-[24px] text-error text-[14px]">{error}</p>
+            ) : (
+                <p className="w-full ml-[144px] pl-[30px] py-[24px] text-error text-[14px]">&nbsp;</p>
+            )}
         </>
     );
 };
