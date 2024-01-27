@@ -3,13 +3,14 @@ import ChapButton from '../../../../components/button';
 import ChapInput from '../../../../components/input';
 import FormHeader from './form-header';
 import { SignUpIn } from '../../../../consts/sign-up-in';
-import { useForm } from 'react-hook-form';
+import { SubmitHandler, useForm } from 'react-hook-form';
 import { SignUpSchema, SignUpType } from '../../../../consts/form-schema';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { FormField } from './form.type';
+import { SignUpField } from '../../../../type/sign.type';
 import { AuthApi } from '../../../../apis/auth.api';
+import { ShowProps } from '../../../../type/sign.type';
 
-const SignUpForm: FC = () => {
+const SignUpForm: FC<ShowProps> = ({ setShowSignUpForm }) => {
     const {
         register,
         handleSubmit,
@@ -25,33 +26,35 @@ const SignUpForm: FC = () => {
         },
     });
 
-    
-    // console.log('isValid', isValid);
-    console.log(errors);
-
-    const onSubmitSignUp = handleSubmit(async (data) => {
+    /**
+     * @todo ... confirm취소시 submit이 자동으로 되어서 취소 버튼을 눌러도 데이터가 넘어가는 문제
+     *
+     * @param data e.preventDefault default
+     * @returns
+     */
+    const onSubmitSignUp: SubmitHandler<SignUpType> = async (data) => {
         try {
-            const res = await AuthApi.SignUp(data.userId, data.password);
-            if (res && res.status === 200) {
-                console.log(`res`, res);
+            await AuthApi.SignUp(data);
+            let result = window.confirm('모든 정보는 수정이 불가능합니다. \n 정말 이대로 제출하시겠습니까?');
+            if (result) {
+                alert('CHAP CHAP의 회원이 되신걸 축하합니다!');
+                setShowSignUpForm(false);
+            } else {
+                return false;
             }
-            return res;
         } catch (error) {
-            console.error(error);
+            alert('회원가입이 정상적으로 이뤄지지 못했습니다!');
         }
-    });
+    };
 
     return (
         <div className="flex h-full w-full flex-col items-center justify-center rounded-l-3xl">
             <FormHeader />
-            <form
-                className="flex w-full flex-col items-center justify-center"
-                onSubmit={handleSubmit((data) => console.log('submit', data))}
-            >
+            <form className="flex w-full flex-col items-center justify-center" onSubmit={handleSubmit(onSubmitSignUp)}>
                 {SignUpIn[0].map((el) => {
                     const { id, label, type } = el;
                     // fieldName의 타입을 FormField 타입으로 단언
-                    const fieldName = id as FormField;
+                    const fieldName = id as SignUpField;
                     /**
                      * register에  함수의 동작에 대한 타입 정보를 제공
                      * 사용하지않으면 명확한 타입 정보를 알 수 없음
@@ -77,21 +80,3 @@ const SignUpForm: FC = () => {
 };
 
 export default SignUpForm;
-
-/*
- *  Zod는 스키마를 기준으로 타입스크립트 타입을 알아서 추론할 수도 있는데요.
- * 이 기능을 잘 활용하면 아예 타입을 따로 작성할 필요가 없어지고 따라서 타입을 스키마와 서로 맞춰 줄 걱정이 사라집니다.
- */
-
-{
-    /* <div className="w-[558px] flex justify-between items-center">
-    <label className="text-[18px] mr-[14px] text-primary-cheese">{'nickname'}</label>
-    <input
-        className="bg-primary-peanut shadow-innerPeanut w-[414px] h-[48px] rounded-[14px] focus:outline-none pl-3 text-primary-chocolate"
-        {...register('nickname')}
-    />
-    {errors.nickname && (
-        <span className="w-full ml-[144px] pl-[30px] py-[15px] text-error text-[14px]">{errors.nickname.message}</span>
-    )}
-</div>; */
-}

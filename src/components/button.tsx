@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { ButtonTypes } from './components.type';
+import { ButtonTypes } from '../type/components.type';
 
 const ChapButton: FC<ButtonTypes> = ({ children, type, variant, size, onClick, ...props }) => {
     const variantCSS = {

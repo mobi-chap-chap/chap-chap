@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { SearchParams } from '../search.type';
+import { SearchParams } from '../../../type/search.type';
 
 const SearchTitle: FC<SearchParams> = ({ searchValue }) => {
     return (

@@ -3,9 +3,6 @@ import TokenRepository from "../repositories/token-repository";
 
 export const axiosInstance = axios.create({
     baseURL: import.meta.env.VITE_BACKEND_URL,
-    headers: {
-        Authorization: `Bearer ${import.meta.env.VITE_MOBI_TOKEN}`,
-    },
     // 백엔드에서 refresh token을 cookie 형태로 전달
     withCredentials: true,
 });

@@ -1,4 +1,4 @@
-import { InputTypes } from './components.type';
+import { InputTypes } from '../type/components.type';
 import { FieldValues } from 'react-hook-form';
 
 const ChapInput = <T extends FieldValues>({ id, label, error, access, register, ...props }: InputTypes<T>) => {
@@ -15,7 +15,7 @@ const ChapInput = <T extends FieldValues>({ id, label, error, access, register, 
             {error ? (
                 <p className="w-full ml-[144px] pl-[30px] py-[24px] text-error text-[14px]">{error}</p>
             ) : (
-                <p className="w-full ml-[144px] pl-[30px] py-[24px] text-error text-[14px]">&nbsp;</p>
+                <p className="w-full ml-[144px] pl-[30px] py-[24px]">&nbsp;</p>
             )}
         </>
     );
