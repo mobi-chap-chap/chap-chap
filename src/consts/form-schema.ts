@@ -11,7 +11,6 @@ export const SignUpSchema = z
         userId: z
             .string()
             .nonempty('아이디를 입력해주세요.')
-            // .max(10, { message: '5자리 이상 10자리 이하의 영문자나 영문자와 숫자로 입력해주세요' })
             .regex(REGEXP.userId, { message: '4자리 이상 10자리 이하의 영어 또는 숫자로 입력해주세요' }),
         password: z
             .string()
@@ -27,12 +26,8 @@ export const SignUpSchema = z
 export type SignUpType = z.infer<typeof SignUpSchema>;
 
 export const SignInSchema = z.object({
-    userId: z
-        .string()
-        .regex(REGEXP.userId, { message: '아이디는 5자리 이상 8자리 이하의 숫자와 영문자만 입력해주세요' }),
-    password: z
-        .string()
-        .regex(REGEXP.password, { message: '비밀번호는 8자리 이상 16자리 이하의 영문자와 숫자 조합입니다' }),
+    userId: z.string().regex(REGEXP.userId, { message: '4자리 이상 10자리 이하의 영어 또는 숫자로 입력해주세요' }),
+    password: z.string().regex(REGEXP.password, { message: '8자리 이상 16자리 이하의 영문자와 숫자로 입력해주세요' }),
 });
 
 export type SignInType = z.infer<typeof SignInSchema>;
