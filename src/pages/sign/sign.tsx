@@ -1,11 +1,10 @@
 import SignInForm from './components/form/in-form';
 import SignUpForm from './components/form/up-form';
-import { FC, useState } from 'react';
+import { useState } from 'react';
 import SignUpOverlay from './components/overlay/sign-up-overlay';
 import LoginOverlay from './components/overlay/login-overlay';
-import { ShowProps } from '../../type/sign.type';
 
-const Sign: FC<ShowProps> = () => {
+const Sign = () => {
     const [showSignUpForm, setShowSignUpForm] = useState<boolean>(true);
 
     const onChangeForm = (): void => {
@@ -35,9 +34,7 @@ const Sign: FC<ShowProps> = () => {
           };
 
     return (
-        // Wrapper
         <div className="w-screen h-screen flex items-center justify-center bg-primary-peanut">
-            {/* container */}
             <div className="flex w-[1424px] h-[898px] shadow-container rounded-3xl">
                 {showSignUpForm ? (
                     <div className="flex w-[1424px] h-[898px] shadow-container rounded-3xl">

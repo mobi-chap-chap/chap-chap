@@ -1,14 +1,14 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Layout from '../layout/layout';
 import MainPage from '../pages/main/main';
-import Sign from '../pages/sign/sign';
 import ScrapPage from '../pages/scrap/scraps';
 import SearchPage from '../pages/search/search';
+import Sign from '../pages/sign/sign';
 
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <Sign />,
+        element: <Sign/>
     },
     {
         element: <Layout />,

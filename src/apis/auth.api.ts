@@ -1,5 +1,4 @@
 import { axiosInstance } from './core';
-import { User } from './type/user.type';
 import { SignUpType, SignInType } from '../consts/form-schema';
 const PATH = '/user';
 
@@ -24,7 +23,7 @@ export const AuthApi = {
         return res.data;
     },
     async SignOut() {
-        const res = await axiosInstance.post<User>(PATH + '/sign-out');
+        const res = await axiosInstance.post(PATH + '/sign-out');
         return res.data;
     },
 

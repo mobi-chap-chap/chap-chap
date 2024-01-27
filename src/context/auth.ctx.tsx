@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import TokenRepository from '../repositories/token-repository';
-import { AuthContextProps, AuthProviderProps } from './ctx.type';
+import { AuthContextProps, AuthProviderProps } from '../type/ctx.type';
 
 const AuthContext = createContext<AuthContextProps | undefined>(undefined);
 

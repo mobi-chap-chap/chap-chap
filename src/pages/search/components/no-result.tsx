@@ -1,5 +1,5 @@
 import ChapButton from '../../../components/button';
-import { SearchParams } from '../search.type';
+import { SearchParams } from '../../../type/search.type';
 import UseNavigation from '../../../hooks/use-navigation';
 import { FC } from 'react';
 

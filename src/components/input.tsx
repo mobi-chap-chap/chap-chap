@@ -1,4 +1,4 @@
-import { InputTypes } from './components.type';
+import { InputTypes } from '../type/components.type';
 import { FieldValues } from 'react-hook-form';
 
 const ChapInput = <T extends FieldValues>({ id, label, error, access, register, ...props }: InputTypes<T>) => {
