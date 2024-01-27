@@ -1,22 +1,30 @@
 import { FC, useEffect } from "react";
-
-import { useGetRecipeInfinity } from "../../../apis/recipe/hook";
 import { Grid } from "@mui/material";
+import { useGetRecipeInfinity } from "../../../apis/recipe/hook";
 import OneRecipe from "../../components/one-recipe";
-import { RecipeInfo } from "../../../apis/type/recipe.type";
 
 const RecipeList: FC = () => {
   const { recipeData, fetchNextPage, hasNextPage } = useGetRecipeInfinity();
-  useEffect(() => {
-    console.log(recipeData?.pages.map((list) => list.COOKRCP01.row).flat());
-  }, [recipeData]);
-  // const RecipeListContent = recipeList && recipeList.COOKRCP01.row;
+
   const RecipeListContent = recipeData?.pages
     .map((list) => list.COOKRCP01.row)
     .flat();
-  /*힌트..
-  map 변수명을 안써도 된다 : 
-   */
+
+  // 스크롤 최하단 시 fetchNextPage실행
+  const handleScroll = () => {
+    const scrollHeight = document.documentElement.scrollHeight;
+    const scrollTop = document.documentElement.scrollTop;
+    const clientHeight = document.documentElement.clientHeight;
+    if (scrollTop + clientHeight >= scrollHeight) return fetchNextPage();
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <div className=" text-black w-full  px-[450px] py-[50px] ml-[13px] relative">
@@ -35,7 +43,7 @@ const RecipeList: FC = () => {
                 key={index + 1}
               >
                 <OneRecipe
-                  recipeData={recipeData}
+                  /* recipeData={recipeData} */
                   recipeNum={recipe.RCP_SEQ}
                   recipeName={recipe.RCP_NM}
                   recipeImg={recipe.ATT_FILE_NO_MAIN}
@@ -47,12 +55,12 @@ const RecipeList: FC = () => {
             ))}
         </Grid>
       </div>
-      <button
+      {/*       <button
         className="h-[300px] w-[300px] text-black"
         onClick={() => fetchNextPage()}
       >
         click me!!
-      </button>
+      </button> */}
     </>
   );
 };

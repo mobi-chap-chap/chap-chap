@@ -26,6 +26,7 @@ const OneRecipe: FC<OneRecipeProps> = ({
 
   // navigate : detail-recipe
   const onClickToDetailPage = (recipeTitle: string) => {
+    console.log("onClick", recipeTitle);
     goToDetailPage(recipeTitle);
     window.scrollTo({ top: 0 });
   };

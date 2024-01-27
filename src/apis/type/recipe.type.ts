@@ -1,8 +1,8 @@
 export const keyID = import.meta.env.VITE_RECIPE_API_KEY;
 export const serviceID = "COOKRCP01";
 
+// recipe props type
 export type Recipe = {
-  // keyID 타입 가져와서 새로운 변수에 할당
   keyId: string;
   serviceId: string;
   dataType: string;
@@ -14,17 +14,19 @@ export type Recipe = {
   RCP_PAT2?: string;
 };
 
-// Recipe 타입 정의
-export interface RecipeInfo {
-  RCP_SEQ: number;
-  ATT_FILE_NO_MAIN: string;
-  RCP_PAT2: string;
-  INFO_ENG: string;
-  RCP_NM: string;
-  // 추가 필드가 있다면 여기에 계속 추가
+// Recipe return type
+export interface Info {
+  COOKRCP01: {
+    RESULT: {
+      CODE: string;
+      MSG: string;
+    };
+    row: RecipeDetail[];
+    total_count: number;
+  };
 }
 
-interface RecipeDetail {
+export interface RecipeDetail {
   ATT_FILE_NO_MAIN: string;
   ATT_FILE_NO_MK: string;
   HASH_TAG: string;
@@ -80,15 +82,4 @@ interface RecipeDetail {
   RCP_PAT2: string;
   RCP_SEQ: string;
   RCP_WAY2: string;
-}
-
-export interface Info {
-  COOKRCP01: {
-    RESULT: {
-      CODE: string;
-      MSG: string;
-    };
-    row: RecipeDetail[];
-    total_count: number;
-  };
 }

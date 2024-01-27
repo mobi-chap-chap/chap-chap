@@ -1,5 +1,3 @@
-import { Recipe } from "../apis/type/recipe.type";
-
 export const keyID = import.meta.env.VITE_RECIPE_API_KEY;
 export const serviceID = "COOKRCP01";
 export const dataTYPE = "json";
@@ -10,6 +8,14 @@ export const END_POINT = {
 };
 
 export const DETAIL_END_POINT = {
-  RECIPE: ({ RCP_NM }: { RCP_NM: string }) =>
-    `/${keyID}/${serviceID}/${dataTYPE}/1/1?RCP_NM=${RCP_NM}`,
+  RECIPE: ({
+    startIdx,
+    endIdx,
+    RCP_NM,
+  }: {
+    startIdx: number;
+    endIdx: number;
+    RCP_NM: string;
+  }) =>
+    `/${keyID}/${serviceID}/${dataTYPE}/${startIdx}/${endIdx}?RCP_NM=${RCP_NM}`,
 };
