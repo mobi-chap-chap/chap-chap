@@ -1,16 +1,15 @@
-import { FC, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import SearchTitle from './components/search-title';
 import { Grid } from '@mui/material';
 import OneRecipe from '../components/one-recipe';
-// import { useGetSearchInfinity } from '../../hooks/use-recipe-query';
+import { useGetSearchInfinity } from '../../hooks/use-recipe-query';
 
 const SearchPage = () => {
   const { RCP_NM: searchValue } = useParams<{ RCP_NM?: string }>();
 
   if (!searchValue) return <div>검색 결과가 없습니다.</div>
 
-  const { recipeData, fetchNextPage } = useGetSearchInfinity();
+  const { recipeData, fetchNextPage } = useGetSearchInfinity(searchValue);
 
   const RecipeListContent = recipeData?.pages
     .map((list) => list.COOKRCP01.row)
@@ -32,7 +31,10 @@ const SearchPage = () => {
 
   return (
     <div className="w-screen h-[990px] flex flex-col">
-      <SearchTitle />
+      <div className="w-[1037px] text-[24px] m-auto pt-[90px]">
+            <p className=" text-primary-chocolate text-[24px] ">{searchValue}에 대한 검색 결과입니다.</p>
+            <div className="h-[20px] bg-primary-peanut mt-[10px]" />
+      </div>
       <div className=" text-black w-full  px-[450px] py-[50px] ml-[13px] relative">
     <Grid
       container

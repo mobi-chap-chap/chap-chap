@@ -40,19 +40,9 @@ export const getSearchRecipe = async ({
   startIdx: number;
   endIdx: number;
   RCP_NM: string;
-  searchValue: string;
 }) => {
   const res = await axiosRecipeInstance.get<Info>(
     SEARCH_END_POINT.RECIPE({ ...recipeData })
   )
-  console.log(res.data)
-  res.data
+  return res.data
 }
-
-
-/**
- * const getSearchProduct = async (category, keyword, pageParam) => {
-    const res = await axiosInstance().get(PATH + `/search?category=${category}&keyword=${keyword}&page=${pageParam}`);
-    return res.data;
-};
- */

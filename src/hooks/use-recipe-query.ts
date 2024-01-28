@@ -76,7 +76,7 @@ export function useGetSearchInfinity(searchValue:string) {
       if (startIdx > lastPage.COOKRCP01.total_count) {
         return null;
       }
-      return { startIdx, endIdx };
+      return { startIdx, endIdx, searchValue };
     },
   });
   return { recipeData, fetchNextPage, hasNextPage, isFetching };
