@@ -1,6 +1,6 @@
-import { FC } from "react"
-import { MyDialogIcon } from "../../assets/icon"
-import { MyDialogProps } from "../../type/user.type"
+import { FC } from "react";
+import { MyDialogIcon } from "../../assets/icon";
+import { MyDialogProps } from "../../type/user.type";
 
 const MyDialog: FC<MyDialogProps> = ({ isDialogOpen }) => {
   /* const changeProfileImage = () => {};

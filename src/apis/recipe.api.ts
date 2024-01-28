@@ -1,4 +1,4 @@
-import { DETAIL_END_POINT, END_POINT } from "../consts/end-point";
+import { DETAIL_END_POINT, END_POINT, SEARCH_END_POINT } from "../consts/end-point";
 import { axiosRecipeInstance } from "./core";
 import { Info } from "../type/recipe.type";
 
@@ -32,3 +32,17 @@ export const getDetailRecipe = async ({
   );
   return res.data;
 };
+
+
+export const getSearchRecipe = async ({
+  ...recipeData
+} : {
+  startIdx: number;
+  endIdx: number;
+  RCP_NM: string;
+}) => {
+  const res = await axiosRecipeInstance.get<Info>(
+    SEARCH_END_POINT.RECIPE({ ...recipeData })
+  )
+  return res.data
+}

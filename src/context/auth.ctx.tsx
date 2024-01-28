@@ -21,7 +21,6 @@ const AuthProvider: FC<AuthProviderProps> = ({ children }) => {
         const token = TokenRepository.getToken();
         if (token) {
             setAccessToken(token);
-            console.log(token);
         }
     }, []);
 
