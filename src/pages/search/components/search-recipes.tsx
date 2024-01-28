@@ -1,5 +1,11 @@
-const SearchRecipes = () => {
-    return <div>search-recipes</div>;
-};
+// import { FC } from "react";
+// import { Grid } from "@mui/material";
+// import OneRecipe from "../../components/one-recipe";
+// import { Info } from "../../../type/recipe.type";
 
-export default SearchRecipes;
+// const SearchRecipes : FC<Info>= ({RecipeListContent}) => {
+    
+//     return (\)
+// };
+
+// export default SearchRecipes;
