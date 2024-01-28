@@ -10,6 +10,9 @@ import { QUERY_KEY } from "../consts/query-key";
  **/
 
 export function useGetRecipeInfinity() {
+//const [serachParam] =  useSeachP
+
+
   const {
     data: recipeData,
     fetchNextPage,
@@ -17,8 +20,9 @@ export function useGetRecipeInfinity() {
     isFetching,
   } = useInfiniteQuery({
     queryKey: [QUERY_KEY.MORE_RECIPE_LIST],
+    // queryKey: [QUERY_KEY.MORE_RECIPE_LIST, {RCP_PAT2: serachParam.get("종류")}],
     queryFn: ({ pageParam = { startIdx: 1, endIdx: 12 } }) =>
-      getRecipe(pageParam),
+      getRecipe({...pageParam, RCP_PAT2:'반찬'}),
     getNextPageParam: (lastPage, totalPages) => {
       const startIdx = totalPages.length * 12 + 1;
       let endIdx = (totalPages.length + 1) * 12;

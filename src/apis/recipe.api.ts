@@ -12,6 +12,7 @@ export const getRecipe = async ({
 }: {
   startIdx: number;
   endIdx: number;
+  RCP_PAT2?:string
 }) => {
   const res = await axiosRecipeInstance.get<Info>(
     END_POINT.RECIPE({ ...recipeData })
