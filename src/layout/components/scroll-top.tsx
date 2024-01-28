@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { MainIcon } from "../../assets/icon";
 
 const ScrollTop = () => {
-  const [isShowButton, setIsShowButton] = useState(false);
+  const [, setIsShowButton] = useState(false);
 
   const onHandleScroll = () => {
     const { scrollY } = window;
