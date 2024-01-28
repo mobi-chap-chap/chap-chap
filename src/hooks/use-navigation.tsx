@@ -19,10 +19,15 @@ const UseNavigation = () => {
       });
     };
 
+    const goToSearchPage = (inputValue : string) => {
+      navigate(`/chap-chap/search/${inputValue}`);
+    };
+
     return {
         goToMainPage,
         goToSignUp,
         goToDetailPage,
+        goToSearchPage
     };
 };
 
