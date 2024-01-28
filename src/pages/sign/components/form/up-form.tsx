@@ -34,9 +34,9 @@ const SignUpForm: FC<ShowProps> = ({ setShowSignUpForm }) => {
      */
     const onSubmitSignUp: SubmitHandler<SignUpType> = async (data) => {
         try {
-            await AuthApi.SignUp(data);
             let result = window.confirm('모든 정보는 수정이 불가능합니다. \n 정말 이대로 제출하시겠습니까?');
             if (result) {
+                await AuthApi.SignUp(data);
                 alert('CHAP CHAP의 회원이 되신걸 축하합니다!');
                 setShowSignUpForm(false);
             } else {
