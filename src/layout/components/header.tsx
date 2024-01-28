@@ -1,23 +1,34 @@
-import { FC, useState } from "react";
+import React, { FC, FormEvent, useState } from "react";
 import { HeaderIcon } from "../../assets/icon";
 import MyDialog from "../../pages/my/dialog";
 import UseNavigation from "../../hooks/use-navigation";
 
-const Header: FC = () => {
+interface HeaderProps {}
+
+const Header: FC<HeaderProps> = () => {
   const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false);
-  const [showSearchBar, setShowSearchBar] = useState(false);
+  const [showSearchBar, setShowSearchBar] = useState<boolean>(false);
 
-  const { goToMainPage } = UseNavigation();
+  const { goToMainPage, goToSearchPage } = UseNavigation();
 
-  const onShowDialog = () => {
-    setIsDialogOpen((prev) => !prev);
+  const onShowDialog = (): void => {
+    setIsDialogOpen((prev: boolean) => !prev);
   };
 
-  const onShowSearchBar = () => {
-    setShowSearchBar((prev) => !prev);
+  const onShowSearchBar = (): void => {
+    setShowSearchBar((prev: boolean) => !prev);
   };
 
-  const increaseInput = showSearchBar
+  const onSearchSubmit = (e: FormEvent<HTMLFormElement>): void => {
+    e.preventDefault();
+    const inputValue = e.currentTarget.search.value;
+    if (!inputValue) {
+      return goToMainPage();
+    }
+    goToSearchPage(inputValue);
+  };
+
+  const increaseInput: React.CSSProperties = showSearchBar
     ? {
         transition: "all 0.7s",
         outline: "none",
@@ -35,8 +46,9 @@ const Header: FC = () => {
           <img src={HeaderIcon.Logo} />
         </div>
         <div className="absolute top-7 right-6 flex flex-row">
-          <div className="relative bottom-1.5">
+          <form onSubmit={onSearchSubmit} className="relative bottom-1.5">
             <input
+              name="search"
               style={increaseInput}
               className="w-[390px] h-[50px] rounded-full bg-primary-peanut text-primary-chocolate ps-12 focus:outline-none"
             />
@@ -44,18 +56,20 @@ const Header: FC = () => {
               <button
                 className="absolute left-4 top-4 bg-primary-peanut focus:outline-none"
                 onClick={onShowSearchBar}
+                type="button"
               >
                 <img src={HeaderIcon.search} className="w-5" />
               </button>
-            ) : (
+            ) : ( 
               <button
                 className="absolute right-4 top-2 bg-white items-center focus:outline-none"
                 onClick={onShowSearchBar}
+                type="button"
               >
                 <img src={HeaderIcon.search} className="w-8" />
               </button>
             )}
-          </div>
+          </form>
           <div className="px-4">
             <img src={HeaderIcon.bookmarkLine} className="w-8" />
           </div>
@@ -68,4 +82,5 @@ const Header: FC = () => {
     </>
   );
 };
+
 export default Header;

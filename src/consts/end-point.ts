@@ -19,3 +19,16 @@ export const DETAIL_END_POINT = {
   }) =>
     `/${keyID}/${serviceID}/${dataTYPE}/${startIdx}/${endIdx}?RCP_NM=${RCP_NM}`,
 };
+
+export const SEARCH_END_POINT = {
+  RECIPE: ({
+    startIdx,
+    endIdx,
+    RCP_NM,
+  }: {
+    startIdx: number;
+    endIdx: number;
+    RCP_NM: string;
+  }) => 
+  `/${keyID}/${serviceID}/${dataTYPE}/${startIdx}/${endIdx}?RCP_NM=${RCP_NM}`,
+}

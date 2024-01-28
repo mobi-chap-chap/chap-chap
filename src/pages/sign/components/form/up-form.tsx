@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { BaseSyntheticEvent, FC, FormEvent } from 'react';
 import ChapButton from '../../../../components/button';
 import ChapInput from '../../../../components/input';
 import FormHeader from './form-header';
@@ -32,15 +32,17 @@ const SignUpForm: FC<ShowProps> = ({ setShowSignUpForm }) => {
      * @param data e.preventDefault default
      * @returns
      */
-    const onSubmitSignUp: SubmitHandler<SignUpType> = async (data) => {
+    const onSubmitSignUp: SubmitHandler<SignUpType> = async (data, e : BaseSyntheticEvent | undefined) => {
+        e?.preventDefault();
         try {
-            await AuthApi.SignUp(data);
             let result = window.confirm('모든 정보는 수정이 불가능합니다. \n 정말 이대로 제출하시겠습니까?');
             if (result) {
+                await AuthApi.SignUp(data);
                 alert('CHAP CHAP의 회원이 되신걸 축하합니다!');
                 setShowSignUpForm(false);
             } else {
-                return false;
+                alert('실패하였습니다')
+                return false
             }
         } catch (error) {
             alert('회원가입이 정상적으로 이뤄지지 못했습니다!');
