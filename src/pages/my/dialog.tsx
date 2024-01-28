@@ -41,6 +41,9 @@ const MyDialog: FC<MyDialogProps> = ({ isDialogOpen, setIsDialogOpen }) => {
     }
   }
 
+  // form Data
+  // PatchProfileImg
+
   const handleConfirm = () => {
     const isConfirmed = window.confirm("변경 사항으로 저장하시겠습니까?")
     console.log("isConfirmed:", isConfirmed) // true
