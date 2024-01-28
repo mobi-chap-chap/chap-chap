@@ -220,6 +220,7 @@ vercel 👉 <a href="#">
     <td>-</td>
   </tr>
 </table>
+
 <br />
 
 <h1>📊 Stacks</h1>
@@ -305,9 +306,20 @@ vercel 👉 <a href="#">
     </td>
     <td>api call, 백엔드 데이터 연결 및 관리</td>
   </tr>
+    <td>
+      <img src="https://img.shields.io/badge/reacthookform-EC5990?style=flat-square&logo=reacthookform&logoColor=white"> 
+    </td>
+    <td>RHF</td>
+  </tr>
+    <td>
+      <img src="https://img.shields.io/badge/zod-3E67B1?style=flat-square&logo=zod&logoColor=white"> 
+    </td>
+    <td>zod</td>
+  </tr>
 <table>
 
 <br />
+
 <h1>📝 Convention</h1>
 
 아래 PR 및 commit 컨벤션은 .github 폴더 안에 마크다운 파일로 형식을 강제하고 있습니다.
@@ -387,7 +399,10 @@ style을 적용할 때 통일을 위해 적용할 컨벤션
 <br />
 
 <h1>🗂️ Folder Structure</h1>
-<img width="30%" src="#" />
+<img width="30%" src="https://github.com/mobi-chap-chap/chap-chap/assets/134191817/195797f7-bcbd-41cc-803c-a3e88f3e358d" />
+
+
+<br />
 
 <h1>🛠️ 주요 기능 구현 내용</h1>
 
@@ -409,15 +424,10 @@ style을 적용할 때 통일을 위해 적용할 컨벤션
 
 <h4>sign in/up form</h4>
 
-<p>
-    <img src="" />
-</p>
-<p>
-    <img src="" />
-</p>
-<p>
-    <img src="" />
-</p>
+https://github.com/mobi-chap-chap/chap-chap/assets/134191815/c497f6f5-aba8-4392-be3e-c0b70b5812c1
+
+https://github.com/mobi-chap-chap/chap-chap/assets/134191815/02d0a30e-8892-452c-83ae-086db91e0ed2
+
 
 <br />
 
@@ -430,7 +440,7 @@ style을 적용할 때 통일을 위해 적용할 컨벤션
     <img src="" />
 </p>
 <p>
-    <img src="" />
+    <img src="https://github.com/mobi-chap-chap/chap-chap/assets/134191817/6cc91a83-8d38-4fdf-9bce-b5c9e0c58762" />
 </p>
 
 <br />
@@ -465,12 +475,8 @@ style을 적용할 때 통일을 위해 적용할 컨벤션
 
 <h4>my dialog</h4>
 
-<p>
-    <img src="" />
-</p>
-<p>
-    <img src="" />
-</p>
+https://github.com/mobi-chap-chap/chap-chap/assets/134191815/2f4d234a-af7f-46e6-a2ca-9adc07e03b36
+
 <p>
     <img src="" />
 </p>
