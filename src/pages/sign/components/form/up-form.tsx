@@ -25,15 +25,8 @@ const SignUpForm: FC<ShowProps> = ({ setShowSignUpForm }) => {
             checkPw: '',
         },
     });
-
-    /**
-     * @todo ... confirm취소시 submit이 자동으로 되어서 취소 버튼을 눌러도 데이터가 넘어가는 문제
-     *
-     * @param data e.preventDefault default
-     * @returns
-     */
-    const onSubmitSignUp: SubmitHandler<SignUpType> = async (data, e : BaseSyntheticEvent | undefined) => {
-        e?.preventDefault();
+    
+    const onSubmitSignUp: SubmitHandler<SignUpType> = async (data) => {
         try {
             let result = window.confirm('모든 정보는 수정이 불가능합니다. \n 정말 이대로 제출하시겠습니까?');
             if (result) {
