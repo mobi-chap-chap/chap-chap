@@ -26,18 +26,18 @@ const MyDialog: FC<MyDialogProps> = ({ isDialogOpen, setIsDialogOpen }) => {
       // 이미지를 base64로 변환
       const reader = new FileReader()
       reader.onloadend = () => {
-        const blob = new Blob([new Uint8Array(reader.result as ArrayBuffer)], { type: selectedFile.type })
-        setProfileImage(URL.createObjectURL(blob))
+        const base64Image = reader.result as string
+        setProfileImage(base64Image)
         setUpdateLocalStorage(true)
       }
       // 이미지 파일을 Base64로 읽어오기
-      // reader.readAsDataURL(selectedFile)
+      reader.readAsDataURL(selectedFile)
 
       // 이미지 파일을 Blob으로 읽어오기
-      const blob = new Blob([selectedFile])
+      // const blob = new Blob([selectedFile])
 
       // Blob을 읽어와서 Base64로 변환
-      reader.readAsDataURL(blob)
+      // reader.readAsDataURL(blob)
     }
   }
 
