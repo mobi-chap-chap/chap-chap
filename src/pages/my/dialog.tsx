@@ -62,10 +62,6 @@ const MyDialog: FC<MyDialogProps> = ({ isDialogOpen, setIsDialogOpen }) => {
       handleConfirm()
     }
   }, [updateLocalStorage, profileImage])
-  //useEffect(() => {
-  //  // profileImage가 변경될 때 실행되는 코드
-  //  console.log("Profile Image Updated:", profileImage)
-  //}, [profileImage])
 
   const navigateMyRecipePage = () => {
     alert("앗! 아직 페이지 개설 중입니다! 조금만 기다려주세요")
