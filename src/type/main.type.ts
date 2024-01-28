@@ -1,7 +1,7 @@
-import { HTMLAttributes } from "react";
+import { HTMLAttributes } from "react"
 
 //recipe-select.tsx type
 export type SelectProps = {
-  label: string;
-  options: string[];
-} & HTMLAttributes<HTMLSelectElement>;
+  label: string
+  options: string[]
+} & HTMLAttributes<HTMLSelectElement>

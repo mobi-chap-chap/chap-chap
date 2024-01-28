@@ -1,48 +1,36 @@
-import { FC } from "react";
-import { OneRecipeIcon } from "../../../assets/icon";
-import { RecipeDetail } from "../../../type/recipe.type";
+import { FC } from "react"
+import { OneRecipeIcon } from "../../../assets/icon"
+import { RecipeDetail } from "../../../type/recipe.type"
 
-const RecipeInfo: FC<RecipeDetail> = (recipeData) => {
-  const {
-    RCP_WAY2,
-    RCP_NM,
-    INFO_ENG,
-    HASH_TAG,
-    INFO_CAR,
-    INFO_PRO,
-    INFO_FAT,
-    INFO_NA,
-    RCP_PARTS_DTLS,
-  } = recipeData;
+const RecipeInfo: FC<RecipeDetail> = recipeData => {
+  const { RCP_WAY2, RCP_NM, INFO_ENG, HASH_TAG, INFO_CAR, INFO_PRO, INFO_FAT, INFO_NA, RCP_PARTS_DTLS } = recipeData
 
   return (
-    <div className="absolute top-[30px] left-[484px]">
-      <div className="flex flex-row ml-[448px]">
+    <div className="absolute left-[484px] top-[30px]">
+      <div className="ml-[448px] flex flex-row">
         <img src={OneRecipeIcon.bookmarkLine} className="w-[30px]" />
-        <img src={OneRecipeIcon.share} className="w-[30px] ml-[30px]" />
+        <img src={OneRecipeIcon.share} className="ml-[30px] w-[30px]" />
       </div>
-      <div className="flex flex-row place-items-center mt-[76px]">
-        <img src={OneRecipeIcon.dish} className="w-[30px] mx-[30px]" />
-        <p className="text-primary-cheese text-[18px]">{RCP_WAY2}</p>
+      <div className="mt-[76px] flex flex-row place-items-center">
+        <img src={OneRecipeIcon.dish} className="mx-[30px] w-[30px]" />
+        <p className="text-[18px] text-primary-cheese">{RCP_WAY2}</p>
       </div>
-      <h3 className="text-black text-[24px] ml-[30px] mt-[14px]">{RCP_NM}</h3>
-      <div className="w-[507px] flex flex-row justify-between ml-[30px] mt-[20px]">
+      <h3 className="ml-[30px] mt-[14px] text-[24px] text-black">{RCP_NM}</h3>
+      <div className="ml-[30px] mt-[20px] flex w-[507px] flex-row justify-between">
         <p className="text-primary-cheese">#{HASH_TAG}</p>
         <p className="text-gray-500">{INFO_ENG}kcal</p>
       </div>
-      <div className="w-[280px] flex flex-row justify-between text-gray-500 text-[14px] ml-[30px] my-[20px]">
+      <div className="my-[20px] ml-[30px] flex w-[280px] flex-row justify-between text-[14px] text-gray-500">
         <p>탄수화물 {INFO_CAR}</p>
         <p>단백질 {INFO_PRO} </p>
         <p>지방 {INFO_FAT} </p>
         <p>나트륨 {INFO_NA} </p>
       </div>
       <div className="ml-[30px]">
-        <p className="text-black text-[14px]">재료 정보</p>
-        <p className="w-[380px] text-black text-[14px] my-[26px] leading-6">
-          {RCP_PARTS_DTLS}
-        </p>
+        <p className="text-[14px] text-black">재료 정보</p>
+        <p className="my-[26px] w-[380px] text-[14px] leading-6 text-black">{RCP_PARTS_DTLS}</p>
       </div>
     </div>
-  );
-};
-export default RecipeInfo;
+  )
+}
+export default RecipeInfo

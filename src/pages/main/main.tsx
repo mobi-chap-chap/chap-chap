@@ -1,9 +1,9 @@
-import RecipeFilter from "./components/recipe-filer";
-import RecipeList from "./components/recipe-list";
-import MyDialog from "../my/dialog";
-import ChapCarousel from "../../components/carousel";
-import { Slides } from "../../assets/slider-images";
-import { FC } from "react";
+import RecipeFilter from "./components/recipe-filer"
+import RecipeList from "./components/recipe-list"
+import MyDialog from "../my/dialog"
+import ChapCarousel from "../../components/carousel"
+import { Slides } from "../../assets/slider-images"
+import { FC } from "react"
 
 const MainPage: FC = () => {
   return (
@@ -14,6 +14,6 @@ const MainPage: FC = () => {
       <RecipeList />
       <hr />
     </div>
-  );
-};
-export default MainPage;
+  )
+}
+export default MainPage

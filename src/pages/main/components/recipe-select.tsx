@@ -1,16 +1,16 @@
-import { ChangeEvent, FC } from "react";
-import { SelectProps } from "../../../type/main.type";
+import { FC } from "react"
+import { SelectProps } from "../../../type/main.type"
 
 export const SelectDropdown: FC<SelectProps> = ({ label, options, ...props }) => {
-
   return (
-    <select className="w-[105px] h-[30px] bg-white text-black border cursor-pointer border-primary-cheese font-thin mx-[6px] rounded-md px-[6px] text-[14px] "
-    {...props}>
+    <select
+      className="font-thin mx-[6px] h-[30px] w-[105px] cursor-pointer rounded-md border border-primary-cheese bg-white px-[6px] text-[14px] text-black "
+      {...props}
+    >
       <option>{label}</option>
       {options.map((option, index) => (
         <option key={index}>{option}</option>
       ))}
     </select>
-  );
-};
- 
+  )
+}

@@ -1,27 +1,27 @@
-import { InputTypes } from '../type/components.type';
-import { FieldValues } from 'react-hook-form';
+import { InputTypes } from "../type/components.type"
+import { FieldValues } from "react-hook-form"
 
 const ChapInput = <T extends FieldValues>({ id, label, error, access, register, ...props }: InputTypes<T>) => {
-    return (
-        <>
-            <div className="w-[558px] flex justify-between items-center">
-                <label className="text-[18px] mr-[14px] text-primary-cheese">{label}</label>
-                <input
-                    className="bg-primary-peanut shadow-innerPeanut w-[414px] h-[48px] rounded-[14px] focus:outline-none pl-3 text-primary-chocolate"
-                    {...props}
-                    {...register(id, { required: true })}
-                />
-            </div>
-            {error ? (
-                <p className="w-full ml-[144px] pl-[30px] py-[24px] text-error text-[14px]">{error}</p>
-            ) : (
-                <p className="w-full ml-[144px] pl-[30px] py-[24px]">&nbsp;</p>
-            )}
-        </>
-    );
-};
+  return (
+    <>
+      <div className="flex w-[558px] items-center justify-between">
+        <label className="mr-[14px] text-[18px] text-primary-cheese">{label}</label>
+        <input
+          className="h-[48px] w-[414px] rounded-[14px] bg-primary-peanut pl-3 text-primary-chocolate shadow-innerPeanut focus:outline-none"
+          {...props}
+          {...register(id, { required: true })}
+        />
+      </div>
+      {error ? (
+        <p className="ml-[144px] w-full py-[24px] pl-[30px] text-[14px] text-error">{error}</p>
+      ) : (
+        <p className="ml-[144px] w-full py-[24px] pl-[30px]">&nbsp;</p>
+      )}
+    </>
+  )
+}
 
-export default ChapInput;
+export default ChapInput
 
 /**
  * 사용 예시

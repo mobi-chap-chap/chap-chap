@@ -1,9 +1,9 @@
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import "./carousel.css";
-import { FC } from "react";
-import { ChapCarouselProps, Slide } from "../type/components.type";
+import Slider from "react-slick"
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
+import "./carousel.css"
+import { FC } from "react"
+import { ChapCarouselProps, Slide } from "../type/components.type"
 
 const ChapCarousel: FC<ChapCarouselProps> = ({ Slides }) => {
   // slick-slider settings
@@ -17,7 +17,7 @@ const ChapCarousel: FC<ChapCarouselProps> = ({ Slides }) => {
     autoplay: true,
     autoplaySpeed: 6000,
     pauseOnHover: true,
-  };
+  }
 
   return (
     <div>
@@ -29,7 +29,7 @@ const ChapCarousel: FC<ChapCarouselProps> = ({ Slides }) => {
         ))}
       </Slider>
     </div>
-  );
-};
+  )
+}
 
-export default ChapCarousel;
+export default ChapCarousel

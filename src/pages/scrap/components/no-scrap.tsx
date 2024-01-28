@@ -1,25 +1,18 @@
-import { FC } from "react";
-import ChapButton from "../../../components/button";
-import UseNavigation from "../../../hooks/use-navigation";
+import { FC } from "react"
+import ChapButton from "../../../components/button"
+import UseNavigation from "../../../hooks/use-navigation"
 
 const NoScrap: FC = () => {
-  const { goToMainPage } = UseNavigation();
+  const { goToMainPage } = UseNavigation()
 
   return (
-    <div className="flex  flex-col items-center justify-center mt-[250px]">
-      <p className=" text-primary-chocolate text-[18px] my-[30px]">
-        아직 스크랩된 게시물이 없습니다
-      </p>
-      <ChapButton
-        variant={"noResults"}
-        size={"square"}
-        type="button"
-        onClick={goToMainPage}
-      >
+    <div className="mt-[250px]  flex flex-col items-center justify-center">
+      <p className=" my-[30px] text-[18px] text-primary-chocolate">아직 스크랩된 게시물이 없습니다</p>
+      <ChapButton variant={"noResults"} size={"square"} type="button" onClick={goToMainPage}>
         레시피 구경하러 가기
       </ChapButton>
     </div>
-  );
-};
+  )
+}
 
-export default NoScrap;
+export default NoScrap

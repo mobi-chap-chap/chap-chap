@@ -1,5 +1,5 @@
 const SearchRecipes = () => {
-    return <div>search-recipes</div>;
-};
+  return <div>search-recipes</div>
+}
 
-export default SearchRecipes;
+export default SearchRecipes
