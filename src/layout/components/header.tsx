@@ -1,11 +1,9 @@
-import React, { FC, FormEvent, useState } from "react";
+import React, { FormEvent, useState } from "react";
 import { HeaderIcon } from "../../assets/icon";
 import MyDialog from "../../pages/my/dialog";
 import UseNavigation from "../../hooks/use-navigation";
 
-interface HeaderProps {}
-
-const Header: FC<HeaderProps> = () => {
+const Header = () => {
   const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false);
   const [showSearchBar, setShowSearchBar] = useState<boolean>(false);
 

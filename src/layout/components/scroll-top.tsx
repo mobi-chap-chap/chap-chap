@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { MainIcon } from "../../assets/icon";
 
 const ScrollTop = () => {
-  const [isShowButton, setIsShowButton] = useState(false);
+  const [, setIsShowButton] = useState(false);
 
   const onHandleScroll = () => {
     const { scrollY } = window;
@@ -21,10 +21,6 @@ const ScrollTop = () => {
   };
 
   if (window.location.pathname === "/") return null;
-
-  const dynamicClass = isShowButton
-    ? "fixed bottom-30 right-80 w-12 h-12 z-30 rounded-full flex place-content-center bg-primary-peanut"
-    : "hide";
 
   return (
     <div

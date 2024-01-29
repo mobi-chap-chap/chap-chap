@@ -1,4 +1,4 @@
-import { BaseSyntheticEvent, FC, FormEvent } from 'react';
+import { BaseSyntheticEvent, FC } from 'react';
 import ChapButton from '../../../../components/button';
 import ChapInput from '../../../../components/input';
 import FormHeader from './form-header';
@@ -26,12 +26,6 @@ const SignUpForm: FC<ShowProps> = ({ setShowSignUpForm }) => {
         },
     });
 
-    /**
-     * @todo ... confirm취소시 submit이 자동으로 되어서 취소 버튼을 눌러도 데이터가 넘어가는 문제
-     *
-     * @param data e.preventDefault default
-     * @returns
-     */
     const onSubmitSignUp: SubmitHandler<SignUpType> = async (data, e : BaseSyntheticEvent | undefined) => {
         e?.preventDefault();
         try {
@@ -41,7 +35,7 @@ const SignUpForm: FC<ShowProps> = ({ setShowSignUpForm }) => {
                 alert('CHAP CHAP의 회원이 되신걸 축하합니다!');
                 setShowSignUpForm(false);
             } else {
-                alert('실패하였습니다')
+                alert('취소하였습니다')
                 return false
             }
         } catch (error) {
