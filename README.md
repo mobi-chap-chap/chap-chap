@@ -401,7 +401,7 @@ style을 적용할 때 통일을 위해 적용할 컨벤션
 <br />
 
 <h1>🗂️ Folder Structure</h1>
-<img width="30%" src="https://github.com/mobi-chap-chap/chap-chap/assets/134191817/195797f7-bcbd-41cc-803c-a3e88f3e358d" />
+<img width="30%" src="https://github.com/mobi-chap-chap/chap-chap/assets/134191815/40970770-a611-4e2c-b01d-b5cd866b9d4b" />
 
 
 <br />
@@ -428,36 +428,32 @@ style을 적용할 때 통일을 위해 적용할 컨벤션
 
 https://github.com/mobi-chap-chap/chap-chap/assets/134191815/c497f6f5-aba8-4392-be3e-c0b70b5812c1
 
-https://github.com/mobi-chap-chap/chap-chap/assets/134191815/02d0a30e-8892-452c-83ae-086db91e0ed2
+https://github.com/mobi-chap-chap/chap-chap/assets/134191815/f355313e-ec1e-44b8-9fc6-4cae7a504278
 
 
 <br />
 
 <h4>main page</h4>
-
-<p>
-    <img src="" />
-</p>
-<p>
-    <img src="" />
-</p>
 <p>
     <img src="https://github.com/mobi-chap-chap/chap-chap/assets/134191817/6cc91a83-8d38-4fdf-9bce-b5c9e0c58762" />
 </p>
 
 <br />
 
+<h4>detail page</h4>
+
+https://github.com/mobi-chap-chap/chap-chap/assets/134191815/94e8c091-d6b1-4c25-9212-3c623a5277b8
+
+
+
 <h4>search page</h4>
 
-<p>
-    <img src="" />
-</p>
-<p>
-    <img src="" />
-</p>
-<p>
-    <img src="" />
-</p>
+https://github.com/mobi-chap-chap/chap-chap/assets/134191815/a5c005bd-0a0f-435b-aab0-d3f7ebbd8aaa
+
+
+https://github.com/mobi-chap-chap/chap-chap/assets/134191815/fc0efde5-1749-411b-830c-ed43355dacc2
+
+
 
 <br />
 
@@ -526,10 +522,10 @@ ScrapPage에도 적용할 수 있는 컴포넌트로 변경할 예정입니다!
 Kimi's Memoirs
 
 ```
-이번에 얻어가고 싶었던 것들의 얻어가게 된 것과 아쉬운 점들을 남겨보도록 하겠습니다.
+이번에 프로젝트를 하면서 얻어가게 된 것과 아쉬운 점들을 남겨보도록 하겠습니다.
 
 얻어가게 된 것
-zod:  지금까지 로젝트에서는 회원가입 로그인 폼을 할 때, React-hook-form  + yarrn을 썼었는데, zod가 타입스크립트에서 호환성이 좋다고 하여 쓰게 되었는데, 쓰면서 장점을 많이 알게 되었고 라이브러리에 대한 거부감을 하나씩 덜고 있는 것 같습니다.
+zod: 지금까지 프로젝트에서는 회원가입 로그인 폼을 할 때, React-hook-form  + yarn을 썼었는데, zod가 타입스크립트에서 호환성이 좋다고 하여 쓰게 되었는데, 쓰면서 장점을 많이 알게 되었고 라이브러리에 대한 거부감을 하나씩 덜고 있는 것 같습니다.
 협업경험: 리니어, 깃허브 이슈, 데일리스크럼 등 리뷰문화를 제대로 경험해보면서 팀원들과의 소통이 중요하다는 것을 깨달았고, 이렇게 하면 당시에 생산성은 좀 저하되지만 프로젝트 규모가 커질수록 유지보수하는 데에 좋을 거 같다는 생각이 들었습니다.
 끝까지 해본 경험: 지금까지는 하다가 안되면 포기하고 넘어갔는데 이번엔 끝까지 잡아보는 노력을 해보았습니다.
 
