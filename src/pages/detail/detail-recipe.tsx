@@ -9,7 +9,7 @@ const DetailRecipe: FC = () => {
 
   // navigate to 404 page
   if (!RCP_NM) return <div>잘못된 접근입니다.</div>
-
+ 
   const { recipeDetail, isSuccess } = useGetDetailRecipe({
     startIdx: 1,
     endIdx: 12,
