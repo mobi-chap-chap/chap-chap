@@ -6,7 +6,7 @@ import { useGetSearchInfinity } from '../../hooks/use-recipe-query';
 import SearchTitle from './components/search-title';
 import NoResult from './components/no-result';
 import Lottie from 'react-lottie';
-import animationData from '../../animations/Animation - 1706605032753.json'
+import animationData from '../../animations/Animation - 1706618442042 (1).json'
 
 const SearchPage = () => {
   const { RCP_NM } = useParams<{ RCP_NM?: string }>();
@@ -14,16 +14,6 @@ const SearchPage = () => {
   if (!RCP_NM) return
 
   const { recipeData, fetchNextPage, isSuccess } = useGetSearchInfinity(RCP_NM);
-
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice',
-    },
-  };
-
 
   const RecipeListContent = recipeData?.pages
     .map((list) => list.COOKRCP01.row)
@@ -43,16 +33,23 @@ const SearchPage = () => {
     };
   });
 
-  if (!isSuccess || !recipeData) return <Lottie options={defaultOptions} height={400} width={400} />
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  };
+
+  if (!isSuccess || !recipeData) return <Lottie options={defaultOptions} height={260} width={260} style={{marginBlock : '346px'}}/>
   
 
 
   return (
-    RecipeListContent && 
-    // h-[990px] 
     <div className="w-screen overflow-x-hidden flex flex-col">
-      {RecipeListContent.filter((recipe) => recipe.RCP_NM.includes(RCP_NM)).length === 0 ? (<NoResult RCP_NM={RCP_NM}/>) : (<SearchTitle RCP_NM={RCP_NM}/>) }
-      <div className=" text-black w-full  px-[450px] py-[50px] ml-[13px] relative">
+      <div className=" text-black w-full  px-[450px]  ml-[13px] relative py-[202px]">
+      {RecipeListContent?.filter((recipe) => recipe.RCP_NM.includes(RCP_NM)).length === 0 ? (<NoResult RCP_NM={RCP_NM}/>) : (<SearchTitle RCP_NM={RCP_NM}/>) }
         <Grid
           container
           spacing={{ xs: 1, md: 2, lg: 3 }}

@@ -15,6 +15,7 @@ export function useGetRecipeInfinity() {
     fetchNextPage,
     hasNextPage,
     isFetching,
+    isSuccess,
   } = useInfiniteQuery({
     queryKey: [QUERY_KEY.MORE_RECIPE_LIST],
     queryFn: ({ pageParam = { startIdx: 1, endIdx: 12 } }) =>
@@ -29,10 +30,10 @@ export function useGetRecipeInfinity() {
       if (startIdx > lastPage.COOKRCP01.total_count) {
         return null;
       }
-      return { startIdx, endIdx };
+      return { startIdx, endIdx};
     },
   });
-  return { recipeData, fetchNextPage, hasNextPage, isFetching };
+  return { recipeData, fetchNextPage, hasNextPage, isFetching, isSuccess };
 }
 
 /**

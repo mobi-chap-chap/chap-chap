@@ -6,8 +6,8 @@ const NoResult: FC<{ RCP_NM?: string }> = ({ RCP_NM }) => {
     const { goToMainPage } = UseNavigation();
 
     return (
-        <div className="flex flex-col items-center py-[280px] mb-[100px]">
-            <p className=" text-primary-chocolate text-[18px] pb-[10px]">{RCP_NM}의 검색결과가 없습니다</p>
+        <div className="flex flex-col items-center py-[232px]">
+            <p className=" text-primary-chocolate text-[18px] pb-[10px]"><span className='text-primary-cheese'>{RCP_NM}</span> 의 검색결과가 없습니다</p>
             <ChapButton variant={'noResults'} size={'square'} type="button" onClick={goToMainPage}>
                 다른 레시피 구경하러가기
             </ChapButton>

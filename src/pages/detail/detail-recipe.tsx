@@ -3,7 +3,7 @@ import RecipeInfo from "./components/recipe-info";
 import Steps from "./components/recipe-steps";
 import { useGetDetailRecipe } from "../../hooks/use-recipe-query";
 import Lottie from "react-lottie";
-import animationData from '../../animations/Animation - 1706605032753.json'
+import animationData from '../../animations/Animation - 1706618442042 (1).json'
 
 const DetailRecipe = () => {
   const { RCP_NM } = useParams<{ RCP_NM?: string }>();
@@ -27,7 +27,7 @@ const DetailRecipe = () => {
   };
 
   // loading page
-  if (!isSuccess || !recipeDetail) return <Lottie options={defaultOptions} height={400} width={400} />
+  if (!isSuccess || !recipeDetail) return <Lottie options={defaultOptions} height={260} width={260} style={{marginBlock : '346px'}}/>
 
   const detailInfo = recipeDetail.COOKRCP01.row.filter(
     (recipe) => recipe.RCP_NM === RCP_NM
@@ -36,7 +36,7 @@ const DetailRecipe = () => {
   
 
   return (
-    <div className="w-[1024px] h-[100%]  mx-[448px] top-[160px] relative">
+    <div className="w-[1024px] h-[100%] mx-[448px] top-[160px] relative pb-[100px]">
       <div className="h-[515px]  flex flex-row">
         <div className="w-[484px] h-[484px] bg-primary-peanut overflow-hidden flex place-content-center place-items-center">
           <img
