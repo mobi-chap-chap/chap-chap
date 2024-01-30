@@ -48,12 +48,12 @@ export function useGetDetailRecipe({
   endIdx: number;
   RCP_NM: string;
 }) {
-  const { data: recipeDetail, isSuccess } = useQuery({
+  const { data: recipeDetail, isLoading } = useQuery({
     queryKey: [QUERY_KEY.DETAIL_RECIPE_DATA],
     queryFn: () => getDetailRecipe({ ...recipeKey }),
   });
 
-  return { recipeDetail, isSuccess };
+  return { recipeDetail, isLoading };
 }
 
 /**

@@ -11,7 +11,7 @@ const DetailRecipe = () => {
   // navigate to 404 page
   if (!RCP_NM) return <div>잘못된 접근입니다.</div>;
 
-  const { recipeDetail, isSuccess } = useGetDetailRecipe({
+  const { recipeDetail, isLoading } = useGetDetailRecipe({
     startIdx: 1,
     endIdx: 12,
     RCP_NM: RCP_NM,
@@ -27,12 +27,12 @@ const DetailRecipe = () => {
   };
 
   // loading page
-  if (!isSuccess || !recipeDetail) return <Lottie options={defaultOptions} height={260} width={260} style={{marginBlock : '346px'}}/>
-
-  const detailInfo = recipeDetail.COOKRCP01.row.filter(
+  // assertion -> 원래쓰면안됨..
+  const detailInfo = recipeDetail!.COOKRCP01.row.filter(
     (recipe) => recipe.RCP_NM === RCP_NM
-  )[0];
-
+    )[0];
+    
+    if (!isLoading) return <Lottie options={defaultOptions} height={260} width={260} style={{marginBlock : '346px'}} />
   
 
   return (
@@ -41,7 +41,7 @@ const DetailRecipe = () => {
         <div className="w-[484px] h-[484px] bg-primary-peanut overflow-hidden flex place-content-center place-items-center">
           <img
             className="w-[484px] h-[484px]"
-            src={detailInfo.ATT_FILE_NO_MK}
+            src={detailInfo?.ATT_FILE_NO_MK}
           />
         </div>
         <RecipeInfo {...detailInfo} />
