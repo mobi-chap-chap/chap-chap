@@ -7,18 +7,12 @@ import { Info } from "../type/recipe.type";
  * @returns  res.data
  */
 
-export const getRecipe = async ({
-  ...recipeData
-}: {
-  startIdx: number;
-  endIdx: number;
-}) => {
-  const res = await axiosRecipeInstance.get<Info>(
-    END_POINT.RECIPE({ ...recipeData })
-  );
+export const getRecipe = async ({ ...recipeData }: { startIdx: number; endIdx: number; RCP_PAT2?: string }) => {
+  const res = await axiosRecipeInstance.get<Info>(END_POINT.RECIPE({ ...recipeData }))
 
-  return res.data;
-};
+  return res.data
+}
+
 
 export const getDetailRecipe = async ({
   ...recipeData

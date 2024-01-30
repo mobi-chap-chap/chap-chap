@@ -1,6 +1,7 @@
 import { useInfiniteQuery, useQuery } from "react-query";
 import { getDetailRecipe, getRecipe, getSearchRecipe } from "../apis/recipe.api";
 import { QUERY_KEY } from "../consts/query-key";
+import { useSearchParams } from "react-router-dom";
 
 /**
  * @function useGetRecipeInfinity 는 recipe data를 가져와 무한 스크롤을 구현해주는 hook 함수
@@ -10,6 +11,8 @@ import { QUERY_KEY } from "../consts/query-key";
  **/
 
 export function useGetRecipeInfinity() {
+  const [searchParams] = useSearchParams()
+  const type = searchParams.get("type") || ""
   const {
     data: recipeData,
     fetchNextPage,
@@ -17,8 +20,10 @@ export function useGetRecipeInfinity() {
     isFetching,
   } = useInfiniteQuery({
     queryKey: [QUERY_KEY.MORE_RECIPE_LIST],
+        // queryKey: [QUERY_KEY.MORE_RECIPE_LIST, { RCP_PAT2: searchParams.get(type) }],
     queryFn: ({ pageParam = { startIdx: 1, endIdx: 12 } }) =>
-      getRecipe(pageParam),
+      // getRecipe(pageParam),
+      getRecipe({ ...pageParam, RCP_PAT2: searchParams.get(type) }),
     getNextPageParam: (lastPage, totalPages) => {
       const startIdx = totalPages.length * 12 + 1;
       let endIdx = (totalPages.length + 1) * 12;
