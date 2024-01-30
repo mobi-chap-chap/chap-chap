@@ -2,6 +2,8 @@ import { useParams } from "react-router-dom";
 import RecipeInfo from "./components/recipe-info";
 import Steps from "./components/recipe-steps";
 import { useGetDetailRecipe } from "../../hooks/use-recipe-query";
+import Lottie from "react-lottie";
+import animationData from '../../animations/Animation - 1706605032753.json'
 
 const DetailRecipe = () => {
   const { RCP_NM } = useParams<{ RCP_NM?: string }>();
@@ -15,12 +17,23 @@ const DetailRecipe = () => {
     RCP_NM: RCP_NM,
   });
 
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  };
+
   // loading page
-  if (!isSuccess || !recipeDetail) return <div>로딩 중</div>;
+  if (!isSuccess || !recipeDetail) return <Lottie options={defaultOptions} height={400} width={400} />
 
   const detailInfo = recipeDetail.COOKRCP01.row.filter(
     (recipe) => recipe.RCP_NM === RCP_NM
   )[0];
+
+  
 
   return (
     <div className="w-[1024px] h-[100%]  mx-[448px] top-[160px] relative">

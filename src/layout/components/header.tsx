@@ -21,6 +21,7 @@ const Header = () => {
     e.preventDefault();
     const inputValue = e.currentTarget.search.value;
     if (!inputValue) {
+      alert('검색어를 입력하세요')
       return goToMainPage();
     }
     goToSearchPage(inputValue);

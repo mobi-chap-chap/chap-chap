@@ -62,6 +62,7 @@ export function useGetSearchInfinity(searchValue:string) {
     fetchNextPage,
     hasNextPage,
     isFetching,
+    isSuccess
   } = useInfiniteQuery({
     queryKey: [QUERY_KEY.MORE_RECIPE_LIST, searchValue],
     queryFn: ({ pageParam = { startIdx: 1, endIdx: 12 }}) =>
@@ -79,5 +80,5 @@ export function useGetSearchInfinity(searchValue:string) {
       return { startIdx, endIdx, searchValue };
     },
   });
-  return { recipeData, fetchNextPage, hasNextPage, isFetching };
+  return { recipeData, fetchNextPage, hasNextPage, isFetching, isSuccess };
 }
