@@ -15,6 +15,7 @@ export function useGetRecipeInfinity() {
     fetchNextPage,
     hasNextPage,
     isFetching,
+    isSuccess,
   } = useInfiniteQuery({
     queryKey: [QUERY_KEY.MORE_RECIPE_LIST],
     queryFn: ({ pageParam = { startIdx: 1, endIdx: 12 } }) =>
@@ -29,10 +30,10 @@ export function useGetRecipeInfinity() {
       if (startIdx > lastPage.COOKRCP01.total_count) {
         return null;
       }
-      return { startIdx, endIdx };
+      return { startIdx, endIdx};
     },
   });
-  return { recipeData, fetchNextPage, hasNextPage, isFetching };
+  return { recipeData, fetchNextPage, hasNextPage, isFetching, isSuccess };
 }
 
 /**
@@ -47,13 +48,22 @@ export function useGetDetailRecipe({
   endIdx: number;
   RCP_NM: string;
 }) {
-  const { data: recipeDetail, isSuccess } = useQuery({
+  const { data: recipeDetail, isLoading } = useQuery({
     queryKey: [QUERY_KEY.DETAIL_RECIPE_DATA],
     queryFn: () => getDetailRecipe({ ...recipeKey }),
   });
 
-  return { recipeDetail, isSuccess };
+  return { recipeDetail, isLoading };
 }
+
+/**
+ * @function useGetSearchInfinity 는 recipe data를 가져와 무한 스크롤을 구현해주며 검색어를 함께 전달하는 hook함수
+ * @param searchValue : 검색어. 검색어를 필터링하기 위해서 사용됨
+ * @param queryKey : 데이터를 캐싱하고 무한 스크롤을 통해 새로운 페이지를 불러올 때 사용
+ * @param {recipeData} : 매개변수로 받은 데이터들을 스프레드 형태로 보관, api 주소에 저장
+ * @param {fetchNextPage} : useInfiniteQuery의 options 중 하나
+ * @return { recipeData, fetchNextPage, hasNextPage, isFetching, isSuccess }
+ **/
 
 
 export function useGetSearchInfinity(searchValue:string) {
@@ -62,6 +72,7 @@ export function useGetSearchInfinity(searchValue:string) {
     fetchNextPage,
     hasNextPage,
     isFetching,
+    isSuccess
   } = useInfiniteQuery({
     queryKey: [QUERY_KEY.MORE_RECIPE_LIST, searchValue],
     queryFn: ({ pageParam = { startIdx: 1, endIdx: 12 }}) =>
@@ -79,5 +90,5 @@ export function useGetSearchInfinity(searchValue:string) {
       return { startIdx, endIdx, searchValue };
     },
   });
-  return { recipeData, fetchNextPage, hasNextPage, isFetching };
+  return { recipeData, fetchNextPage, hasNextPage, isFetching, isSuccess };
 }

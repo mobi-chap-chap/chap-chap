@@ -1,11 +1,9 @@
-import React, { FC, FormEvent, useState } from "react";
+import React, { FormEvent, useState } from "react";
 import { HeaderIcon } from "../../assets/icon";
 import MyDialog from "../../pages/my/dialog";
 import UseNavigation from "../../hooks/use-navigation";
 
-interface HeaderProps {}
-
-const Header: FC<HeaderProps> = () => {
+const Header = () => {
   const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false);
   const [showSearchBar, setShowSearchBar] = useState<boolean>(false);
 
@@ -23,6 +21,7 @@ const Header: FC<HeaderProps> = () => {
     e.preventDefault();
     const inputValue = e.currentTarget.search.value;
     if (!inputValue) {
+      alert('검색어를 입력하세요')
       return goToMainPage();
     }
     goToSearchPage(inputValue);
