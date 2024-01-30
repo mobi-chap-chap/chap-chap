@@ -9,13 +9,13 @@ const DetailRecipe = () => {
   const { RCP_NM } = useParams<{ RCP_NM?: string }>();
 
   // navigate to 404 page
-  if (!RCP_NM) return <div>잘못된 접근입니다.</div>;
+  if (!RCP_NM) return <div>잘못된 접근입니다.</div>
 
   const { recipeDetail, isLoading } = useGetDetailRecipe({
     startIdx: 1,
     endIdx: 12,
     RCP_NM: RCP_NM,
-  });
+  })
 
   const defaultOptions = {
     loop: true,
@@ -46,9 +46,9 @@ const DetailRecipe = () => {
         </div>
         <RecipeInfo {...detailInfo} />
       </div>
-      <div className="w-[1024px] h-[1px]  bg-primary-cheese" />
+      <div className="h-[1px] w-[1024px]  bg-primary-cheese" />
       <Steps {...detailInfo} />
     </div>
-  );
-};
-export default DetailRecipe;
+  )
+}
+export default DetailRecipe
