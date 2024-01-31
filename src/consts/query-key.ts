@@ -4,3 +4,4 @@ export const QUERY_KEY = {
   DETAIL_RECIPE_DATA: "detailRecipeData",
   SEARCH_RECIPE_LIST: "searchRecipeList",
 };
+

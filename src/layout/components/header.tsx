@@ -77,7 +77,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-      {isDialogOpen && <MyDialog isDialogOpen={isDialogOpen} />}
+      {isDialogOpen && <MyDialog isDialogOpen={isDialogOpen} setIsDialogOpen={setIsDialogOpen} />}
     </>
   );
 };

@@ -4,6 +4,7 @@ import { User } from "../type/user.type";
 const PATH = "/user/update";
 
 export const UserApi = {
+  // image : File ? FormData?
   async PatchProfileImg(image: File) {
     const res = await axiosInstance.patch<User>(PATH + "/profile", {
       image,
