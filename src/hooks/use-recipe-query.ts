@@ -16,6 +16,7 @@ export function useGetRecipeInfinity() {
     hasNextPage,
     isFetching,
     isSuccess,
+    refetch,
   } = useInfiniteQuery({
     queryKey: [QUERY_KEY.MORE_RECIPE_LIST],
     queryFn: ({ pageParam = { startIdx: 1, endIdx: 12 } }) =>
@@ -33,7 +34,7 @@ export function useGetRecipeInfinity() {
       return { startIdx, endIdx};
     },
   });
-  return { recipeData, fetchNextPage, hasNextPage, isFetching, isSuccess };
+  return { recipeData, fetchNextPage, hasNextPage, isFetching, isSuccess, refetch };
 }
 
 /**
@@ -48,12 +49,12 @@ export function useGetDetailRecipe({
   endIdx: number;
   RCP_NM: string;
 }) {
-  const { data: recipeDetail, isLoading } = useQuery({
+  const { data: recipeDetail, isSuccess } = useQuery({
     queryKey: [QUERY_KEY.DETAIL_RECIPE_DATA],
     queryFn: () => getDetailRecipe({ ...recipeKey }),
   });
 
-  return { recipeDetail, isLoading };
+  return { recipeDetail, isSuccess };
 }
 
 /**
@@ -72,7 +73,8 @@ export function useGetSearchInfinity(searchValue:string) {
     fetchNextPage,
     hasNextPage,
     isFetching,
-    isSuccess
+    isSuccess,
+    refetch
   } = useInfiniteQuery({
     queryKey: [QUERY_KEY.MORE_RECIPE_LIST, searchValue],
     queryFn: ({ pageParam = { startIdx: 1, endIdx: 12 }}) =>
@@ -90,8 +92,9 @@ export function useGetSearchInfinity(searchValue:string) {
       return { startIdx, endIdx, searchValue };
     },
   });
-  return { recipeData, fetchNextPage, hasNextPage, isFetching, isSuccess };
+  return { recipeData, fetchNextPage, hasNextPage, isFetching, isSuccess, refetch };
 }
+
 export function useGetScrapInfinity(id: number) {
   const {
     data: recipeData,
@@ -102,7 +105,7 @@ export function useGetScrapInfinity(id: number) {
   } = useInfiniteQuery({
     queryKey: [QUERY_KEY.MORE_RECIPE_LIST, id],
     queryFn: ({ pageParam = { startIdx: 1, endIdx: 12 }}) =>
-    PostScrapRecie(), 
+    GetScrapRecipe(pageParam),
     getNextPageParam: (lastPage, totalPages) => {
       const startIdx = totalPages.length * 12 + 1;
       let endIdx = (totalPages.length + 1) * 12;

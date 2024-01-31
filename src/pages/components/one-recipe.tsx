@@ -2,21 +2,34 @@ import { FC, useState } from "react";
 import UseNavigation from "../../hooks/use-navigation";
 import { skipTitleView } from "../../utils/overflow-helper";
 import { OneRecipeIcon } from "../../assets/icon";
-import { OneRecipeProps } from "./one-recipe-type";
+import { OneRecipeProps } from "../../type/recipe.type";
+import { useMutation } from "react-query";
+import { ScrapApi } from "../../apis/user.api";
 
 const OneRecipe: FC<OneRecipeProps> = ({
+  recipeId,
   recipeImg,
   recipeType,
   recipeKal,
   recipeTitle,
+  isScrapped,
+  refetch,
 }) => {
-  const [isLikedScrap, setIsLikedScrap] = useState(false);
+  const [, setIsScrapped] = useState<boolean>(false);
 
-  //스크랩 저장
-  const onScrapToggle = () => {
-    setIsLikedScrap((prev) => !prev);
-    if (isLikedScrap === false) return alert("스크랩이 저장되었습니다 :)");
-    if (isLikedScrap === true) return alert("스크랩이 취소되었습니다 :)");
+  const { mutateAsync: onScrapMutation } = useMutation((recipeId:string) =>
+    ScrapApi.PostScrapRecipe(recipeId)
+  );
+
+  const onScrapToggle = async () => {
+    if (!isScrapped) {
+      await onScrapMutation(recipeId)
+      setIsScrapped(true);
+    } else if (isScrapped) {
+      await onScrapMutation(recipeId);
+      setIsScrapped(false);
+    }
+    refetch();
   };
 
   const { goToDetailPage } = UseNavigation();
@@ -24,7 +37,6 @@ const OneRecipe: FC<OneRecipeProps> = ({
   const urlParams = new URLSearchParams(window.location.href);
   urlParams.append("RCP_NM", recipeTitle);
 
-  // navigate : detail-recipe
   const onClickToDetailPage = (recipeTitle: string) => {
     goToDetailPage(recipeTitle);
     window.scrollTo({ top: 0 });
@@ -43,23 +55,20 @@ const OneRecipe: FC<OneRecipeProps> = ({
           className="w-[239px] h-[240px] rounded-t-lg "
         />
       </div>
-
       <div className="flex  flex-col  my-[10px]">
         <div className="flex justify-between items-center px-[13px] pl-[15px] ">
           <div className="flex text-[14px] ">
             <div>{recipeType}</div>
             <div className="ml-[27px]">{recipeKal}kal</div>
           </div>
-
-          <div>
+          <div onClick={onScrapToggle}>
             <img
               className="w-[30px]"
               src={
-                isLikedScrap
+                isScrapped
                   ? OneRecipeIcon.bookmarkFull
                   : OneRecipeIcon.bookmarkLine
               }
-              onClick={onScrapToggle}
             />
           </div>
         </div>
@@ -71,4 +80,5 @@ const OneRecipe: FC<OneRecipeProps> = ({
     </div>
   );
 };
+
 export default OneRecipe;

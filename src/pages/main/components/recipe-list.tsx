@@ -6,7 +6,7 @@ import Lottie from "react-lottie";
 import animationData from '../../../animations/Animation - 1706618442042 (1).json'
 
 const RecipeList: FC = () => {
-  const { recipeData, fetchNextPage, isSuccess } = useGetRecipeInfinity();
+  const { recipeData, fetchNextPage, isSuccess, refetch } = useGetRecipeInfinity();
 
   const RecipeListContent = recipeData?.pages
     .map((list) => list.COOKRCP01.row)
@@ -55,12 +55,16 @@ const RecipeList: FC = () => {
                 style={{ paddingBottom: 40 }}
                 key={index + 1}
               >
+                {/* isScrapped: boolean값이 필요 */}
                 <OneRecipe
+                  recipeId={recipe.RCP_SEQ}
                   recipeName={recipe.RCP_NM}
                   recipeImg={recipe.ATT_FILE_NO_MAIN}
                   recipeType={recipe.RCP_PAT2}
                   recipeKal={recipe.INFO_ENG}
                   recipeTitle={recipe.RCP_NM}
+                  isScrapped={recipe.isScrapped}
+                  refetch={refetch}
                 />
               </Grid>
             ))}

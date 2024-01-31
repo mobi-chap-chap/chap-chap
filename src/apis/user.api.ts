@@ -6,22 +6,31 @@ const USER = "/user/update";
 const SCRAP = '/data';
 
 export const UserApi = {
-  // image : File ? FormData?
-  async PatchProfileImg(image: File) {
+  async PatchProfileImg(image: FormData) {
     const res = await axiosInstance.patch<User>(USER + "/profile", {
       image,
     });
     return res.data;
   },
-
-  //  <method:POST> https://topdragon.co.kr/mobithon/data/recipe?pair=2&auth=true&apiKey=mobi2nd1234
+}
+//  <method:POST> https://topdragon.co.kr/mobithon/data/recipe?pair=2&auth=true&apiKey=mobi2nd1234
 //   BODY : {
 //     imageURL: string, 
 //     RCP_NM: string,
 //     isScrapped : boolean,
 //  } 
-  async PostScrapRecipe({...data}){
-    const res = await axiosInstance.post<User>(SCRAP + "/recipe", data, {
+
+/**
+ * const postLikedProduct = async (id) => {
+    const res = await axiosInstance().post(PATH + `/like`, {
+        prod_idx: id,
+    });
+    return res.data;
+};
+ */
+export const ScrapApi = {
+  async PostScrapRecipe(id: string){
+    const res = await axiosInstance.post<User>(SCRAP + "/recipe", id, {
       params : {
         auth: true,
       }

@@ -10,3 +10,13 @@ export type OverlayProps = {
 
 export type SignUpField = "nickname" | "userId" | "password" | "checkPw"
 export type SignInField = "userId" | "password"
+
+
+export type SignInDataType = {
+  userId: string;
+  password: string;
+  token: string;
+  info: {
+    profileUrl: string;
+  };
+}

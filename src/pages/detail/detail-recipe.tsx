@@ -11,7 +11,7 @@ const DetailRecipe = () => {
   // navigate to 404 page
   if (!RCP_NM) return <div>잘못된 접근입니다.</div>
 
-  const { recipeDetail, isLoading } = useGetDetailRecipe({
+  const { recipeDetail, isSuccess } = useGetDetailRecipe({
     startIdx: 1,
     endIdx: 12,
     RCP_NM: RCP_NM,
@@ -32,7 +32,7 @@ const DetailRecipe = () => {
     (recipe) => recipe.RCP_NM === RCP_NM
     )[0];
     
-    if (!isLoading) return <Lottie options={defaultOptions} height={260} width={260} style={{marginBlock : '346px'}} />
+    if (!isSuccess) return <Lottie options={defaultOptions} height={260} width={260} style={{marginBlock : '346px'}} />
   
 
   return (

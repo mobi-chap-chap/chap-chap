@@ -14,6 +14,19 @@ export type Recipe = {
   RCP_PAT2?: string;
 };
 
+// MMM -> OneProduct isLiked={isLiked}
+// OneRecipe의 props 타입 정의
+export type OneRecipeProps = {
+  recipeId : string;
+  recipeName: string;
+  recipeImg: string;
+  recipeType: string;
+  recipeKal: string;
+  recipeTitle: string;
+  isScrapped: boolean;
+  refetch: () => void; 
+};
+
 // Recipe return type
 export type Info = {
   COOKRCP01: {
@@ -27,6 +40,7 @@ export type Info = {
 }
 
 export type RecipeDetail = {
+  isScrapped: boolean;
   ATT_FILE_NO_MAIN: string;
   ATT_FILE_NO_MK: string;
   HASH_TAG: string;
