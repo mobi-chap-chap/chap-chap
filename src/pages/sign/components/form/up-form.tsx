@@ -1,4 +1,4 @@
-import { BaseSyntheticEvent, FC, FormEvent } from 'react';
+import { BaseSyntheticEvent, FC } from 'react';
 import ChapButton from '../../../../components/button';
 import ChapInput from '../../../../components/input';
 import FormHeader from './form-header';

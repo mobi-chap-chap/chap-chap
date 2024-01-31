@@ -1,4 +1,4 @@
-import { ChangeEvent, FC, FormEvent, useEffect, useRef, useState } from "react"
+import { ChangeEvent, FC, FormEvent, useRef, useState } from "react"
 import { MyDialogIcon } from "../../assets/icon"
 import { MyDialogProps } from "../../type/user.type"
 import { AuthApi } from "../../apis/auth.api"
@@ -8,7 +8,7 @@ import { UserApi } from "../../apis/user.api"
 
 const MyDialog: FC<MyDialogProps> = ({ isDialogOpen, setIsDialogOpen }) => {
   const fileInputRef = useRef<HTMLInputElement | null>(null)
-  const [selectedFile, setSelectedFile] = useState<File | null>(null)
+  const [, setSelectedFile] = useState<File | null>(null)
   const [profileImage, setProfileImage] = useState<string | null>(null)
 
 

@@ -7,7 +7,6 @@ const TokenRepository: TokenRepository = {
   },
 
   getToken() {
-    const token = localStorage.getItem(TOKEN_KEY)
     return localStorage.getItem(TOKEN_KEY)
   },
 
