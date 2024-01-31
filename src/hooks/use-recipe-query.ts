@@ -15,7 +15,7 @@ export function useGetRecipeInfinity() {
     fetchNextPage,
     hasNextPage,
     isFetching,
-    isSuccess,
+    isLoading
   } = useInfiniteQuery({
     queryKey: [QUERY_KEY.MORE_RECIPE_LIST],
     queryFn: ({ pageParam = { startIdx: 1, endIdx: 12 } }) =>
@@ -30,10 +30,10 @@ export function useGetRecipeInfinity() {
       if (startIdx > lastPage.COOKRCP01.total_count) {
         return null;
       }
-      return { startIdx, endIdx};
+      return { startIdx, endIdx };
     },
   });
-  return { recipeData, fetchNextPage, hasNextPage, isFetching, isSuccess };
+  return { recipeData, fetchNextPage, hasNextPage, isFetching, isLoading };
 }
 
 /**
@@ -48,12 +48,12 @@ export function useGetDetailRecipe({
   endIdx: number;
   RCP_NM: string;
 }) {
-  const { data: recipeDetail, isLoading } = useQuery({
+  const { data: recipeDetail, isFetching } = useQuery({
     queryKey: [QUERY_KEY.DETAIL_RECIPE_DATA],
     queryFn: () => getDetailRecipe({ ...recipeKey }),
   });
 
-  return { recipeDetail, isLoading };
+  return { recipeDetail, isFetching };
 }
 
 /**
@@ -72,7 +72,7 @@ export function useGetSearchInfinity(searchValue:string) {
     fetchNextPage,
     hasNextPage,
     isFetching,
-    isSuccess
+    isLoading
   } = useInfiniteQuery({
     queryKey: [QUERY_KEY.MORE_RECIPE_LIST, searchValue],
     queryFn: ({ pageParam = { startIdx: 1, endIdx: 12 }}) =>
@@ -90,5 +90,5 @@ export function useGetSearchInfinity(searchValue:string) {
       return { startIdx, endIdx, searchValue };
     },
   });
-  return { recipeData, fetchNextPage, hasNextPage, isFetching, isSuccess };
+  return { recipeData, fetchNextPage, hasNextPage, isFetching, isLoading};
 }

@@ -6,7 +6,7 @@ import Lottie from "react-lottie";
 import animationData from '../../../animations/Animation - 1706618442042 (1).json'
 
 const RecipeList: FC = () => {
-  const { recipeData, fetchNextPage, isSuccess } = useGetRecipeInfinity();
+  const { recipeData, fetchNextPage, isLoading } = useGetRecipeInfinity();
 
   const RecipeListContent = recipeData?.pages
     .map((list) => list.COOKRCP01.row)
@@ -36,7 +36,7 @@ const RecipeList: FC = () => {
     }
   };
 
-  if (!isSuccess || !recipeData) return <Lottie options={defaultOptions} height={260} width={260} style={{marginBlock : '70px'}} />
+  if (!isLoading) return <Lottie options={defaultOptions} height={260} width={260} style={{marginBlock : '70px'}} />
 
   return (
     <>

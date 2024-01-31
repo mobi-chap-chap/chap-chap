@@ -13,7 +13,7 @@ const SearchPage = () => {
 
   if (!RCP_NM) return
 
-  const { recipeData, fetchNextPage, isSuccess } = useGetSearchInfinity(RCP_NM);
+  const { recipeData, fetchNextPage, isFetching } = useGetSearchInfinity(RCP_NM);
 
   const RecipeListContent = recipeData?.pages
     .map((list) => list.COOKRCP01.row)
@@ -42,7 +42,7 @@ const SearchPage = () => {
     },
   };
 
-  if (!isSuccess || !recipeData) return <Lottie options={defaultOptions} height={260} width={260} style={{marginBlock : '346px'}}/>
+  if (!isFetching ) return <Lottie options={defaultOptions} height={260} width={260} style={{marginBlock : '346px'}}/>
   
 
 
