@@ -1,0 +1,85 @@
+
+
+
+[post-scrap]    
+[1. 어디에다 보낼 것인가]
+POST https://topdragon.co.kr/mobithon/data/recipe/scrap?auth=true&...
+ 
+    kimi: 좋습니다 auth boolean userId 불리언 갑싱있으니 활용하면 좋을 거 같아요 post 
+          // get부분에서는 dataId로 포스트한 부분 데이터 가져오면 되지 않을까욤?
+          1. post 코드로 칠수 있게 URL을 먼저 짜고 위에처럼 아래 BODY{}에 보내야하는 데이터 쓰고 (-(00)-)
+          <method:POST> https://topdragon.co.kr/mobithon/data/recipe?pair=2&auth=true&apiKey=mobi2nd1234 ✅
+          선더로 되는지 넣어볼게요 리프레시토큰이 존재하지않는다며.. 403 에러 맞고왔어욤.. 로그인부터 하셔야죠! 아넵.
+          
+    Ann: 
+    Amy: auth=true 이 부분이여?  userId 불리언 갑싱있으니 이부분여
+          그게 저거에요! 네브ㅡ 죄송해여ㅡㅡㄷ맞
+
+          
+
+          2. <method:GET> 
+
+
+레시피 중 나한테 스크랩된
+
+-parentId: string
+특정 부모요소의 자식을 가지고 올 것인지 구분하는 parameter입니다. 
+해당 옵션에 부모의 값을 입력하면 해당 데이터에 속해있는 데이터만 가지고 올 수 있습니다. 
+특정 게시글의 댓글 등을 가지고 올 때 사용할 수 있어요!
+
+특정게시글의 댓글 이런 건데
+저희는 레시피 중 스크랩된.. 이라서 
+
+1. auth 사용자 소유의 데이터를 가져올 수 있으니 맞다! 
+
+data의 dataId -> scrapId:string
+
+parentId ... 각 data 식별자
+
+/data/scrap?pair=1&auth=true 
+&parentId=8c81c030-6eb8-4f91-a06a-b42b55143922&apiKey=mobi2nd1234
+
+parentID => 
+   
+
+
+
+
+[2. 어떤 데이터를 보낼 것인가]
+필요한 값을 찾아야해요, 피그마에 노출되어야하는 값을 통째로 저장하는게 제일 좋을 것 같아요
+ex) imageUrl, RCP_NM, 등등, 피그마를 보고 스크랩 레시피 페이지를 보여줄 때 어떠한 값이 있는지 확인해봐요
+
+parentId : 각 데이터의 고유 식별자 ...? 이거를 파람으로 보내서.. 삭제...? thankss..
+recipeId,,? good,,,, goood,,,^^ 
+
+BODY : {
+    imageURL: string, 
+    RCP_NM: string,
+    isScrapped : boolean,
+}
+
+const postScrapRecipe = async (id) => { ✅
+    const res = await axiosInstance().post(PATH + `/scrap`, {
+        parentId: id,
+    });
+    return res.data;
+};
+
+[3. 불가능한 것은 무엇인가] 
+openAPI에서 불러온 데이터는 모비톤 백엔드에서 중복검사가 불가능하므로, 중복 스크랩 발생 가능성이 있다 --> 삭제가 가능해야한다. (delete)
+...etc
+
+
+
+    1. 삭제 로직 ✅
+    <method: DELETE> https://topdragon.co.kr/mobithon/data/scrap?pair=2&apiKey=mobi2nd1234
+&dataId=8c81c030-6eb8-4f91-a06a-b42b55143922&apiKey=mobi2nd1234
+
+
+
+
+
+
+
+
+

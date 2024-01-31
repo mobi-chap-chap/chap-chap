@@ -92,3 +92,29 @@ export function useGetSearchInfinity(searchValue:string) {
   });
   return { recipeData, fetchNextPage, hasNextPage, isFetching, isSuccess };
 }
+export function useGetScrapInfinity(id: number) {
+  const {
+    data: recipeData,
+    fetchNextPage,
+    hasNextPage,
+    isFetching,
+    isSuccess
+  } = useInfiniteQuery({
+    queryKey: [QUERY_KEY.MORE_RECIPE_LIST, id],
+    queryFn: ({ pageParam = { startIdx: 1, endIdx: 12 }}) =>
+    PostScrapRecie(), 
+    getNextPageParam: (lastPage, totalPages) => {
+      const startIdx = totalPages.length * 12 + 1;
+      let endIdx = (totalPages.length + 1) * 12;
+
+      if (lastPage.COOKRCP01.total_count < endIdx) {
+        endIdx = lastPage.COOKRCP01.total_count;
+      }
+      if (startIdx > lastPage.COOKRCP01.total_count) {
+        return null;
+      }
+      return { startIdx, endIdx, id };
+    },
+  });
+  return { recipeData, fetchNextPage, hasNextPage, isFetching, isSuccess };
+}

@@ -7,7 +7,7 @@ export type User = {
   password: string
   checkPw: string
   data: {
-    memberId: number
+    scrapId: string
     profileImage: string
     scrap?: boolean
   }
