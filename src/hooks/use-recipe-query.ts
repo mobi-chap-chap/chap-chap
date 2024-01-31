@@ -13,14 +13,15 @@ import { useSearchParams } from "react-router-dom";
 export function useGetRecipeInfinity() {
   const [searchParams] = useSearchParams()
   const type = searchParams.get("type") || ""
+  console.log(type)
   const {
     data: recipeData,
     fetchNextPage,
     hasNextPage,
     isFetching,
   } = useInfiniteQuery({
-    queryKey: [QUERY_KEY.MORE_RECIPE_LIST],
-        // queryKey: [QUERY_KEY.MORE_RECIPE_LIST, { RCP_PAT2: searchParams.get(type) }],
+    // queryKey: [QUERY_KEY.MORE_RECIPE_LIST],
+        queryKey: [QUERY_KEY.MORE_RECIPE_LIST, { RCP_PAT2: searchParams.get(type) }],
     queryFn: ({ pageParam = { startIdx: 1, endIdx: 12 } }) =>
       // getRecipe(pageParam),
       getRecipe({ ...pageParam, RCP_PAT2: searchParams.get(type) }),
