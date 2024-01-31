@@ -2,9 +2,11 @@ import { FC, useEffect } from "react";
 import { Grid } from "@mui/material";
 import { useGetRecipeInfinity } from "../../../hooks/use-recipe-query";
 import OneRecipe from "../../components/one-recipe";
+import Lottie from "react-lottie";
+import animationData from '../../../animations/Animation - 1706618442042 (1).json'
 
 const RecipeList: FC = () => {
-  const { recipeData, fetchNextPage } = useGetRecipeInfinity();
+  const { recipeData, fetchNextPage, isSuccess } = useGetRecipeInfinity();
 
   const RecipeListContent = recipeData?.pages
     .map((list) => list.COOKRCP01.row)
@@ -24,6 +26,17 @@ const RecipeList: FC = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   });
+
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    }
+  };
+
+  if (!isSuccess || !recipeData) return <Lottie options={defaultOptions} height={260} width={260} style={{marginBlock : '70px'}} />
 
   return (
     <>

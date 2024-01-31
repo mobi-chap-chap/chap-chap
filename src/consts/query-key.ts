@@ -3,6 +3,5 @@ export const QUERY_KEY = {
   MORE_RECIPE_LIST: "moreRecipeList",
   DETAIL_RECIPE_DATA: "detailRecipeData",
   SEARCH_RECIPE_LIST: "searchRecipeList",
-
 };
 

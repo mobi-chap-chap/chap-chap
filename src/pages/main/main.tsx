@@ -14,7 +14,6 @@ const MainPage: FC = () => {
       <ChapCarousel Slides={Slides} />
       <RecipeFilter />
       <RecipeList />
-      <hr />
     </div>
   );
 };
