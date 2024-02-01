@@ -1,7 +1,7 @@
 import { ReactNode } from "react"
 
 export type AuthContextProps = {
-  accessToken: string | null
+  accessToken: string
   signIn: (token: string) => Promise<void>
   signOut: () => Promise<void>
 }

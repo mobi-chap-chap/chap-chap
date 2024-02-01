@@ -13,7 +13,7 @@ const SearchPage = () => {
 
   if (!RCP_NM) return
 
-  const { recipeData, fetchNextPage, isSuccess, refetch } = useGetSearchInfinity(RCP_NM);
+  const { recipeData, fetchNextPage, isSuccess } = useGetSearchInfinity(RCP_NM);
 
   const RecipeListContent = recipeData?.pages
     .map((list) => list.COOKRCP01.row)

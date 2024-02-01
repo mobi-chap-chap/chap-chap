@@ -6,7 +6,7 @@ import Lottie from "react-lottie";
 import animationData from '../../../animations/Animation - 1706618442042 (1).json'
 
 const RecipeList: FC = () => {
-  const { recipeData, fetchNextPage, isSuccess, refetch } = useGetRecipeInfinity();
+  const { recipeData, fetchNextPage, isSuccess } = useGetRecipeInfinity();
 
   const RecipeListContent = recipeData?.pages
     .map((list) => list.COOKRCP01.row)

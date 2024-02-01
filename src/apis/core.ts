@@ -17,8 +17,9 @@ export const axiosRecipeInstance = axios.create({
 
 // interceptor.response 응답을 가로챔 / request: 요청
 // use안에서 axiosInstance의 요청의 설정을 가져온것 -> 요청의 header에 token을 심겠다
+// 이 인터셉터를 사용하면 모든 요청에 대해 설정을 추가하거나 수정할 수 있다.
 axiosInstance.interceptors.request.use(function (config) {
-  const token = TokenRepository.getToken()
-  config.headers.Authorization = token ? `Bearer ${token}` : ""
-  return config
-})
+	const token = TokenRepository.getToken();
+	config.headers.Authorization = token ? `Bearer ${token}` : "";
+	return config;
+});

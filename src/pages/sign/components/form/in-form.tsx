@@ -28,15 +28,15 @@ const SignInForm: FC = () => {
     const { signIn } = useAuth();
     const { goToMainPage } = UseNavigation();
 
-    const onSubmitSignIn = async (data: SignInType) => {
-        try {
-            await AuthApi.SignIn(data);
-            signIn(data.tokenForHeader);
-            goToMainPage();
-        } catch (error) {
-            alert('로그인에 실패하였습니다');
-        }
-    };
+    const onSubmitSignIn = async (data:SignInType) => {
+		try {
+			const res = await AuthApi.SignIn(data);
+			signIn(res.token);
+            goToMainPage()
+		} catch {
+			alert("아이디와 비밀번호를 확인해주세요");
+		}
+	};
 
     return (
         <div className="flex h-full w-full flex-col items-center justify-center rounded-l-3xl bg-primary-peanut">

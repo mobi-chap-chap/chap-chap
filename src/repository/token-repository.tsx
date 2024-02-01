@@ -1,8 +1,8 @@
-import { TokenRepository } from "../type/token.type"
 const TOKEN_KEY = "access_token"
 
-const TokenRepository: TokenRepository = {
-  setToken(token) {
+const TokenRepository = {
+
+  setToken(token: string) {
     localStorage.setItem(TOKEN_KEY, token)
   },
 

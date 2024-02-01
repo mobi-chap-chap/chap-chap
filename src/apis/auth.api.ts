@@ -1,8 +1,6 @@
 import { axiosInstance } from "./core"
 import { SignUpType, SignInType } from "../consts/form-schema"
 import LocalStorage, { STORAGE_KEYS } from "../repository/user-info-repository"
-import { AxiosResponse } from "axios"
-import { SignInDataType } from "../type/sign.type"
 
 const PATH = "/user"
 
@@ -18,14 +16,11 @@ export const AuthApi = {
     })
     return res.data
   },
-
-  /**
-   * @param data 
-   * @returns return type, error type 
-   */
+  
   async SignIn(data: SignInType) {
-    const res: AxiosResponse<SignInDataType, Error> = await axiosInstance.post(PATH + "/sign-in", {
-      data,
+    const res = await axiosInstance.post(PATH + "/sign-in", {
+      userId: data.userId,
+      password: data.password,
     }) 
      //유저의 정보 저장
     LocalStorage.setItem(

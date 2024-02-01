@@ -2,7 +2,6 @@ import { createBrowserRouter } from "react-router-dom";
 import Layout from "../layout/layout";
 import MainPage from "../pages/main/main";
 import Sign from "../pages/sign/sign";
-import ScrapPage from "../pages/scrap/scraps";
 import SearchPage from "../pages/search/search";
 import DetailRecipe from "../pages/detail/detail-recipe";
 
@@ -19,7 +18,6 @@ const router = createBrowserRouter([
         path: "/chap-chap/recipe/:RCP_NM",
         element: <DetailRecipe />,
       },
-      { path: "/chap-chap/data/scrap", element: <ScrapPage /> },
       { path: "/chap-chap/search/:RCP_NM", element: <SearchPage /> },
     ],
   },
