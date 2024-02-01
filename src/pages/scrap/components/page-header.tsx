@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-const ScrapList: FC = () => {
+const PageHeader: FC = () => {
   return (
     <div className="w-[1037px]  text-[24px] ">
       <p className=" text-primary-chocolate text-[24px] mt-[30px]">
@@ -10,7 +10,7 @@ const ScrapList: FC = () => {
     </div>
   );
 };
-export default ScrapList;
+export default PageHeader;
 /*
 
 */

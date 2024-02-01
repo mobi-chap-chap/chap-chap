@@ -19,7 +19,7 @@ const router = createBrowserRouter([
         path: "/chap-chap/recipe/:RCP_NM",
         element: <DetailRecipe />,
       },
-      { path: "/chap-chap/scrap", element: <ScrapPage /> },
+      { path: "/chap-chap/data/scrap", element: <ScrapPage /> },
       { path: "/chap-chap/search/:RCP_NM", element: <SearchPage /> },
     ],
   },

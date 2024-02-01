@@ -55,7 +55,6 @@ const RecipeList: FC = () => {
                 style={{ paddingBottom: 40 }}
                 key={index + 1}
               >
-                {/* isScrapped: boolean값이 필요 */}
                 <OneRecipe
                   recipeId={recipe.RCP_SEQ}
                   recipeName={recipe.RCP_NM}
@@ -63,8 +62,6 @@ const RecipeList: FC = () => {
                   recipeType={recipe.RCP_PAT2}
                   recipeKal={recipe.INFO_ENG}
                   recipeTitle={recipe.RCP_NM}
-                  isScrapped={recipe.isScrapped}
-                  refetch={refetch}
                 />
               </Grid>
             ))}

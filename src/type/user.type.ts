@@ -1,4 +1,5 @@
 import { Dispatch, SetStateAction } from "react"
+import { RecipeDetail } from "./recipe.type"
 
 // user type
 export type User = {
@@ -7,9 +8,13 @@ export type User = {
   password: string
   checkPw: string
   data: {
-    scrapId: string
     profileImage: string
-    scrap?: boolean
+    // 유저가 스크랩한 레시피 목록
+    scrapRecipe: {
+      scrapId:string
+      recipes: RecipeDetail[]
+      total_count: number
+    }
   }
   status: number
 }

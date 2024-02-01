@@ -30,10 +30,6 @@ export const AuthApi = {
      //유저의 정보 저장
     LocalStorage.setItem(
       STORAGE_KEYS.USER_INFO,
-      // 회원가입 정보 중 변경 가능한 정보들만??
-      // isBoolean : 로그인할 때 남아있어야하고 백엔드 데이터에 그래서 localStorage에 저장을해야하지않을까?
-      // 강사님 주신데이터  isLiked? <-백엔드에서 관리가되는 데이터
-      // 추가??? {isLiked: false}
       JSON.stringify({
         userId: res.data.userId,
         profileUrl: res.data?.info?.profileUrl,      

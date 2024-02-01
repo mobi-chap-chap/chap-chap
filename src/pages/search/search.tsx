@@ -43,9 +43,6 @@ const SearchPage = () => {
   };
 
   if (!isSuccess || !recipeData) return <Lottie options={defaultOptions} height={260} width={260} style={{marginBlock : '346px'}}/>
-  
-
-
   return (
     <div className="w-screen overflow-x-hidden flex flex-col">
       <div className=" text-black w-full  px-[450px]  ml-[13px] relative py-[202px]">
@@ -67,14 +64,12 @@ const SearchPage = () => {
                 key={index + 1}
               >
                 <OneRecipe
-                recipeId={recipe.RCP_SEQ}
+                  recipeId={recipe.RCP_SEQ}
                   recipeName={recipe.RCP_NM}
                   recipeImg={recipe.ATT_FILE_NO_MAIN}
                   recipeType={recipe.RCP_PAT2}
                   recipeKal={recipe.INFO_ENG}
                   recipeTitle={recipe.RCP_NM}
-                  isScrapped={recipe.isScrapped}
-                  refetch={refetch}
                 />
               </Grid>
             ))}

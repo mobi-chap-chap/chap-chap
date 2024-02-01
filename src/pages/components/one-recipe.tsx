@@ -1,35 +1,30 @@
-import { FC, useState } from "react";
+import { FC} from "react";
 import UseNavigation from "../../hooks/use-navigation";
 import { skipTitleView } from "../../utils/overflow-helper";
 import { OneRecipeIcon } from "../../assets/icon";
 import { OneRecipeProps } from "../../type/recipe.type";
 import { useMutation } from "react-query";
-import { ScrapApi } from "../../apis/user.api";
+import { RecipeApi } from "../../apis/recipe.api";
 
 const OneRecipe: FC<OneRecipeProps> = ({
-  recipeId,
   recipeImg,
   recipeType,
   recipeKal,
   recipeTitle,
-  isScrapped,
-  refetch,
 }) => {
-  const [, setIsScrapped] = useState<boolean>(false);
-
-  const { mutateAsync: onScrapMutation } = useMutation((recipeId:string) =>
-    ScrapApi.PostScrapRecipe(recipeId)
-  );
+  const { mutateAsync: onScrapMutation } = useMutation({
+    mutationFn : ({recipeImg, recipeTitle}:{recipeImg:string, recipeTitle:string }) => RecipeApi.PostScrapRecipe({
+      recipeImg,
+      recipeTitle
+    })
+  });
 
   const onScrapToggle = async () => {
-    if (!isScrapped) {
-      await onScrapMutation(recipeId)
-      setIsScrapped(true);
-    } else if (isScrapped) {
-      await onScrapMutation(recipeId);
-      setIsScrapped(false);
-    }
-    refetch();
+    await onScrapMutation({
+      recipeImg,
+      recipeTitle,
+    })
+    alert('스크랩에 성공하셨습니다 :)')
   };
 
   const { goToDetailPage } = UseNavigation();
@@ -64,15 +59,10 @@ const OneRecipe: FC<OneRecipeProps> = ({
           <div onClick={onScrapToggle}>
             <img
               className="w-[30px]"
-              src={
-                isScrapped
-                  ? OneRecipeIcon.bookmarkFull
-                  : OneRecipeIcon.bookmarkLine
-              }
+              src={OneRecipeIcon.bookmarkLine}
             />
           </div>
         </div>
-
         <div className="pl-[15px] mt-[65px] text-[18px]">
           {skipTitleView(recipeTitle)}
         </div>
